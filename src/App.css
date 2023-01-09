@@ -1,0 +1,41 @@
+html,body{
+    margin: 0;
+    padding: 0;
+}
+
+.baseLayer{
+    position: relative;
+}
+    .bulletinBoard{
+        position: absolute;
+        top: 150px;
+        left: 0;
+    }
+    .calendar{
+        position: absolute;
+        top: 315px;
+        left: 385px;
+    }
+    .garbageCan{
+        position: absolute;
+        top: 873px;
+        left: 565px;
+    }
+    .paperAirplane{
+        position: absolute;
+        top: 288px;
+        left: 135px;
+    }
+    .pottedPlant{
+        position: absolute;
+        top: 362px;
+        left: 521px;
+    }
+    .todoList{
+        position: absolute;
+        top: 541px;
+        left: 10px;
+    }
+    .item:hover{
+        transform: rotate(5deg);
+    }
