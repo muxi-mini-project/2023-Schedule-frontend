@@ -66,3 +66,60 @@ html,body{
     .item:hover{
         transform: rotate(5deg);
     }
+
+
+
+.baseMap{
+    max-width: 750px;
+    height: auto;
+    position: relative;
+}
+    .paper{
+        max-width: 100%;
+        height: auto;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+    }
+    .checkBox{
+        max-width: 100%;
+        height: auto;
+        position: absolute;
+        top: -15px;
+        left: -30px;
+    }
+    .check1{
+        max-width: 100%;
+        height: auto;
+        position: absolute;
+        top: 410px;
+        left: 138px;
+    }
+    .check2{
+        max-width: 100%;
+        height: auto;
+        position: absolute;
+        top: 492px;
+        left: 153px;
+    }
+    .check3{
+        max-width: 100%;
+        height: auto;
+        position: absolute;
+        top: 579px;
+        left: 174px;
+    }
+    .check4{
+        max-width: 100%;
+        height: auto;
+        position: absolute;
+        top: 669px;
+        left: 190px;
+    }
+    .check5{
+        max-width: 100%;
+        height: auto;
+        position: absolute;
+        top: 765px;
+        left: 210px;
+    }

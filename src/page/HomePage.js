@@ -18,13 +18,13 @@ const HomePage = () => {
     else{
         return(
             <div className="view">
-                <Link to="/baseLayer"><img src={baseLayer} className="baseLayer"/></Link>
-                <Link to="/bulletinBoard"><img src={bulletinBoard} className="bulletinBoard item"/></Link>
-                <Link to="/calendar"><img src={calendar} className="calendar item"/></Link>
-                <Link to="/garbageCan"><img src={garbageCan} className="garbageCan item"/></Link>
-                <Link to="/paperAirplane"><img src={paperAirplane} className="paperAirplane item"/></Link>
-                <Link to="/pottedPlant"><img src={pottedPlant} className="pottedPlant item"/></Link>
-                <Link to="/TodoList"><img src={todoList} className="todoList item"/></Link>
+                <Link to="/baseLayer"><img alt='' src={baseLayer} className="baseLayer"/></Link>
+                <Link to="/bulletinBoard"><img alt='' src={bulletinBoard} className="bulletinBoard item"/></Link>
+                <Link to="/calendar"><img alt='' src={calendar} className="calendar item"/></Link>
+                <Link to="/garbageCan"><img alt='' src={garbageCan} className="garbageCan item"/></Link>
+                <Link to="/paperAirplane"><img alt='' src={paperAirplane} className="paperAirplane item"/></Link>
+                <Link to="/pottedPlant"><img alt='' src={pottedPlant} className="pottedPlant item"/></Link>
+                <Link to="/TodoList"><img alt='' src={todoList} className="todoList item"/></Link>
             </div>
         );
     }
