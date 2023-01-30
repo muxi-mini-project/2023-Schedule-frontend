@@ -1,17 +1,7 @@
-import {HashRouter,Route,Switch} from "react-router-dom";
-import homePage from "./page/home page"
-import todoList from "./page/todo list"
+import router from "./router";
+import { useRoutes } from "react-router-dom";
 
 
 export default function App(){
-    return(
-        <HashRouter>
-            <Switch>
-                <homePage>
-                    <Route exact path="/" component={homePage}/>
-                    <Route path="/todoList" component={todoList}/>
-                </homePage>
-            </Switch>
-        </HashRouter>
-    );   
+    return useRoutes(router);   
 }
