@@ -6,7 +6,7 @@ import paperAirplane from '../img/home page/PaperAirplane.png';
 import pottedPlant from '../img/home page/PottedPlant.png';
 import todoList from '../img/home page/TodoList.png';
 import {Link} from "react-router-dom";
-import '../App.css';
+import './HomePage.css';
 
 
 const HomePage = () => {

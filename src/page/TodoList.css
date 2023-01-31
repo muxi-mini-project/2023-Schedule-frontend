@@ -1,0 +1,143 @@
+html,body{
+    margin: 0;
+    padding: 0;
+}
+
+.view{
+    max-width: 100%;
+    height: 100%;
+}
+
+.hint{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.baseMap{
+    max-width: 750px;
+    height: auto;
+    position: relative;
+}
+    .paper{
+        width: 750px;
+        height: auto;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+    }
+    .checkBox{
+        width: 750px;
+        height: auto;
+        position: absolute;
+        top: -15px;
+        left: -30px;
+    }
+    .check1{
+        max-width: 100%;
+        height: auto;
+        position: absolute;
+        top: 410px;
+        left: 138px;
+    }
+    .check2{
+        max-width: 100%;
+        height: auto;
+        position: absolute;
+        top: 492px;
+        left: 153px;
+    }
+    .check3{
+        max-width: 100%;
+        height: auto;
+        position: absolute;
+        top: 579px;
+        left: 174px;
+    }
+    .check4{
+        max-width: 100%;
+        height: auto;
+        position: absolute;
+        top: 669px;
+        left: 190px;
+    }
+    .check5{
+        max-width: 100%;
+        height: auto;
+        position: absolute;
+        top: 765px;
+        left: 210px;
+    }
+    .todo1{
+        width: 260px;
+        height: 30px;
+        position: absolute;
+        top: 400px;
+        left: 190px;
+        transform: rotate(-11.2deg);
+        border: 0;
+        background-color: rgb(255, 240, 206);
+        font-size: 40px;
+        color: rgb(155, 122, 122);
+        text-align: center;
+        outline: 0;
+    }
+    .todo2{
+        width: 260px;
+        height: 30px;
+        position: absolute;
+        top: 480px;
+        left: 208px;
+        transform: rotate(-11.2deg);
+        border: 0;
+        background-color: rgb(255, 240, 206);
+        font-size: 40px;
+        color: rgb(155, 122, 122);
+        text-align: center;
+        outline: 0;
+    }
+    .todo3{
+        width: 260px;
+        height: 30px;
+        position: absolute;
+        top: 568px;
+        left: 225px;
+        transform: rotate(-11.2deg);
+        border: 0;
+        background-color: rgb(255, 240, 206);
+        font-size: 40px;
+        color: rgb(155, 122, 122);
+        text-align: center;
+        outline: 0;
+    }
+    .todo4{
+        width: 260px;
+        height: 30px;
+        position: absolute;
+        top: 659px;
+        left: 243px;
+        transform: rotate(-11.2deg);
+        border: 0;
+        background-color: rgb(255, 240, 206);
+        font-size: 40px;
+        color: rgb(155, 122, 122);
+        text-align: center;
+        outline: 0;
+    }
+    .todo5{
+        width: 260px;
+        height: 30px;
+        position: absolute;
+        top: 755px;
+        left: 263px;
+        transform: rotate(-11.2deg);
+        border: 0;
+        background-color: rgb(255, 240, 206);
+        font-size: 40px;
+        color: rgb(155, 122, 122);
+        text-align: center;
+        outline: 0;
+    }
