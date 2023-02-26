@@ -1,17 +1,17 @@
-import React, { Component } from 'react'
+import React, { Component, useEffect } from 'react'
 
 export default function Item (props) {
 
-    const handleCheck=(id)=>{
+    const handleCheck=(userId)=>{
         return(event)=>{
-          props.updateTodo(id,event.target.checked)
+          props.updateTodo(userId,event.target.checked)
         }
     }
     return (
         <li>
-                        <input type="checkbox" name="checkbox" id={props.id} onChange={handleCheck(props.id)} />
-                        <label htmlFor={props.id} ></label>
-                        <span className={props.done?'done':''}> {props.name} </span>
+                        <input type="checkbox" name="checkbox" id={props.userId} checked={props.done} onChange={handleCheck(props.userId)} />
+                        <label htmlFor={props.userId} ></label>
+                        <span className={props.done?'done':''}> {props.content} </span>
         </li>
     )
     }
