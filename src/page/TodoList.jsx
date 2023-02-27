@@ -1,9 +1,9 @@
+import baseMap from "../img/Todolist/basemap.png";
+import check from "../img/Todolist/check.png";
+import checkBox from "../img/Todolist/CheckBox.png";
+import paper from "../img/Todolist/paper.png";
+import {CheckGet, CompletePut, WritePost} from "../api/fetch";
 import {useState} from "react";
-
-import baseMap from "../img/todo list/basemap.png";
-import check from "../img/todo list/check.png";
-import checkBox from "../img/todo list/CheckBox.png";
-import paper from "../img/todo list/paper.png";
 import "./TodoList.css";
 
 
@@ -76,25 +76,27 @@ const TodoList = () => {
     }
 
     return(
-        <div className="view">
-            <img alt='' src={baseMap} className="baseMap"/>
-            <img alt='' src={paper} className="paper"/>
-            <img alt='' src={checkBox} className="checkBox"/>
-            <img alt='' src={check} className={`check1 check ${opacity1?"a":"b"}`}/>
-            <img alt='' src={check} className={`check2 check ${opacity2?"a":"b"}`}/>
-            <img alt='' src={check} className={`check3 check ${opacity3?"a":"b"}`}/>
-            <img alt='' src={check} className={`check4 check ${opacity4?"a":"b"}`}/>
-            <img alt='' src={check} className={`check5 check ${opacity5?"a":"b"}`}/>
-            <input type="checkbox" className="checker1 checker" value={this.state.InputValue} onChange={checked1}></input>
-            <input className="todo1 todo descriptionInput" onChange={todoChange1}></input>
-            <input type="checkbox" className="checker2 checker" onChange={checked2}></input>
-            <input className="todo2 todo descriptionInput" onChange={todoChange2}></input>
-            <input type="checkbox" className="checker3 checker" onChange={checked3}></input>
-            <input className="todo3 todo descriptionInput" onChange={todoChange3}></input>
-            <input type="checkbox" className="checker4 checker" onChange={checked4}></input>
-            <input className="todo4 todo descriptionInput" onChange={todoChange4}></input>
-            <input type="checkbox" className="checker5 checker" onChange={checked5}></input>
-            <input className="todo5 todo descriptionInput" onChange={todoChange5}></input>    
+        <div className="base">
+            <div className="view">
+                <img alt='' src={baseMap} className="baseMap"/>
+                <img alt='' src={paper} className="paper"/>
+                <img alt='' src={checkBox} className="checkBox"/>
+                <img alt='' src={check} className={`check1 check ${opacity1?"a":"b"}`}/>
+                <img alt='' src={check} className={`check2 check ${opacity2?"a":"b"}`}/>
+                <img alt='' src={check} className={`check3 check ${opacity3?"a":"b"}`}/>
+                <img alt='' src={check} className={`check4 check ${opacity4?"a":"b"}`}/>
+                <img alt='' src={check} className={`check5 check ${opacity5?"a":"b"}`}/>
+                <input type="checkbox" className="checker1 checker" onChange={checked1}></input>
+                <input className="todo1 todo descriptionInput" onChange={todoChange1}></input>
+                <input type="checkbox" className="checker2 checker" onChange={checked2}></input>
+                <input className="todo2 todo descriptionInput" onChange={todoChange2}></input>
+                <input type="checkbox" className="checker3 checker" onChange={checked3}></input>
+                <input className="todo3 todo descriptionInput" onChange={todoChange3}></input>
+                <input type="checkbox" className="checker4 checker" onChange={checked4}></input>
+                <input className="todo4 todo descriptionInput" onChange={todoChange4}></input>
+                <input type="checkbox" className="checker5 checker" onChange={checked5}></input>
+                <input className="todo5 todo descriptionInput" onChange={todoChange5}></input>    
+            </div>
         </div>
     );
 }

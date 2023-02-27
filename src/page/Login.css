@@ -1,0 +1,98 @@
+html,body{
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+}
+.view{
+    max-width: 100%;
+    height: 100%;
+}
+.hint{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.baseLayer{
+    max-width: 750px;
+    height: auto;
+    position: relative;
+}
+    .textBox{
+        max-width: 100%;
+        height: auto;
+        position: absolute;
+        top: 600px;
+        left: 30px;
+    }
+    .logo{
+        max-width: 100%;
+        height: auto;
+        position: absolute;
+        top: 100px;
+        left: 230px;
+    }
+    .studentID{
+        max-width: 100%;
+        height: auto;
+        position: absolute;
+        top:520px;
+        left: 60px;
+    }
+    .pottedPlant2{
+        max-width: 100%;
+        height: auto;
+        position: absolute;
+        top: 470px;
+        left: 600px;
+    }
+    .password{
+        max-width: 100%;
+        height: auto;
+        position: absolute;
+        top:720px;
+        left: 60px;
+    }
+    .bacterium{
+        max-width: 100%;
+        height: auto;
+        position: absolute;
+        top:762px;
+        left: 580px;
+    }
+    .login{
+        max-width: 100%;
+        height: auto;
+        position: absolute;
+        top:850px;
+        left: 500px;
+    }
+    .studentIDText{
+        width: 330px;
+        height: 50px;
+        max-width: 100%;
+        position: absolute;
+        top:535px;
+        left: 230px;
+        border: 0;
+        background-color: rgb(252, 243, 224);
+        font-size: 40px;
+        color: rgb(155, 122, 122);
+        outline: 0;
+    }
+    .passwordText{
+        width: 330px;
+        height: 50px;
+        max-width: 100%;
+        position: absolute;
+        top:735px;
+        left: 230px;
+        border: 0;
+        background-color: rgb(252, 243, 224);
+        font-size: 40px;
+        color: rgb(155, 122, 122);
+        outline: 0;
+    }
