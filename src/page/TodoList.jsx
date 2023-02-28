@@ -8,6 +8,9 @@ import "./TodoList.css";
 
 
 const TodoList = () => {
+    let bodyStyle = document.body.style;
+    bodyStyle.zoom = window.innerWidth/750;
+    
     let todos = getTodos();
     const [temp, setTemp] = useState(todos);
     function getTodos() {
@@ -58,24 +61,28 @@ const TodoList = () => {
     function checked1(e) {
         updateTodo(todos[0], "completed", e.target.checked);
         setTodos(todos);
+        window.location.reload();
     }
     function checked2(e) {
         updateTodo(todos[1], "completed", e.target.checked);
         setTodos(todos);
+        window.location.reload();
     }
     function checked3(e) {
         updateTodo(todos[2], "completed", e.target.checked);
         setTodos(todos);
+        window.location.reload();
     }
     function checked4(e) {
         updateTodo(todos[3], "completed", e.target.checked);
         setTodos(todos);
+        window.location.reload();
     }
     function checked5(e) {
         updateTodo(todos[4], "completed", e.target.checked);
         setTodos(todos);
+        window.location.reload();
     }
-
 
     return (
         <div className="base">
