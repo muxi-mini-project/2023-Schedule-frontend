@@ -1,9 +1,8 @@
 html,body{
-    max-width: 100%;
-    min-width: 100%;
+    max-width: 414px;
+    min-width: 414px;
     margin: 0;
     padding: 0;
-    max-zoom: 0.1;
 }
 .view{
     max-width: 100%;

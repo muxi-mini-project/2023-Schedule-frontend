@@ -18,6 +18,8 @@ const Login = () => {
         );
     }
     else{
+        let bodyStyle = document.body.style;
+        bodyStyle.zoom = window.innerWidth/750;
         return(
             <div className="view">
                 <img alt='' src={baseLayer} className="baseLayer"/>
