@@ -21,10 +21,10 @@ const HomePage = () => {
         return(
             <div className="view">
                 <img alt='' src={baseLayer} className="baseLayer"/>
-                <Link to="/bulletinBoard"><img alt='' src={bulletinBoard} className="bulletinBoard"/></Link>
-                <Link to="/calendar"><img alt='' src={calendar} className="calendar item"/></Link>
-                <Link to="/garbageCan"><img alt='' src={garbageCan} className="garbageCan item"/></Link>
-                <Link to="/paperAirplane"><img alt='' src={paperAirplane} className="paperAirplane item"/></Link>
+                <Link to="/BulletinBoard"><img alt='' src={bulletinBoard} className="bulletinBoard"/></Link>
+                <Link to="/Calendar"><img alt='' src={calendar} className="calendar item"/></Link>
+                <Link to="/GarbageCan"><img alt='' src={garbageCan} className="garbageCan item"/></Link>
+                <Link to="/PaperAirplane"><img alt='' src={paperAirplane} className="paperAirplane item"/></Link>
                 <img alt='' src={pottedPlant} className="pottedPlant1 item"/>
                 <Link to="/TodoList"><img alt='' src={todoList} className="todoList item"/></Link>
             </div>
