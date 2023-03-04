@@ -43,8 +43,8 @@ input[type=checkbox] {
 }
 
 ul {
-	position: absolute;
-	top: 34%;
+	position: relative;
+	top: 6%;
 	left: 7vh;
 	overflow: scroll;
 	height: 20vh;
@@ -79,6 +79,7 @@ img {
 	top: 41%;
 }
 
+
 input[type=checkbox]:checked+label::before {
 	content: "";
 	position: absolute;
@@ -93,8 +94,8 @@ input[type=checkbox]:checked+label::before {
 
 
 #inputbox {
-	position: absolute;
-	top: 21%;
+	position: relative;
+	top: 6%;
 	left: 11vh;
 	border: 0ch;
 	height: 2vh;
@@ -115,7 +116,7 @@ input[type=checkbox]:checked+label::before {
 	font-size: 3.5rem;
 	font-weight: bold;
 	color: #88674f;
-	top: 11%;
+	top: 5%;
 	left: 6%;
 }
 
@@ -124,4 +125,72 @@ font{
 	padding: 0.3rem;
 	margin-right: 0.5vh;
 	margin-left: 0.5vh;
+}
+
+.page{
+	background-image: url(../imgs/page.png);
+	height: 87vh;
+	width: 50vh;
+	background-repeat: no-repeat;
+	background-size:contain;
+	background-position: -1.4vh -25vh;
+}
+
+.tear {
+    position: absolute;
+    z-index: 1;
+    -webkit-transform-origin: top left;
+    transform-origin: top left;
+    pointer-events: none;
+    -webkit-animation: tear-animation 0.8s linear forwards;
+    animation: tear-animation 0.8s linear forwards;
+	background-image: url(../imgs/page.png);
+	height: 87vh;
+	width: 50vh;
+	background-repeat: no-repeat;
+	background-size:contain;
+	background-position: -1.4vh -25vh;
+
+}
+@-webkit-keyframes tear-animation {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+        top: 0;
+        opacity: 1;
+    }
+    20% {
+        -webkit-transform: rotate(9deg);
+        transform: rotate(9deg);
+        top: 0;
+        opacity: 1;
+    }
+    70% {
+        opacity: 1;
+    }
+    100% {
+        top: 200px;
+        opacity: 0;
+    }
+}
+@keyframes tear-animation {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+        top: 0;
+        opacity: 1;
+    }
+    20% {
+        -webkit-transform: rotate(9deg);
+        transform: rotate(9deg);
+        top: 0;
+        opacity: 1;
+    }
+    70% {
+        opacity: 1;
+    }
+    100% {
+        top: 200px;
+        opacity: 0;
+    }
 }

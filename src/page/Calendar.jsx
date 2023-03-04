@@ -61,6 +61,34 @@ export default  function Calendar(){
     })
     setTodos(newTodos)
   }
+
+const [isClicked,setClick]=useState(false)
+const [isAlldone,setAlldone]=useState(true)
+
+  const handleClick =(target)=>{
+    setAlldone(true);
+    todos.map((todo)=>{ if(todo.done==false) setAlldone(false)})
+    console.log(isAlldone)
+    console.log(todos)
+    if (todos.length!=0 && isAlldone){
+    setTodos([]);
+    setClick(true);
+    updateCalendar(target);
+    }
+    else return ;
+  }
+
+ const updateCalendar= (target)=>{
+  if (target) {
+    setTimeout(function () {
+      setClick(false)
+    }, 800)
+  } else {
+    return;
+  }
+
+ }
+
   
 
   
@@ -71,8 +99,9 @@ export default  function Calendar(){
   return (
     <div className='body'>
     <div className='book'>
+      <div  className={isClicked?'tear':'page'} onClick={handleClick}>
       <div className='time'>
-      <font>{time.getMonth()<10?'0':''}</font><font>{month}</font>月<font>{days[0]}</font><font>{days[1]}</font>日
+      <font>{time.getMonth()<10?'0':''}</font><font>{month}</font>月<font>{time.getDay()<10?'0':days[0]}</font><font>{time.getDay()<10?days[0]:days[1]}</font>日
       </div>
       <input id="inputbox" placeholder="今天要做什么呢？" onKeyUp={handleKeyUp}/>
                 <ul>
@@ -82,6 +111,7 @@ export default  function Calendar(){
 				})
 			}
                 </ul>
+    </div>
     </div>
     </div>
   )
