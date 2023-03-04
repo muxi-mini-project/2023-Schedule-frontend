@@ -4,98 +4,103 @@ function tokenCheck(){
     if(!token){return }
 }
 
-
-// Login
-export async function LoginPost(uid, pw){
-    const response = await fetch(preurl+"login", {
+export async function postData(url, data){
+    tokenCheck();
+    const response = await fetch(preurl+url, {
         method: 'POST', 
-        headers: {
-            "User-Agent": "Apifox/1.0.0 (https://www.apifox.cn)",
-            "Content-Type": "application/json;charset=utf-8",
-        },
-        body: {
-            "password": pw,
-            "uid": uid
-        },
-        redirect: 'follow'
+        headers: { "Content-Type": "application/json;charset=utf-8" },
+        body: JSON.stringify(data)
     })
-        .then(response => response.text())
-        .then(result => console.log(result))
+        .catch(error => console.log('error', error));
+
+    return response.json();
+}
+
+export async function getJSON(url){
+    tokenCheck();
+    const response = await fetch(preurl+url, {
+        method: 'GET', 
+        headers: {
+            "Content-Type": "application/json;charset=utf-8",
+            "Authorization": localStorage.getItem('token')
+        },
+    })
+        .catch(error => console.log('error', error));
+
+    return response.json();
+}
+
+export async function putData(url, data){
+    tokenCheck();
+    const response = await fetch(preurl+url, {
+        method: 'PUT', 
+        headers: {
+            "Content-Type": "application/json;charset=utf-8",
+            "Authorization": localStorage.getItem('token')
+        },
+        body: JSON.stringify(data)
+    })
         .catch(error => console.log('error', error));
 
     return response.json();
 }
 
 
+
+
 // TodoList
-export async function CheckGet(data = {}){
+export async function CheckGet(data){
     tokenCheck();
     const response = await fetch(preurl+"calendar", {
         method: 'GET', 
         headers: {
-            "User-Agent": "Apifox/1.0.0 (https://www.apifox.cn)",
             "Content-Type": "application/json;charset=utf-8",
             "Authorization": localStorage.getItem('token')
         },
-        redirect: 'follow'
     })
-        .then(response => response.text())
-        .then(result => console.log(result))
         .catch(error => console.log('error', error));
 
     return response.json();
 }
 
-export async function CompletePut(data = {}){
+export async function CompletePut(data){
     tokenCheck();
     const response = await fetch(preurl+"calendar/check/<content>", {
         method: 'PUT', 
         headers: {
-            "User-Agent": "Apifox/1.0.0 (https://www.apifox.cn)",
             "Content-Type": "application/json;charset=utf-8",
             "Authorization": localStorage.getItem('token')
         },
-        redirect: 'follow'
     })
-        .then(response => response.text())
-        .then(result => console.log(result))
         .catch(error => console.log('error', error));
 
     return response.json();
 }
 
-export async function WritePost(data = {}){
+export async function WritePost(data){
     tokenCheck();
     const response = await fetch(preurl+"calendar/write", {
         method: 'POST', 
         headers: {
-            "User-Agent": "Apifox/1.0.0 (https://www.apifox.cn)",
             "Content-Type": "application/json;charset=utf-8",
             "Authorization": localStorage.getItem('token')
         },
-        body: {"content": "<content>"},
-        redirect: 'follow'
+        body: { "content": "" },
     })
-        .then(response => response.text())
-        .then(result => console.log(result))
         .catch(error => console.log('error', error));
 
     return response.json();
 }
 
-export async function CrashGet(data = {}){
+export async function CrashGet(data){
     tokenCheck();
     const response = await fetch(preurl+"crash", {
         method: 'GET', 
         headers: {
-            "User-Agent": "Apifox/1.0.0 (https://www.apifox.cn)",
             "Content-Type": "application/json;charset=utf-8",
             "Authorization": localStorage.getItem('token')
         },
-        redirect: 'follow'
     })
-        .then(response => response.text())
-        .then(result => console.log(result))
         .catch(error => console.log('error', error));
 
     return response.json();

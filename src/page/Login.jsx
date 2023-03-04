@@ -6,7 +6,8 @@ import login from '../img/Login/Login.png';
 import logo from '../img/Login/Logo.png';
 import pottedPlant from '../img/Login/PottedPlant.png';
 import bacterium from '../img/Login/Bacterium.png';
-import {LoginPost} from '../api/fetch';
+
+import {postData} from '../api/fetch';
 import {Link} from "react-router-dom";
 import {useState} from "react";
 import './Login.css';
@@ -32,7 +33,7 @@ const Login = () => {
             SetPW(value);
         }
         function submitChange(){
-            LoginPost(uid, pw);
+            let result = postData("login", {"password": pw, "uid": uid});
         }
         
         return(
