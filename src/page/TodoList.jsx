@@ -2,7 +2,8 @@ import baseMap from "../img/Todolist/basemap.png";
 import check from "../img/Todolist/check.png";
 import checkBox from "../img/Todolist/CheckBox.png";
 import paper from "../img/Todolist/paper.png";
-import { CheckGet, CompletePut, WritePost } from "../api/fetch";
+
+import { postData, getJSON, putData } from "../api/fetch";
 import { useState } from "react";
 import "./TodoList.css";
 
