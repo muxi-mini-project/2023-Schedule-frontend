@@ -67,7 +67,7 @@ html,body{
         height: 30px;
         transform: rotate(-11.2deg);
         border: 0;
-        background-color: rgb(255, 240, 206);
+        background-color: transparent;
         font-size: 40px;
         color: rgb(155, 122, 122);
         text-align: center;

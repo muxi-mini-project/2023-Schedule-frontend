@@ -1,13 +1,13 @@
-import baseLayer from '../img/Login/BaseLayer.png';
-import textBox from '../img/Login/TextBox.png';
-import studentID from '../img/Login/StudentID.png';
-import password from '../img/Login/Password.png';
-import login from '../img/Login/Login.png';
-import logo from '../img/Login/Logo.png';
-import pottedPlant from '../img/Login/PottedPlant.png';
-import bacterium from '../img/Login/Bacterium.png';
+import baseLayer from '../../img/Login/BaseLayer.png';
+import textBox from '../../img/Login/TextBox.png';
+import studentID from '../../img/Login/StudentID.png';
+import password from '../../img/Login/Password.png';
+import login from '../../img/Login/Login.png';
+import logo from '../../img/Login/Logo.png';
+import pottedPlant from '../../img/Login/PottedPlant.png';
+import bacterium from '../../img/Login/Bacterium.png';
 
-import {postData} from '../api/fetch';
+import {postData} from '../../api/fetch';
 import {Link} from "react-router-dom";
 import {useState} from "react";
 import './Login.css';

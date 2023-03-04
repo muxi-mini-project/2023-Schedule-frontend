@@ -1,10 +1,10 @@
-import baseLayer from '../img/HomePage/BaseLayer.png';
-import bulletinBoard from '../img/HomePage/BulletinBoard.png';
-import calendar from '../img/HomePage/Calendar.png';
-import garbageCan from '../img/HomePage/GarbageCan.png';
-import paperAirplane from '../img/HomePage/PaperAirplane.png';
-import pottedPlant from '../img/HomePage/PottedPlant.png';
-import todoList from '../img/HomePage/TodoList.png';
+import baseLayer from '../../img/HomePage/BaseLayer.png';
+import bulletinBoard from '../../img/HomePage/BulletinBoard.png';
+import calendar from '../../img/HomePage/Calendar.png';
+import garbageCan from '../../img/HomePage/GarbageCan.png';
+import paperAirplane from '../../img/HomePage/PaperAirplane.png';
+import pottedPlant from '../../img/HomePage/PottedPlant.png';
+import todoList from '../../img/HomePage/TodoList.png';
 
 import {Link} from "react-router-dom";
 import './HomePage.css';
