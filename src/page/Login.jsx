@@ -13,18 +13,8 @@ import './Login.css';
 
 
 const Login = () => {
-    const [data, SetData] = useState({
-        method: 'POST', 
-        headers: {
-            "User-Agent": "Apifox/1.0.0 (https://www.apifox.cn)",
-            "Content-Type": "application/json;charset=utf-8",
-        },
-        body: {
-            "password": "",
-            "uid": ""
-        },
-        redirect: 'follow'
-    });
+    const [uid, SetUid] = useState("");
+    const [pw, SetPW] = useState("");
 
     if(window.innerWidth > window.innerHeight){
         return(
@@ -36,13 +26,13 @@ const Login = () => {
         bodyStyle.zoom = window.innerWidth/750;
 
         function studentIDChange(value){
-            SetData(value.body.uid);
+            SetUid(value);
         }
         function passwordChange(value){
-            SetData(value.body.password);
+            SetPW(value);
         }
         function submitChange(){
-            LoginPost(data);
+            LoginPost(uid, pw);
         }
         
         return(

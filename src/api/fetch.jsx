@@ -6,7 +6,7 @@ function tokenCheck(){
 
 
 // Login
-export async function LoginPost(data = {}){
+export async function LoginPost(uid, pw){
     const response = await fetch(preurl+"login", {
         method: 'POST', 
         headers: {
@@ -14,8 +14,8 @@ export async function LoginPost(data = {}){
             "Content-Type": "application/json;charset=utf-8",
         },
         body: {
-            "password": "",
-            "uid": ""
+            "password": pw,
+            "uid": uid
         },
         redirect: 'follow'
     })
