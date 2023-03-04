@@ -6,19 +6,16 @@ function tokenCheck(){
 
 
 // Login
-export async function LoginPost(data = {}){
-    tokenCheck();
+export async function LoginPost(uid, pw){
     const response = await fetch(preurl+"login", {
         method: 'POST', 
         headers: {
             "User-Agent": "Apifox/1.0.0 (https://www.apifox.cn)",
             "Content-Type": "application/json;charset=utf-8",
-            "Authorization": localStorage.getItem('token')
         },
         body: {
-            "password": "<password>",
-            "token": "<token>",
-            "uid": "<uid>",
+            "password": pw,
+            "uid": uid
         },
         redirect: 'follow'
     })

@@ -8,10 +8,14 @@ import pottedPlant from '../img/Login/PottedPlant.png';
 import bacterium from '../img/Login/Bacterium.png';
 import {LoginPost} from '../api/fetch';
 import {Link} from "react-router-dom";
+import {useState} from "react";
 import './Login.css';
 
 
 const Login = () => {
+    const [uid, SetUid] = useState("");
+    const [pw, SetPW] = useState("");
+
     if(window.innerWidth > window.innerHeight){
         return(
             <div className="hint"><h2>请将萤幕转为纵向或使用手机检视并重整页面</h2></div>
@@ -20,6 +24,17 @@ const Login = () => {
     else{
         let bodyStyle = document.body.style;
         bodyStyle.zoom = window.innerWidth/750;
+
+        function studentIDChange(value){
+            SetUid(value);
+        }
+        function passwordChange(value){
+            SetPW(value);
+        }
+        function submitChange(){
+            LoginPost(uid, pw);
+        }
+        
         return(
             <div className="view">
                 <img alt='' src={baseLayer} className="baseLayer"/>
@@ -30,8 +45,9 @@ const Login = () => {
                 <img alt='' src={logo} className="logo"/>
                 <img alt='' src={pottedPlant} className="pottedPlant2"/>
                 <img alt='' src={bacterium} className="bacterium"/>
-                <input type="text" className="studentIDText"></input>
-                <input type="password" className="passwordText"></input>
+                <input type="text" className="studentIDText" onChange={studentIDChange}></input>
+                <input type="password" className="passwordText" onChange={passwordChange}></input>
+                <input type="submit" className="submit" onChange={submitChange}></input>
             </div>
         );
     }

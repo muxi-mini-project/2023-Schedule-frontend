@@ -3,7 +3,6 @@ html,body{
     min-width: 100%;
     margin: 0;
     padding: 0;
-    max-zoom: 0.1;
 }
 .view{
     max-width: 100%;
@@ -97,4 +96,12 @@ html,body{
         font-size: 40px;
         color: rgb(155, 122, 122);
         outline: 0;
+    }
+    .submit{
+        max-width: 100%;
+        width: 138px;
+        height: 154px;
+        position: absolute;
+        top:850px;
+        left: 300px;
     }
