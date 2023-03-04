@@ -1,7 +1,7 @@
-import baseLayer from '../img/GarbageCan/BaseLayer.png';
-import check from '../img/GarbageCan/Check2.png';
-import crumpledPaper from '../img/GarbageCan/CrumpledPaper.png';
-import {Link} from "react-router-dom";
+import baseLayer from '../../img/GarbageCan/BaseLayer.png';
+import crumpledPaper from '../../img/GarbageCan/CrumpledPaper.png';
+import GarbageCanContentOuterBox from '../../components/GarbageCanContentOuterBox/GarbageCanContentOuterBox';
+import GarbageCanPastDate from '../../components/GarbageCanPastDate/GarbageCanPastDate';
 import './GarbageCan.css';
 
 
@@ -19,6 +19,8 @@ const GarbageCan = () => {
             <div className="view">
                 <img alt='' src={baseLayer} className="baseLayer2" />
                 <img alt='' src={crumpledPaper} className="crumpledPaper" />
+                <GarbageCanContentOuterBox/>
+                <GarbageCanPastDate/>
             </div>
         );
     }

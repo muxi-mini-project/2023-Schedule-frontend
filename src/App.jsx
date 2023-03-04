@@ -1,8 +1,8 @@
 import {BrowserRouter, Routes, Route} from "react-router-dom";
-import Login from "./page/Login";
-import HomePage from "./page/HomePage";
-import TodoList from "./page/TodoList";
-import GarbageCan from "./page/GarbageCan";
+import Login from "./page/Login/Login";
+import HomePage from "./page/HomePage/HomePage";
+import TodoList from "./page/TodoList/TodoList";
+import GarbageCan from "./page/GarbageCan/GarbageCan";
 
 
 export default function App(){
