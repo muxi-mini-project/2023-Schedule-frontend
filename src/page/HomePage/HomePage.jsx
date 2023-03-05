@@ -20,11 +20,20 @@ const HomePage = () => {
         let bodyStyle = document.body.style;
         bodyStyle.zoom = window.innerWidth/750;
 
+        let time = new Date();
+        let month = time.getMonth()+1;
+        let date = time.getDate();
+        let timing = month + '.' + date;
+        console.log(timing);
+
         return(
             <div className="view">
                 <img alt='' src={baseLayer} className="baseLayer"/>
                 <Link to="/BulletinBoard"><img alt='' src={bulletinBoard} className="bulletinBoard"/></Link>
-                <Link to="/Calendar"><img alt='' src={calendar} className="calendar item"/></Link>
+                <Link to="/Calendar">
+                    <img alt='' src={calendar} className="calendar item"/>
+                    <input type="text" className="timing" defaultValue={timing}></input>
+                </Link>
                 <Link to="/GarbageCan"><img alt='' src={garbageCan} className="garbageCan item"/></Link>
                 <img alt='' src={paperAirplane} className="paperAirplane item"/>
                 <img alt='' src={pottedPlant} className="pottedPlant1 item"/>
