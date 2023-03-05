@@ -2,6 +2,8 @@ import baseMap from "../../img/Todolist/basemap.png";
 import check from "../../img/Todolist/check.png";
 import checkBox from "../../img/Todolist/CheckBox.png";
 import paper from "../../img/Todolist/paper.png";
+import greenBook from "../../img/Todolist/GreenBook.png";
+import paperContent from "../../img/Todolist/PaperContent.png";
 
 import { postData, getJSON, putData } from "../../api/fetch";
 import { useState } from "react";
@@ -21,7 +23,7 @@ const TodoList = () => {
         setTemp(todos);
     }
     if (todos.length === 0) {
-        for (let i = 0; i < 5; i++) {
+        for (let i = 0; i < 10; i++) {
             todos.unshift({
                 description: "",
                 completed: false
@@ -96,22 +98,47 @@ const TodoList = () => {
                 <div className="view">
                     <img alt='' src={baseMap} className="baseMap" />
                     <img alt='' src={paper} className="paper" />
-                    <img alt='' src={checkBox} className="checkBox" />
-                    <img alt='' src={check} className={`check1 check ${temp[0].completed ? "a" : "b"}`} />
-                    <img alt='' src={check} className={`check2 check ${temp[1].completed ? "a" : "b"}`} />
-                    <img alt='' src={check} className={`check3 check ${temp[2].completed ? "a" : "b"}`} />
-                    <img alt='' src={check} className={`check4 check ${temp[3].completed ? "a" : "b"}`} />
-                    <img alt='' src={check} className={`check5 check ${temp[4].completed ? "a" : "b"}`} />
-                    <input type="checkbox" className="checker1 checker" defaultChecked={temp[0].completed} onChange={checked1}></input>
-                    <input type="checkbox" className="checker2 checker" defaultChecked={temp[1].completed} onChange={checked2}></input>
-                    <input type="checkbox" className="checker3 checker" defaultChecked={temp[2].completed} onChange={checked3}></input>
-                    <input type="checkbox" className="checker4 checker" defaultChecked={temp[3].completed} onChange={checked4}></input>
-                    <input type="checkbox" className="checker5 checker" defaultChecked={temp[4].completed} onChange={checked5}></input>
-                    <input type="text" className="todo1 todo descriptionInput" defaultValue={temp[0].description} onChange={todoChange1}></input>
-                    <input type="text" className="todo2 todo descriptionInput" defaultValue={temp[1].description} onChange={todoChange2}></input>
-                    <input type="text" className="todo3 todo descriptionInput" defaultValue={temp[2].description} onChange={todoChange3}></input>
-                    <input type="text" className="todo4 todo descriptionInput" defaultValue={temp[3].description} onChange={todoChange4}></input>
-                    <input type="text" className="todo5 todo descriptionInput" defaultValue={temp[4].description} onChange={todoChange5}></input>
+                    <div className="TodolistOuterContent">
+                        <div className="TodolistContent">
+                            <img alt='' src={paperContent} className="paperContent" />
+                            <img alt='' src={checkBox} className="checkBox" />
+                            <img alt='' src={check} className={`check1 check ${temp[0].completed ? "a" : "b"}`} />
+                            <img alt='' src={check} className={`check2 check ${temp[1].completed ? "a" : "b"}`} />
+                            <img alt='' src={check} className={`check3 check ${temp[2].completed ? "a" : "b"}`} />
+                            <img alt='' src={check} className={`check4 check ${temp[3].completed ? "a" : "b"}`} />
+                            <img alt='' src={check} className={`check5 check ${temp[4].completed ? "a" : "b"}`} />
+                            <input type="checkbox" className="check1 checker" defaultChecked={temp[0].completed} onChange={checked1}></input>                            
+                            <input type="text" className="todo1 todo descriptionInput" defaultValue={temp[0].description} onChange={todoChange1}></input>
+                            <input type="checkbox" className="check2 checker" defaultChecked={temp[1].completed} onChange={checked2}></input>
+                            <input type="text" className="todo2 todo descriptionInput" defaultValue={temp[1].description} onChange={todoChange2}></input>
+                            <input type="checkbox" className="check3 checker" defaultChecked={temp[2].completed} onChange={checked3}></input>
+                            <input type="text" className="todo3 todo descriptionInput" defaultValue={temp[2].description} onChange={todoChange3}></input>
+                            <input type="checkbox" className="check4 checker" defaultChecked={temp[3].completed} onChange={checked4}></input>
+                            <input type="text" className="todo4 todo descriptionInput" defaultValue={temp[3].description} onChange={todoChange4}></input>
+                            <input type="checkbox" className="check5 checker" defaultChecked={temp[4].completed} onChange={checked5}></input>
+                            <input type="text" className="todo5 todo descriptionInput" defaultValue={temp[4].description} onChange={todoChange5}></input>
+                        </div>
+                        <div className="TodolistContent">
+                            <img alt='' src={paperContent} className="paperContent" />
+                            <img alt='' src={checkBox} className="checkBox" />
+                            <img alt='' src={check} className={`check1 check ${temp[5].completed ? "a" : "b"}`} />
+                            <img alt='' src={check} className={`check2 check ${temp[6].completed ? "a" : "b"}`} />
+                            <img alt='' src={check} className={`check3 check ${temp[7].completed ? "a" : "b"}`} />
+                            <img alt='' src={check} className={`check4 check ${temp[8].completed ? "a" : "b"}`} />
+                            <img alt='' src={check} className={`check5 check ${temp[9].completed ? "a" : "b"}`} />
+                            <input type="checkbox" className="check1 checker" defaultChecked={temp[5].completed}></input>                            
+                            <input type="text" className="todo1 todo descriptionInput" defaultValue={temp[5].description}></input>
+                            <input type="checkbox" className="check2 checker" defaultChecked={temp[6].completed}></input>
+                            <input type="text" className="todo2 todo descriptionInput" defaultValue={temp[6].description}></input>
+                            <input type="checkbox" className="check3 checker" defaultChecked={temp[7].completed}></input>
+                            <input type="text" className="todo3 todo descriptionInput" defaultValue={temp[7].description}></input>
+                            <input type="checkbox" className="check4 checker" defaultChecked={temp[8].completed}></input>
+                            <input type="text" className="todo4 todo descriptionInput" defaultValue={temp[8].description}></input>
+                            <input type="checkbox" className="check5 checker" defaultChecked={temp[9].completed}></input>
+                            <input type="text" className="todo5 todo descriptionInput" defaultValue={temp[9].description}></input>
+                        </div>
+                    </div>
+                    <img alt='' src={greenBook} className="greenBook" />
                 </div>
             </div>
         );
