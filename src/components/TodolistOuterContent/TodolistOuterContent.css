@@ -69,10 +69,11 @@
             height: 30px;
             border: 0;
             background-color: transparent;
-            font-size: 35px;
+            font-size: 32px;
             color: rgb(155, 122, 122);
             text-align: center;
             outline: 0;
+            font-family: 'ftmaru400a';
         }
             .todo1{
                 position: absolute;

@@ -46,8 +46,8 @@ const Login = () => {
                 <img alt='' src={logo} className="logo"/>
                 <img alt='' src={pottedPlant} className="pottedPlant2"/>
                 <img alt='' src={bacterium} className="bacterium"/>
-                <input type="text" className="studentIDText" onChange={studentIDChange}></input>
-                <input type="password" className="passwordText" onChange={passwordChange}></input>
+                <input type="text" className="studentIDText Text" onChange={studentIDChange}></input>
+                <input type="password" className="passwordText Text" onChange={passwordChange}></input>
                 <input type="submit" className="submit" onChange={submitChange}></input>
             </div>
         );
