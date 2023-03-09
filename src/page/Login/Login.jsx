@@ -8,7 +8,7 @@ import pottedPlant from '../../img/Login/PottedPlant.png';
 import bacterium from '../../img/Login/Bacterium.png';
 
 import {postData} from '../../api/fetch';
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import {useState} from "react";
 import './Login.css';
 
@@ -16,6 +16,7 @@ import './Login.css';
 const Login = () => {
     const [uid, SetUid] = useState("");
     const [pw, SetPW] = useState("");
+    let navigate = useNavigate();
 
     if(window.innerWidth > window.innerHeight){
         return(
@@ -33,7 +34,9 @@ const Login = () => {
             SetPW(value);
         }
         function submitChange(){
-            let result = postData("login", {"password": pw, "uid": uid});
+            let LoginPost = postData("login", {"password": pw, "uid": uid});
+            if(LoginPost === 114514) navigate("/HomePage");
+            else alert("学号或密码错误，请再试一次。");
         }
         
         return(

@@ -8,6 +8,12 @@ import "./TodolistOuterContent.css";
 
 
 const TodolistOuterContent = () => {
+    let CheckGet = getJSON("calendar");
+    console.log(CheckGet);
+    let CompletePut = putData("calendar/check/", "<content>");
+    let WritePost = postData("calendar/write", { "content": "" });
+
+
     let todos = getTodos();
     const [temp, setTemp] = useState(todos);
     function getTodos(){

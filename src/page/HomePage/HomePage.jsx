@@ -24,7 +24,6 @@ const HomePage = () => {
         let month = time.getMonth()+1;
         let date = time.getDate();
         let timing = month + '.' + date;
-        console.log(timing);
 
         return(
             <div className="view">

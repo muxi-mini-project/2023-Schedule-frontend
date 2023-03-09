@@ -32,74 +32,13 @@ export async function getJSON(url){
 
 export async function putData(url, data){
     tokenCheck();
-    const response = await fetch(preurl+url, {
+    const response = await fetch(preurl+url+data, {
         method: 'PUT', 
         headers: {
             "Content-Type": "application/json;charset=utf-8",
             "Authorization": localStorage.getItem('token')
         },
         body: JSON.stringify(data)
-    })
-        .catch(error => console.log('error', error));
-
-    return response.json();
-}
-
-
-
-
-// TodoList
-export async function CheckGet(data){
-    tokenCheck();
-    const response = await fetch(preurl+"calendar", {
-        method: 'GET', 
-        headers: {
-            "Content-Type": "application/json;charset=utf-8",
-            "Authorization": localStorage.getItem('token')
-        },
-    })
-        .catch(error => console.log('error', error));
-
-    return response.json();
-}
-
-export async function CompletePut(data){
-    tokenCheck();
-    const response = await fetch(preurl+"calendar/check/<content>", {
-        method: 'PUT', 
-        headers: {
-            "Content-Type": "application/json;charset=utf-8",
-            "Authorization": localStorage.getItem('token')
-        },
-    })
-        .catch(error => console.log('error', error));
-
-    return response.json();
-}
-
-export async function WritePost(data){
-    tokenCheck();
-    const response = await fetch(preurl+"calendar/write", {
-        method: 'POST', 
-        headers: {
-            "Content-Type": "application/json;charset=utf-8",
-            "Authorization": localStorage.getItem('token')
-        },
-        body: { "content": "" },
-    })
-        .catch(error => console.log('error', error));
-
-    return response.json();
-}
-
-export async function CrashGet(data){
-    tokenCheck();
-    const response = await fetch(preurl+"crash", {
-        method: 'GET', 
-        headers: {
-            "Content-Type": "application/json;charset=utf-8",
-            "Authorization": localStorage.getItem('token')
-        },
     })
         .catch(error => console.log('error', error));
 
