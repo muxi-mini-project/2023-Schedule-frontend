@@ -3,7 +3,6 @@ import crumpledPaper from '../../img/GarbageCan/CrumpledPaper.png';
 import GarbageCanContentOuterBox from '../../components/GarbageCanContentOuterBox/GarbageCanContentOuterBox';
 import GarbageCanPastDate from '../../components/GarbageCanPastDate/GarbageCanPastDate';
 
-import {getJSON} from '../../api/fetch';
 import './GarbageCan.css';
 
 

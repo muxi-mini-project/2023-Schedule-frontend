@@ -1,9 +1,14 @@
 import check from '../../img/GarbageCan/Check2.png';
 import crumpledPaperContent from '../../img/GarbageCan/CrumpledPaperContent.png';
+
+import {getJSON} from "../../api/fetch";
 import './GarbageCanContentBox.css';
 
 
 const GarbageCanContentBox = () => {
+    let crash = getJSON("crash");
+    console.log(crash);
+
     return(
         <div className="contentBox">
             <img alt='' src={crumpledPaperContent} className="" />
