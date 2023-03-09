@@ -1,4 +1,4 @@
-import React, { Component, useEffect } from 'react'
+import React, { components, useEffect } from 'react'
 
 export default function Item (props) {
 

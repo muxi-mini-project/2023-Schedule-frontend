@@ -1,26 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import './Calendar.css'
-import Item from '../component/item';
+import Item from '../../components/item';
 import{nanoid} from 'nanoid'
+import { postData, getJSON, putData } from "../../api/fetch";
 
 export default  function Calendar(){
-
-  function postData(url, data) {
-    return fetch(url, {
-        body: JSON.stringify(data),
-        cache: 'no-cache',
-        credentials: 'same-origin',
-        headers: {								
-            'content-type': 'application/json'	,
-          	//'Authorization':token
-        },												
-        method: 'POST',						//也可以是GET，PUT,DELETE等
-        mode: 'cors',
-        redirect: 'follow',
-        referrer: 'no-referrer',
-    })
-        .then(response => response.json())
-}
 
 
   const [todos,setTodos] = useState([])
@@ -32,7 +16,7 @@ export default  function Calendar(){
     })
     .then(function (myJson) {
       window.firstData = myJson;
-      setTodos(window.firstData)
+      //setTodos(window.firstData)
     });
   },[]);
 
@@ -63,20 +47,21 @@ export default  function Calendar(){
   }
 
 const [isClicked,setClick]=useState(false)
-const [isAlldone,setAlldone]=useState(true)
+const [isAlldone,setAllDone]=useState(true)
 
   const handleClick =(target)=>{
-    setAlldone(true);
-    todos.map((todo)=>{ if(todo.done==false) setAlldone(false)})
-    console.log(isAlldone)
-    console.log(todos)
-    if (todos.length!=0 && isAlldone){
+    if (todos.length!=0 && isAlldone==true){
     setTodos([]);
     setClick(true);
     updateCalendar(target);
     }
     else return ;
   }
+
+  useEffect(()=>{
+    setAllDone(true)
+    todos.map((todo)=>{ if(todo.done!=true){setAllDone(false)}  })
+  },[todos])
 
  const updateCalendar= (target)=>{
   if (target) {
@@ -88,14 +73,20 @@ const [isAlldone,setAlldone]=useState(true)
   }
 
  }
-
-  
-
-  
     const time = new Date();
     const month = time.getMonth() + 1 ;
     const day = time.getDate();
-    const days = day.toString()
+    const days = day.toString();
+
+      if(window.innerWidth > window.innerHeight){
+          return(
+              <div className="hint"><h2>请将萤幕转为纵向或使用手机检视并重整页面</h2></div>
+          );
+      }
+      else{
+          let bodyStyle = document.body.style;
+          bodyStyle.zoom = '';}
+
   return (
     <div className='body'>
     <div className='book'>

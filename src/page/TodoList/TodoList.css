@@ -1,0 +1,134 @@
+html,body{
+    max-width: 100%;
+    min-width: 100%;
+    margin: 0;
+    padding: 0;
+}
+.view{
+    max-width: 100%;
+    height: 100%;
+}
+
+
+.baseMap{
+    max-width: 750px;
+    height: auto;
+    position: relative;
+}
+    .paper{
+        width: 750px;
+        height: auto;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+    }
+    .checkBox{
+        width: 750px;
+        height: auto;
+        position: absolute;
+        top: -15px;
+        left: -30px;
+    }
+
+    .a{opacity: 1;}
+    .b{opacity: 0;}
+    .check{
+        max-width: 100%;
+        height: auto;
+    }
+        .check1{
+            position: absolute;
+            top: 410px;
+            left: 138px;
+        }
+        .check2{
+            position: absolute;
+            top: 492px;
+            left: 153px;
+        }
+        .check3{
+            position: absolute;
+            top: 579px;
+            left: 174px;
+        }
+        .check4{
+            position: absolute;
+            top: 669px;
+            left: 190px;
+        }
+        .check5{
+            position: absolute;
+            top: 765px;
+            left: 210px;
+        }
+
+    .todo{
+        width: 260px;
+        height: 30px;
+        transform: rotate(-11.2deg);
+        border: 0;
+        background-color: transparent;
+        font-size: 40px;
+        color: rgb(155, 122, 122);
+        text-align: center;
+        outline: 0;
+    }
+        .todo1{
+            position: absolute;
+            top: 400px;
+            left: 190px;
+        }
+        .todo2{
+            position: absolute;
+            top: 480px;
+            left: 208px;
+        }
+        .todo3{
+            position: absolute;
+            top: 568px;
+            left: 225px;
+        }
+        .todo4{
+            position: absolute;
+            top: 659px;
+            left: 243px;
+        }
+        .todo5{
+            position: absolute;
+            top: 755px;
+            left: 263px;
+        }
+    .checker{
+        width: 40px;
+        height: 40px;
+        transform: rotate(-11.2deg);
+        opacity: 0;
+    }
+        .checker1{
+            position: absolute;
+            top: 430px;
+            left: 134px;
+        }
+        .checker2{
+            position: absolute;
+            top: 510px;
+            left: 150px;
+        }
+        .checker3{
+            position: absolute;
+            top: 595px;
+            left: 167px;
+        }
+        .checker4{
+            position: absolute;
+            top: 685px;
+            left: 185px;
+        }
+        .checker5{
+            position: absolute;
+            top: 780px;
+            left: 205px;
+        }
+    .checker:checked + .todo{
+        text-decoration: line-through;
+    }
