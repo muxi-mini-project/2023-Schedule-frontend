@@ -35,6 +35,7 @@ const Login = () => {
         }
         function submitChange(){
             let LoginPost = postData("login", {"password": pw, "uid": uid});
+            console.log(LoginPost);
             if(LoginPost === 114514) navigate("/HomePage");
             else alert("学号或密码错误，请再试一次。");
         }
@@ -51,7 +52,7 @@ const Login = () => {
                 <img alt='' src={bacterium} className="bacterium"/>
                 <input type="text" className="studentIDText Text" onChange={studentIDChange}></input>
                 <input type="password" className="passwordText Text" onChange={passwordChange}></input>
-                <input type="submit" className="submit" onChange={submitChange}></input>
+                <input type="submit" className="submit" onClick={submitChange}></input>
             </div>
         );
     }
