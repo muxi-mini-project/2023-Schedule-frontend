@@ -1,4 +1,4 @@
-const preurl = "http://test-cn.your-api-server.com/";
+const preurl = "116.204.121.9:1729/api/v1/";
 function tokenCheck(){
     const token = localStorage.getItem('token');
     if(!token){return }
