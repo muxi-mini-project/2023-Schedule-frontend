@@ -7,11 +7,13 @@ import pottedPlant from '../../img/HomePage/PottedPlant.png';
 import todoList from '../../img/HomePage/TodoList.png';
 
 import {getJSON} from '../../api/fetch';
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import './HomePage.css';
 
 
 const HomePage = () => {
+    let navigate = useNavigate();
+
     if(window.innerWidth > window.innerHeight){
         return(
             <div className="hint"><h2>请将萤幕转为纵向或使用手机检视并重整页面</h2></div>
@@ -21,7 +23,7 @@ const HomePage = () => {
         let bodyStyle = document.body.style;
         bodyStyle.zoom = window.innerWidth/750;
 
-        getJSON("index", []).then((res) => {console.log(res);});
+        getJSON("index", 0).then((res) => {if(res.code !== 200) navigate("/");});
 
         let time = new Date();
         let month = time.getMonth()+1;

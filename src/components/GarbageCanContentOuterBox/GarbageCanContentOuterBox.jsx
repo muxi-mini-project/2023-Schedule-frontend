@@ -7,6 +7,7 @@ const GarbageCanContentOuterBox = (monthF, dateF) => {
         <div className="contentOuterBox">
             <GarbageCanContentBox monthF={monthF} dateF={dateF} m={0}/>
             <GarbageCanContentBox monthF={monthF} dateF={dateF} m={5}/>
+            <GarbageCanContentBox monthF={monthF} dateF={dateF} m={9}/>
         </div>
     );
 }

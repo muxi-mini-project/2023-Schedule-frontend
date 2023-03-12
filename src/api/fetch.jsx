@@ -37,8 +37,8 @@ export async function postData(url, data, temp){
     }
 }
 
-export async function getJSON(url, time){
-    if(time===[]){
+export async function getJSON(url, temp){
+    if(temp === 0){
         const response = await fetch(preurl+url, {
             method: 'GET', 
             headers: {
@@ -51,6 +51,7 @@ export async function getJSON(url, time){
         return response.json();
     }
     else{
+        let time = new Date();
         const response = await fetch(preurl+url, {
             method: 'GET', 
             headers: {
@@ -120,7 +121,6 @@ export async function putData(url, data, time){
 // 引入JSON扩展包解决循环调用
 if (typeof JSON.decycle !== "function") {
     JSON.decycle = function decycle(object, replacer) {
-        "use strict";
         var objects = new WeakMap();
         return (function derez(value, path) {
             var old_path;
@@ -166,9 +166,7 @@ if (typeof JSON.decycle !== "function") {
 }
 if (typeof JSON.retrocycle !== "function") {
     JSON.retrocycle = function retrocycle($) {
-        "use strict";
-
-        var px = /^\$(?:\[(?:\d+|"(?:[^\\"\u0000-\u001f]|\\(?:[\\"\/bfnrt]|u[0-9a-zA-Z]{4}))*")\])*$/;
+        var px = /^\$(?:\[(?:\d+|"(?:[^\\"\u0000-\u001f]|\\(?:[\\"bfnrt]|u[0-9a-zA-Z]{4}))*")\])*$/;
 
         (function rez(value) {
             if (value && typeof value === "object") {
