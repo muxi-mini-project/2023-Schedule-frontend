@@ -6,6 +6,7 @@ import paperAirplane from '../../img/HomePage/PaperAirplane.png';
 import pottedPlant from '../../img/HomePage/PottedPlant.png';
 import todoList from '../../img/HomePage/TodoList.png';
 
+import {getJSON} from '../../api/fetch';
 import {Link} from "react-router-dom";
 import './HomePage.css';
 
@@ -19,6 +20,8 @@ const HomePage = () => {
     else{
         let bodyStyle = document.body.style;
         bodyStyle.zoom = window.innerWidth/750;
+
+        getJSON("index", []).then((res) => {console.log(res);});
 
         let time = new Date();
         let month = time.getMonth()+1;

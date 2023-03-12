@@ -8,10 +8,9 @@ import "./TodolistOuterContent.css";
 
 
 const TodolistOuterContent = () => {
-    let CheckGet = getJSON("calendar");
-    console.log(CheckGet);
-    let CompletePut = putData("calendar/check/", "<content>");
-    let WritePost = postData("calendar/write", { "content": "" });
+    let time = new Date();
+    const [checkGet, setCheckGet] = useState([]);
+    getJSON("calendar", time).then((res) => {setCheckGet(res.schedule);});
 
 
     let todos = getTodos();
@@ -42,11 +41,13 @@ const TodolistOuterContent = () => {
     function todoChange(id, e){
         updateTodo(todos[id], "description", e.target.value);
         setTodos(todos);
+        postData("calendar/write", { "Content": e.target.value, "Number": id }, time);
     }
     function checked(id, e){
         updateTodo(todos[id], "completed", e.target.checked);
         setTodos(todos);
         window.location.reload();
+        putData("calendar/check/", e.target.value, time);
     }
     
     return(
