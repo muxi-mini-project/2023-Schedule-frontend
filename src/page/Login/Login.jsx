@@ -34,11 +34,12 @@ const Login = () => {
             SetPW(value);
         }
         function submitClick(){
-            postData("login", {Password: pw, UID: uid})
+            postData("login", {Password: pw, UID: uid}, 0)
                 .then((res) => {
                     if(res.code === 200) navigate("/HomePage");
                     else alert("学号或密码错误，请再试一次。");
-                });
+                })
+                .then((res) => {localStorage.setItem("token", res.token);});
         }
         
         return(

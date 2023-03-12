@@ -40,14 +40,14 @@ html,body{
         height: 60px;
         border: 0;
         background-color: transparent;
-        font-size: 40px;
+        font-size: 30px;
         color: rgb(155, 122, 122);
         text-align: center;
         outline: 0;
         position: absolute;
         top: 345px;
         left: 405px;
-        transform: rotate(2deg);
+        transform: rotate(-0.5deg);
     }
     .garbageCan{
         max-width: 100%;
