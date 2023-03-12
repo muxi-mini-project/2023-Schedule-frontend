@@ -38,10 +38,10 @@ const GarbageCan = () => {
                 <img alt='' src={baseLayer} className="baseLayer2" />
                 <img alt='' src={crumpledPaper} className="crumpledPaper" />
                 <GarbageCanContentOuterBox monthF={monthF} dateF={dateF} />
-                <input type="text" className="tenDigitsOfTheMonth pastTime" Value={monthT} onChange={(e) => { setMonthT(e) }}></input>
-                <input type="text" className="singleDigitOfTheMonth pastTime" Value={monthD} onChange={(e) => { setMonthD(e) }}></input>
-                <input type="text" className="tenDigitsOfTheDate pastTime" Value={dateT} onChange={(e) => { setDateT(e) }}></input>
-                <input type="text" className="singleDigitOfTheDate pastTime" Value={dateD} onChange={(e) => { setDateD(e) }}></input>
+                <input type="text" className="tenDigitsOfTheMonth pastTime" Value={monthT} onChange={(e) => {setMonthT(e)}}></input>
+                <input type="text" className="singleDigitOfTheMonth pastTime" Value={monthD} onChange={(e) => {setMonthD(e)}}></input>
+                <input type="text" className="tenDigitsOfTheDate pastTime" Value={dateT} onChange={(e) => {setDateT(e)}}></input>
+                <input type="text" className="singleDigitOfTheDate pastTime" Value={dateD} onChange={(e) => {setDateD(e)}}></input>
             </div>
         );
     }
