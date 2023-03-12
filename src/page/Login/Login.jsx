@@ -27,12 +27,6 @@ const Login = () => {
         let bodyStyle = document.body.style;
         bodyStyle.zoom = window.innerWidth/750;
 
-        function studentIDChange(value){
-            SetUid(value);
-        }
-        function passwordChange(value){
-            SetPW(value);
-        }
         function submitClick(){
             postData("login", {Password: pw, UID: uid}, 0)
                 .then((res) => {
@@ -52,8 +46,8 @@ const Login = () => {
                 <img alt='' src={logo} className="logo"/>
                 <img alt='' src={pottedPlant} className="pottedPlant2"/>
                 <img alt='' src={bacterium} className="bacterium"/>
-                <input type="text" className="studentIDText Text" onChange={studentIDChange}></input>
-                <input type="password" className="passwordText Text" onChange={passwordChange}></input>
+                <input type="text" className="studentIDText Text" onChange={(e) => {SetUid(e.target.value);}}></input>
+                <input type="password" className="passwordText Text" onChange={(e) => {SetPW(e.target.value);}}></input>
                 <input type="submit" className="submit" onClick={submitClick}></input>
             </div>
         );
