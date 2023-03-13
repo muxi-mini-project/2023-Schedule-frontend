@@ -4,7 +4,7 @@
         background-repeat: no-repeat;
         background-size: 100%;
         background-position: center center;
-        background-image: url(../../img/background2.png);
+        background-image: url(../../img/BulletinBoard/background2.png);
         position: fixed;
         top: 0px;
         padding:0;
@@ -22,7 +22,7 @@
 }
 .pb0::before{
     display: block;
-    content: url(../../img/peg1.png);
+    content: url(../../img/BulletinBoard/peg1.png);
     position: relative;
     left: 7.2vh;
 }
@@ -38,7 +38,7 @@
 }
 .pb1::before{
     display: block;
-    content: url(../../img/peg1.png);
+    content: url(../../img/BulletinBoard/peg1.png);
     position: relative;
     left: 7.2vh;
 }
@@ -54,7 +54,7 @@
 }
 .pb2::before{
     display: block;
-    content: url(../../img/peg2.png);
+    content: url(../../img/BulletinBoard/peg2.png);
     position: relative;
     left: 7vh;
     top:-1vh;
@@ -63,7 +63,7 @@
     position: absolute;
     top: 62%;
     left: 25%;
-    background-image:url(../../img/pb3.png) ;
+    background-image:url(../../img/BulletinBoard/pb3.png) ;
     height: 11vh;
     width: 20vh;
     background-repeat: no-repeat;
@@ -72,7 +72,7 @@
 }
 .pb3::before{
     display: block;
-    content: url(../../img/peg3.png);
+    content: url(../../img/BulletinBoard/peg3.png);
     position: relative;
     left: 6.5vh;
     top:-0.5vh;

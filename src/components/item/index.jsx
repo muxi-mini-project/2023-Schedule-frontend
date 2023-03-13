@@ -2,16 +2,16 @@ import React, { components, useEffect } from 'react'
 
 export default function Item (props) {
 
-    const handleCheck=(userId)=>{
+    const handleCheck=(id)=>{
         return(event)=>{
-          props.updateTodo(userId,event.target.checked)
+          props.updateTodo(id,event.target.checked)
         }
     }
     return (
         <li>
-                        <input type="checkbox" name="checkbox" id={props.userId} checked={props.done} onChange={handleCheck(props.userId)} />
-                        <label htmlFor={props.userId} ></label>
-                        <span className={props.done?'done':''}> {props.content} </span>
+                        <input type="checkbox" name="checkbox" key={props.id} id={props.id} checked={props.Done} onChange={handleCheck(props.id)} />
+                        <label htmlFor={props.id} ></label>
+                        <span className={props.Done?'done':''}> {props.schedule} </span>
         </li>
     )
     }

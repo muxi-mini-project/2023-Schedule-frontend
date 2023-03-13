@@ -8,7 +8,7 @@ import pottedPlant from '../../img/Login/PottedPlant.png';
 import bacterium from '../../img/Login/Bacterium.png';
 
 import {postData} from '../../api/fetch';
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import {useState} from "react";
 import './Login.css';
 
@@ -16,6 +16,7 @@ import './Login.css';
 const Login = () => {
     const [uid, SetUid] = useState("");
     const [pw, SetPW] = useState("");
+    let navigate = useNavigate();
 
     if(window.innerWidth > window.innerHeight){
         return(
@@ -26,14 +27,20 @@ const Login = () => {
         let bodyStyle = document.body.style;
         bodyStyle.zoom = window.innerWidth/750;
 
-        function studentIDChange(value){
-            SetUid(value);
+        function studentIDChange(event){
+            SetUid(event.target.value);
         }
-        function passwordChange(value){
-            SetPW(value);
+        function passwordChange(event){
+            SetPW(event.target.value);
         }
-        function submitChange(){
-            let result = postData("login", {"password": pw, "uid": uid});
+        function submitClick(){
+            postData("login", {Password:pw, UID:uid})
+                .then((res) => {
+                    if(res.code === 200) {navigate("/HomePage");
+                    localStorage.token = res.token;
+                    console.log(res.token);}
+                    else alert("学号或密码错误，请再试一次。");
+                });
         }
         
         return(
@@ -46,9 +53,9 @@ const Login = () => {
                 <img alt='' src={logo} className="logo"/>
                 <img alt='' src={pottedPlant} className="pottedPlant2"/>
                 <img alt='' src={bacterium} className="bacterium"/>
-                <input type="text" className="studentIDText" onChange={studentIDChange}></input>
-                <input type="password" className="passwordText" onChange={passwordChange}></input>
-                <input type="submit" className="submit" onChange={submitChange}></input>
+                <input type="text" className="studentIDText Text" onChange={studentIDChange}></input>
+                <input type="password" className="passwordText Text" onChange={passwordChange}></input>
+                <input type="submit" className="submit" onClick={submitClick}></input>
             </div>
         );
     }

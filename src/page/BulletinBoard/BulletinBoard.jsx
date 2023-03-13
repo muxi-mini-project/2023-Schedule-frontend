@@ -1,9 +1,9 @@
 import React,{useState} from 'react'
 import './BulletinBoard.css'
-import image1 from '../../img/pt1.webp'
-import image2 from '../../img/pt2.jpg'
-import image3 from '../../img/pt3.webp'
-import image4 from '../../img/pt4.webp'
+import image1 from '../../img/BulletinBoard/pt1.webp'
+import image2 from '../../img/BulletinBoard/pt2.jpg'
+import image3 from '../../img/BulletinBoard/pt3.webp'
+import image4 from '../../img/BulletinBoard/pt4.webp'
 import { postData, getJSON, putData } from "../../api/fetch";
 
 
@@ -19,7 +19,7 @@ export default function BulletinBoard() {
     const url = URL.createObjectURL(event.target.files[0])
     setFirstPhoto(url)
     console.log(url)
-    postData('calendar/addphoto2',event.target.files[0]).then(data => console.log(data))
+    postData('calendar/addphoto',event.target.files[0]).then(data => console.log(data))
 .catch(error => console.error('Error',error))
   }
 

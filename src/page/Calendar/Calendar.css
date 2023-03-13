@@ -5,7 +5,7 @@
 	background-repeat: no-repeat;
 	background-size: 100%;
 	background-position: center center;
-	background-image: url(../../img/background.png);
+	background-image: url(../../img/Calendar/background.png);
 	position: fixed;
 	top: 0px;
 	padding:0;
@@ -13,7 +13,7 @@
 }
 
 .book{
-	background-image: url(../../img/book.png);
+	background-image: url(../../img/Calendar/book.png);
 	background-repeat: no-repeat;
 	height: 40vh;
 	width: 43vh;
@@ -24,7 +24,7 @@
 }
 li {
 	list-style-type: none;
-	background-image: url(../../img/line.png);
+	background-image: url(../../img/Calendar/line.png);
 	background-repeat: no-repeat;
 	background-size: 40rem;
 	background-position: 1.5vh 2.3vh;
@@ -53,7 +53,7 @@ ul {
 input[type=checkbox]+label {
 	cursor: pointer;
 	position: absolute;
-	background-image: url(../../img/checkbox.png);
+	background-image: url(../../img/Calendar/checkbox.png);
 	width: 2.3vh;
 	height: 2.2vh;
 	top: 0.6vh;
@@ -79,7 +79,7 @@ input[type=checkbox]:checked+label::before {
 	top: -0.5vh;
 	width: 4vh;
 	height: 3.5vh;
-	background-image: url(../../img/checked.png);
+	background-image: url(../../img/Calendar/checked.png);
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: 0 -1vh;
@@ -93,7 +93,7 @@ input[type=checkbox]:checked+label::before {
 	border: 0ch;
 	height: 2vh;
 	font-size: 1.5vh;
-	background-image: url(../../img/line.png);
+	background-image: url(../../img/Calendar/line.png);
 	background-repeat: no-repeat;
 	background-color: transparent;
 	outline: none;
@@ -121,7 +121,7 @@ font{
 }
 
 .page{
-	background-image: url(../../img/page.png);
+	background-image: url(../../img/Calendar/page.png);
 	height: 87vh;
 	width: 50vh;
 	background-repeat: no-repeat;
@@ -137,7 +137,7 @@ font{
     pointer-events: none;
     -webkit-animation: tear-animation 0.8s linear forwards;
     animation: tear-animation 0.8s linear forwards;
-	background-image: url(../../img/page.png);
+	background-image: url(../../img/Calendar/page.png);
 	height: 87vh;
 	width: 50vh;
 	background-repeat: no-repeat;

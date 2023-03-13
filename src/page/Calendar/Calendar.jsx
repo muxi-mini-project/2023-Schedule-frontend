@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './Calendar.css'
 import Item from '../../components/item';
 import{nanoid} from 'nanoid'
-import { postData, getJSON, putData } from "../../api/fetch";
+import { postData,postDataa, getJSON, putData } from "../../api/fetch";
 
 export default  function Calendar(){
 
@@ -10,14 +10,9 @@ export default  function Calendar(){
   const [todos,setTodos] = useState([])
 
   useEffect( () =>{
-    fetch('http://127.0.0.1:4523/m1/2128895-0-default/board?id=')
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (myJson) {
-      window.firstData = myJson;
-      //setTodos(window.firstData)
-    });
+    getJSON('calendar')
+    .then(data => console.log(data))
+    .catch(error => console.error('Error',error))
   },[]);
 
   
@@ -25,17 +20,18 @@ export default  function Calendar(){
   const addToDo=(todoObj)=>{
     const newTodos =[todoObj,...todos]
     setTodos(newTodos)
-    postData('http://127.0.0.1:4523/m1/2128895-0-default/calendar/write',todoObj)
-    .then(data => console.log(data))
-    .catch(error => console.error('Error',error))
+    console.log(todoObj)
   }
   const handleKeyUp = (event)=>{
     const {keyCode,target}=event
     if(keyCode !== 13) return
     if(target.value.trim()==='')return
-    const todoObj = {userId:nanoid(),content:target.value,done:false}
+    const todoObj = {id:nanoid(),schedule:target.value};
     addToDo(todoObj)
     target.value=''
+    postDataa('calendar/write',todoObj)
+    .then(data => console.log(data))
+    .catch(error => console.error('Error',error))
   }
 
   const updateTodo=(userId,done)=>{
