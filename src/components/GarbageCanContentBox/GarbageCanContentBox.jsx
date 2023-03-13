@@ -25,11 +25,11 @@ const GarbageCanContentBox = (monthF, dateF, m) => {
             <input type="checkbox" className="pastChecker3 pastChecker"></input>
             <input type="checkbox" className="pastChecker4 pastChecker"></input>
             <input type="checkbox" className="pastChecker5 pastChecker"></input>
-            <input type="text" className="pastTodo1 pastTodo" defaultValue={pastTodos[0+m]}></input>
-            <input type="text" className="pastTodo2 pastTodo" defaultValue={pastTodos[1+m]}></input>
-            <input type="text" className="pastTodo3 pastTodo" defaultValue={pastTodos[2+m]}></input>
-            <input type="text" className="pastTodo4 pastTodo" defaultValue={pastTodos[3+m]}></input>
-            <input type="text" className="pastTodo5 pastTodo" defaultValue={pastTodos[4+m]}></input>
+            <input type="text" className="pastTodo1 pastTodo" Value={pastTodos[0+m].Content}></input>
+            <input type="text" className="pastTodo2 pastTodo" Value={pastTodos[1+m].Content}></input>
+            <input type="text" className="pastTodo3 pastTodo" Value={pastTodos[2+m].Content}></input>
+            <input type="text" className="pastTodo4 pastTodo" Value={pastTodos[3+m].Content}></input>
+            <input type="text" className="pastTodo5 pastTodo" Value={pastTodos[4+m].Content}></input>
         </div>
     );
 }

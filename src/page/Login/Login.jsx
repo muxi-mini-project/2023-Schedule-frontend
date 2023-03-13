@@ -18,6 +18,8 @@ const Login = () => {
     const [pw, SetPW] = useState("");
     let navigate = useNavigate();
 
+    if(localStorage.getItem("token") !== "") navigate("/HomePage");
+
     if(window.innerWidth > window.innerHeight){
         return(
             <div className="hint"><h2>请将萤幕转为纵向或使用手机检视并重整页面</h2></div>
@@ -32,8 +34,8 @@ const Login = () => {
                 .then((res) => {
                     if(res.code === 200) navigate("/HomePage");
                     else alert("学号或密码错误，请再试一次。");
-                })
-                .then((res) => {localStorage.setItem("token", res.token);});
+                    localStorage.setItem("token", res.token);
+                });
         }
         
         return(

@@ -8,9 +8,9 @@ import "./TodolistOuterContent.css";
 
 
 const TodolistOuterContent = () => {
-    let time = new Date();
     const [checkGet, setCheckGet] = useState([]);
-    getJSON("calendar", time).then((res) => {setCheckGet(res.schedule);});
+    getJSON("calendar", 1).then((res) => {setCheckGet(res.schedule);});
+    console.log(checkGet)
 
 
     let todos = getTodos();
@@ -41,13 +41,13 @@ const TodolistOuterContent = () => {
     function todoChange(id, e){
         updateTodo(todos[id], "description", e.target.value);
         setTodos(todos);
-        postData("calendar/write", { "Content": e.target.value, "Number": id }, time);
+        postData("calendar/write", { "Content": e.target.value, "Schid": id }, 1);
     }
     function checked(id, e){
         updateTodo(todos[id], "completed", e.target.checked);
         setTodos(todos);
         window.location.reload();
-        putData("calendar/check/", e.target.value, time);
+        putData("calendar/check/", { "Schid": id }, 1);
     }
     
     return(
@@ -55,40 +55,40 @@ const TodolistOuterContent = () => {
             <div className="TodolistContent">
                 <img alt='' src={paperContent} className="paperContent" />
                 <img alt='' src={checkBox} className="checkBox" />
-                <img alt='' src={check} className={`check1 check ${temp[0].completed ? "a" : "b"}`} />
-                <img alt='' src={check} className={`check2 check ${temp[1].completed ? "a" : "b"}`} />
-                <img alt='' src={check} className={`check3 check ${temp[2].completed ? "a" : "b"}`} />
-                <img alt='' src={check} className={`check4 check ${temp[3].completed ? "a" : "b"}`} />
-                <img alt='' src={check} className={`check5 check ${temp[4].completed ? "a" : "b"}`} />
-                <input type="checkbox" className="check1 checker" defaultChecked={temp[0].completed} onChange={checked.bind(this, 0)}></input>                            
-                <input type="text" className="todo1 todo descriptionInput" defaultValue={temp[0].description} onChange={todoChange.bind(this, 0)}></input>
-                <input type="checkbox" className="check2 checker" defaultChecked={temp[1].completed} onChange={checked.bind(this, 1)}></input>
-                <input type="text" className="todo2 todo descriptionInput" defaultValue={temp[1].description} onChange={todoChange.bind(this, 1)}></input>
-                <input type="checkbox" className="check3 checker" defaultChecked={temp[2].completed} onChange={checked.bind(this, 2)}></input>
-                <input type="text" className="todo3 todo descriptionInput" defaultValue={temp[2].description} onChange={todoChange.bind(this, 2)}></input>
-                <input type="checkbox" className="check4 checker" defaultChecked={temp[3].completed} onChange={checked.bind(this, 3)}></input>
-                <input type="text" className="todo4 todo descriptionInput" defaultValue={temp[3].description} onChange={todoChange.bind(this, 3)}></input>
-                <input type="checkbox" className="check5 checker" defaultChecked={temp[4].completed} onChange={checked.bind(this, 4)}></input>
-                <input type="text" className="todo5 todo descriptionInput" defaultValue={temp[4].description} onChange={todoChange.bind(this, 4)}></input>
+                <img alt='' src={check} className={`check1 check ${checkGet[0].Done ? "a" : "b"}`} />
+                <img alt='' src={check} className={`check2 check ${checkGet[1].Done ? "a" : "b"}`} />
+                <img alt='' src={check} className={`check3 check ${checkGet[2].Done ? "a" : "b"}`} />
+                <img alt='' src={check} className={`check4 check ${checkGet[3].Done ? "a" : "b"}`} />
+                <img alt='' src={check} className={`check5 check ${checkGet[4].Done ? "a" : "b"}`} />
+                <input type="checkbox" className="check1 checker" Checked={checkGet[0].Done} onChange={checked.bind(this, 0)}></input>                            
+                <input type="text" className="todo1 todo descriptionInput" Value={checkGet[0].Content} onChange={todoChange.bind(this, 0)}></input>
+                <input type="checkbox" className="check2 checker" Checked={checkGet[1].Done} onChange={checked.bind(this, 1)}></input>
+                <input type="text" className="todo2 todo descriptionInput" Value={checkGet[1].Content} onChange={todoChange.bind(this, 1)}></input>
+                <input type="checkbox" className="check3 checker" Checked={checkGet[2].Done} onChange={checked.bind(this, 2)}></input>
+                <input type="text" className="todo3 todo descriptionInput" Value={checkGet[2].Content} onChange={todoChange.bind(this, 2)}></input>
+                <input type="checkbox" className="check4 checker" Checked={checkGet[3].Done} onChange={checked.bind(this, 3)}></input>
+                <input type="text" className="todo4 todo descriptionInput" Value={checkGet[3].Content} onChange={todoChange.bind(this, 3)}></input>
+                <input type="checkbox" className="check5 checker" Checked={checkGet[4].Done} onChange={checked.bind(this, 4)}></input>
+                <input type="text" className="todo5 todo descriptionInput" Value={checkGet[4].Content} onChange={todoChange.bind(this, 4)}></input>
             </div>
             <div className="TodolistContent">
                 <img alt='' src={paperContent} className="paperContent" />
                 <img alt='' src={checkBox} className="checkBox" />
-                <img alt='' src={check} className={`check1 check ${temp[5].completed ? "a" : "b"}`} />
-                <img alt='' src={check} className={`check2 check ${temp[6].completed ? "a" : "b"}`} />
-                <img alt='' src={check} className={`check3 check ${temp[7].completed ? "a" : "b"}`} />
-                <img alt='' src={check} className={`check4 check ${temp[8].completed ? "a" : "b"}`} />
-                <img alt='' src={check} className={`check5 check ${temp[9].completed ? "a" : "b"}`} />
-                <input type="checkbox" className="check1 checker" defaultChecked={temp[5].completed} onChange={checked.bind(this, 5)}></input>                            
-                <input type="text" className="todo1 todo descriptionInput" defaultValue={temp[5].description} onChange={todoChange.bind(this, 5)}></input>
-                <input type="checkbox" className="check2 checker" defaultChecked={temp[6].completed} onChange={checked.bind(this, 6)}></input>
-                <input type="text" className="todo2 todo descriptionInput" defaultValue={temp[6].description} onChange={todoChange.bind(this, 6)}></input>
-                <input type="checkbox" className="check3 checker" defaultChecked={temp[7].completed} onChange={checked.bind(this, 7)}></input>
-                <input type="text" className="todo3 todo descriptionInput" defaultValue={temp[7].description} onChange={todoChange.bind(this, 7)}></input>
-                <input type="checkbox" className="check4 checker" defaultChecked={temp[8].completed} onChange={checked.bind(this, 8)}></input>
-                <input type="text" className="todo4 todo descriptionInput" defaultValue={temp[8].description} onChange={todoChange.bind(this, 8)}></input>
-                <input type="checkbox" className="check5 checker" defaultChecked={temp[9].completed} onChange={checked.bind(this, 9)}></input>
-                <input type="text" className="todo5 todo descriptionInput" defaultValue={temp[9].description} onChange={todoChange.bind(this, 9)}></input>
+                <img alt='' src={check} className={`check1 check ${checkGet[5].Done ? "a" : "b"}`} />
+                <img alt='' src={check} className={`check2 check ${checkGet[6].Done ? "a" : "b"}`} />
+                <img alt='' src={check} className={`check3 check ${checkGet[7].Done ? "a" : "b"}`} />
+                <img alt='' src={check} className={`check4 check ${checkGet[8].Done ? "a" : "b"}`} />
+                <img alt='' src={check} className={`check5 check ${checkGet[9].Done ? "a" : "b"}`} />
+                <input type="checkbox" className="check1 checker" Checked={checkGet[5].Done} onChange={checked.bind(this, 5)}></input>                            
+                <input type="text" className="todo1 todo descriptionInput" Value={checkGet[5].Content} onChange={todoChange.bind(this, 5)}></input>
+                <input type="checkbox" className="check2 checker" Checked={checkGet[6].Done} onChange={checked.bind(this, 6)}></input>
+                <input type="text" className="todo2 todo descriptionInput" Value={checkGet[6].Content} onChange={todoChange.bind(this, 6)}></input>
+                <input type="checkbox" className="check3 checker" Checked={checkGet[7].Done} onChange={checked.bind(this, 7)}></input>
+                <input type="text" className="todo3 todo descriptionInput" Value={checkGet[7].Content} onChange={todoChange.bind(this, 7)}></input>
+                <input type="checkbox" className="check4 checker" Checked={checkGet[8].Done} onChange={checked.bind(this, 8)}></input>
+                <input type="text" className="todo4 todo descriptionInput" Value={checkGet[8].Content} onChange={todoChange.bind(this, 8)}></input>
+                <input type="checkbox" className="check5 checker" Checked={checkGet[9].Done} onChange={checked.bind(this, 9)}></input>
+                <input type="text" className="todo5 todo descriptionInput" Value={checkGet[9].Content} onChange={todoChange.bind(this, 9)}></input>
             </div>           
         </div>
     );
