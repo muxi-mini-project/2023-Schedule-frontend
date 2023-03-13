@@ -6,7 +6,7 @@ function tokenCheck(){
 }
 
 export async function postData(url, data, temp){
-    let d = JSON.decycle(data);
+    // let d = JSON.decycle(data);
     if(temp === 0){
         const response = await fetch(preurl+url, {
             method: 'POST', 
@@ -14,7 +14,7 @@ export async function postData(url, data, temp){
                 "Content-Type": "application/json;charset=utf-8",
                 "Authorization": tokenCheck()
             },
-            body: JSON.stringify(d)
+            body: JSON.stringify(data)
         });
 
         return response.json();
@@ -30,7 +30,7 @@ export async function postData(url, data, temp){
                 "Month": time.getMonth()+1,
                 "Day": time.getDate()
             },
-            body: JSON.stringify(d)
+            body: JSON.stringify(data)
         });
 
         return response.json();
@@ -50,7 +50,7 @@ export async function getJSON(url, temp){
         
         return response.json();
     }
-    else{
+    if(temp === 1){
         let time = new Date();
         const response = await fetch(preurl+url, {
             method: 'GET', 
@@ -83,8 +83,8 @@ export async function getRecycleBin(url, year, month, date){
     return response.json();
 }
 
-export async function putData(url, data, time){
-    if(time===[]){
+export async function putData(url, data, temp){
+    if(temp === 0){
         const response = await fetch(preurl+url+data, {
             method: 'PUT', 
             headers: {
@@ -97,7 +97,8 @@ export async function putData(url, data, time){
         
         return response.json();
     }
-    else{
+    if(temp === 1){
+        let time = new Date();
         const response = await fetch(preurl+url+data, {
             method: 'PUT', 
             headers: {
