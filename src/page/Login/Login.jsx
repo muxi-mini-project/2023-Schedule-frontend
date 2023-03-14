@@ -18,7 +18,8 @@ const Login = () => {
     const [pw, SetPW] = useState("");
     let navigate = useNavigate();
 
-    if(localStorage.getItem("token") !== "") navigate("/HomePage");
+    if(localStorage.getItem("token") == null) localStorage.setItem("token", [""]);
+    // if(localStorage.getItem("token") !== [""]) navigate("/HomePage");
 
     if(window.innerWidth > window.innerHeight){
         return(
