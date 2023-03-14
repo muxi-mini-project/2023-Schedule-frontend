@@ -64,7 +64,6 @@ export async function getJSON(url, temp){
         })
             .catch(error => console.log('error', error));
 
-            console.log(response.json())
         return response.json();
     }
 }
