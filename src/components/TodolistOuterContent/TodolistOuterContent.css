@@ -5,7 +5,8 @@
     position: absolute;
     top: 388px;
     left: 135px;
-    overflow: scroll;
+    overflow-x: scroll;
+    overflow-y: hidden;
     margin: 0;
     padding: 0;
 }
@@ -15,7 +16,10 @@
         position: relative;
         top: 0;
         left: 0;
-        overflow: hidden;
+        overflow: scroll;
+        background-image: url("../../img/Todolist/PaperContent.png");
+        display: flex;
+        flex-direction: column;
     }
         .paperContent{
             width: 390px;
@@ -24,88 +28,58 @@
             top: 0;
             left: 0;
         }
-        .checkBox{
-            width: 750px;
-            height: auto;
-            position: absolute;
-            top: -390px;
-            left: -180px;
-            transform: rotate(11.2deg);
-        }
+
         .a{opacity: 1;}
         .b{opacity: 0;}
         .check{
             max-width: 100%;
-            height: auto;
+            position: relative;
+            top: -20px;
         }
-            .check1{
-                position: absolute;
-                top: 5px;
-                left: 28px;
-            }
-            .check2{
-                position: absolute;
-                top: 85px;
-                left: 28px;
-            }
-            .check3{
-                position: absolute;
-                top: 175px;
-                left: 30px;
-            }
-            .check4{
-                position: absolute;
-                top: 265px;
-                left: 30px;
-            }
-            .check5{
-                position: absolute;
-                top: 365px;
-                left: 30px;
-            }
 
         .todo{
-            width: 260px;
-            height: 30px;
+            width: 325px;
+            height: 100%;
             border: 0;
             background-color: transparent;
-            font-size: 32px;
+            font-size: 36px;
             color: rgb(155, 122, 122);
             text-align: center;
             outline: 0;
             font-family: 'ftmaru400a';
         }
-            .todo1{
-                position: absolute;
-                top: 25px;
-                left: 85px;
-            }
-            .todo2{
-                position: absolute;
-                top: 105px;
-                left: 90px;
-            }
-            .todo3{
-                position: absolute;
-                top: 193px;
-                left: 93px;
-            }
-            .todo4{
-                position: absolute;
-                top: 288px;
-                left: 95px;
-            }
-            .todo5{
-                position: absolute;
-                top: 385px;
-                left: 95px;
-            }
+
         .checker{
             width: 40px;
             height: 40px;
-            transform: rotate(11.2deg);
             opacity: 0;
+            transform: rotate(11.2deg);
         }
-        .checker:checked + .todo{
+        
+        .itemBox{
+            display: flex;
+            height: 80px;
+            max-width: 380px;
+        }
+        .CheckBox {
+            position: relative;
+            transform: rotate(11.2deg);
+        }
+        .checkLabel {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .InputBox {
+            display: flex;
+            flex-direction: column;
+        }
+        .TodolistContent :first-child {
+            margin-top: 8px;
+        }
+        .done{
             text-decoration: line-through;
+        }
+        .line img {
+            max-width: 100%;
         }
