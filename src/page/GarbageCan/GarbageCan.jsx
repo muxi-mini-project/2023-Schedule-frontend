@@ -14,7 +14,6 @@ const GarbageCan = () => {
     const [dateD, setDateD] = useState(0);
     useEffect(() => {
         let time = new Date();
-        console.log(time.getMonth(),time.getDate())
         if (time.getMonth() + 1 < 10) { setMonthT(0); setMonthD(time.getMonth() + 1); }
         else if (time.getMonth() + 1 >= 10) { setMonthT(1); setMonthD(time.getMonth() + 1 - 10); }
         if (time.getDate() < 10) { setDateT(0); setDateD(time.getDate()); }

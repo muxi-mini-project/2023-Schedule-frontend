@@ -46,16 +46,8 @@ const TodolistOuterContent = () => {
             if(todo.SchId === id) return{...todo,Content};
             else return todo;
         })
-        let d = new Date();
-        postData("calendar/write", {"schedule": {
-            "Year": d.getFullYear(),
-            "Month": d.getMonth()+1,
-            "Day": d.getDate(),
-            "UserId": todos[id].UserId,
-            "Content": Content,
-            "Done": todos[id].Done,
-            "SchId": id
-        }, "SchId": id}, 1).then((res) => {console.log(res)});
+        postData("calendar/write", {"schedule": Content, "SchId": id}, 1)
+            .then((res) => {console.log(res)});
         setTodos(newTodos);
     }
     function checked(id,Done){

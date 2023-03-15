@@ -48,6 +48,7 @@ html,body{
         top: 345px;
         left: 405px;
         transform: rotate(-0.5deg);
+        font-family: 'ftmaru400a';
     }
     .garbageCan{
         max-width: 100%;

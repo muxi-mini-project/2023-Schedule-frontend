@@ -7,9 +7,7 @@ import {useState} from "react";
 import './GarbageCanContentBox.css';
 
 
-function pastTodolistItem(props){
-    const todo = props
-
+function PastTodolistItem(todo){
     return(
         <div className="pastItemBox" >
             <div className="pastCheckBox">
@@ -30,17 +28,27 @@ function pastTodolistItem(props){
 
 
 const GarbageCanContentBox = (monthF, dateF) => {
-    const [pastTodos, setPastTodos] = useState([]);
+    const [pastTodos, setPastTodos] = useState([
+        {
+            "Year": 2023,
+            "Month": 3,
+            "Day": 15,
+            "UserId": "2022214207",
+            "Content": "228922",
+            "Done": true,
+            "SchId": "0"
+        }
+    ]);
     let date = new Date();
-    getRecycleBin("crash", date.getFullYear(), monthF, dateF)
-        .then((res) => {setPastTodos(res.schedule);});    
+    getRecycleBin("calendar", date.getFullYear(), monthF.monthF.monthF, monthF.monthF.dateF)
+        .then((res) => {setPastTodos(res.schedule);});
 
     return(
         <div className="GarbageCanContentBox">
             <div className="GarbageCanContent">
                 {pastTodos.map(todo => {
                     return(
-                        <pastTodolistItem todo={todo}/>
+                        <PastTodolistItem todo={todo}/>
                     );
                 })}
             </div>
