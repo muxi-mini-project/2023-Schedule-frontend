@@ -17,7 +17,27 @@ export default function BulletinBoard() {
   useEffect( () =>{
     getJSON('board/photo')
     .then(data => {
-      if(data.photo.length>0) setFirstPhoto(data.photo[0].PhotoUrl);})
+      if(data.photo.length>0)
+      { const url = "'"+'http://'+ data.photo[0].PhotoUrl +"'"
+       setFirstPhoto(url);}})
+    .catch(error => console.error('Error',error))
+    getJSON('board/photo2')
+    .then(data => {
+      if(data.photo.length>0)
+      { const url = "'"+'http://'+ data.photo[0].PhotoUrl +"'"
+       setSecondPhoto(url);}})
+    .catch(error => console.error('Error',error))
+    getJSON('board/photo3')
+    .then(data => {
+      if(data.photo.length>0)
+      { const url = "'"+'http://'+ data.photo[0].PhotoUrl +"'"
+       setthirdPhoto(url);}})
+    .catch(error => console.error('Error',error))
+    getJSON('board/photo4')
+    .then(data => {
+      if(data.photo.length>0)
+      { const url = "'"+'http://'+ data.photo[0].PhotoUrl +"'"
+       setfourthPhoto(url);}})
     .catch(error => console.error('Error',error))
   },[]);
   
@@ -25,37 +45,28 @@ export default function BulletinBoard() {
 
     const url = URL.createObjectURL(event.target.files[0])
     setFirstPhoto(url)
-    console.log(url)
-    console.log(event.target.files[0])
     postPhoto('board/addPhoto',event.target.files[0])
-        .then(data => console.log(data))
     .catch(error => console.error('Error',error))
     
   }
   const selectedFileHandler2 = (event) =>{
     const url = URL.createObjectURL(event.target.files[0])
     setSecondPhoto(url)
-    console.log(url)
     postPhoto('board/addPhoto2',event.target.files[0])
-        .then(data => console.log(data))
     .catch(error => console.error('Error',error))
   }
 
   const selectedFileHandler3 = (event) =>{
     const url = URL.createObjectURL(event.target.files[0])
     setthirdPhoto(url)
-    console.log(url)
     postPhoto('board/addPhoto3',event.target.files[0])
-        .then(data => console.log(data))
     .catch(error => console.error('Error',error))
   }
   
   const selectedFileHandler4 = (event) =>{
     const url = URL.createObjectURL(event.target.files[0])
     setfourthPhoto(url)
-    console.log(url)
     postPhoto('board/addPhoto4',event.target.files[0])
-        .then(data => console.log(data))
     .catch(error => console.error('Error',error))
   }
 
