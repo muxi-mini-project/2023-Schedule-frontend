@@ -8,7 +8,6 @@ function tokenCheck() {
 
 export async function postData(url, data, temp) {
 	// let d = JSON.decycle(data);
-	console.log(data)
 	if (temp === 0) {
 		const response = await fetch(preurl + url, {
 			method: 'POST',
