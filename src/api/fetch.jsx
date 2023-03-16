@@ -24,7 +24,9 @@ export async function postData(url, data){
 
 export async function postDataa(url, data){
     tokenCheck();
-    let d = JSON.decycle(data);
+    var urlencoded = new URLSearchParams();
+    urlencoded.append("schedule", data.Content);
+    urlencoded.append("SchId", data.SchId);
     const response = await fetch(preurl+url, {
         method: 'POST', 
         headers: { 
@@ -33,11 +35,28 @@ export async function postDataa(url, data){
             "Year":year,
             "Month":month,
             "Day":day,
-            "Schid":data.id,
             "Connection": "keep-alive"
         },
-        body:JSON.stringify({schedule:d.schedule}),
+        body:urlencoded,
         redirect: 'follow'
+    })
+
+    return response.json();
+}
+
+export async function postPhoto(url, data){
+    tokenCheck();
+    var formdata = new FormData();
+    formdata.append("photo", data)
+    const response = await fetch(preurl+url, {
+        method: 'POST', 
+        headers: { 
+            "Authorization": localStorage.getItem('token'),
+            "Year":year,
+            "Month":month,
+            "Day":day,
+    },
+        body: formdata
     })
 
     return response.json();
@@ -62,13 +81,37 @@ export async function getJSON(url){
 
 export async function putData(url, data){
     tokenCheck();
-    const response = await fetch(preurl+url+data, {
+    const response = await fetch(preurl+url, {
         method: 'PUT', 
         headers: {
-            "Content-Type": "application/json;charset=utf-8",
-            "Authorization": localStorage.getItem('token')
+            "Content-Type": "application/x-www-form-urlencoded",
+            "Authorization": localStorage.getItem('token'),
+            "Year":year,
+            "Month":month,
+            "Day":day,
+            "Access-Control-Max-Age":"172800"
         },
         body: JSON.stringify(data)
+    })
+        .catch(error => console.log('error', error));
+
+    return response.json();
+}
+
+export async function postCheck(url, data){
+    var urlencoded = new URLSearchParams();
+    urlencoded.append("SchId", data.SchId);
+    tokenCheck();
+    const response = await fetch(preurl+url, {
+        method: 'POST', 
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+            "Authorization": localStorage.getItem('token'),
+            "Year":year,
+            "Month":month,
+            "Day":day
+        },
+        body: urlencoded
     })
         .catch(error => console.log('error', error));
 

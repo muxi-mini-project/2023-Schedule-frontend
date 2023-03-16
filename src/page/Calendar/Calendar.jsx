@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './Calendar.css'
 import Item from '../../components/item';
 import{nanoid} from 'nanoid'
-import { postData,postDataa, getJSON, putData } from "../../api/fetch";
+import { postData,postDataa, getJSON, postCheck} from "../../api/fetch";
 
 export default  function Calendar(){
 
@@ -11,22 +11,22 @@ export default  function Calendar(){
 
   useEffect( () =>{
     getJSON('calendar')
-    .then(data => console.log(data))
+    .then(data => {console.log(data);
+    setTodos(data.schedule)})
     .catch(error => console.error('Error',error))
   },[]);
 
   
 
-  const addToDo=(todoObj)=>{
+    const addToDo=(todoObj)=>{
     const newTodos =[todoObj,...todos]
     setTodos(newTodos)
-    console.log(todoObj)
   }
   const handleKeyUp = (event)=>{
     const {keyCode,target}=event
     if(keyCode !== 13) return
     if(target.value.trim()==='')return
-    const todoObj = {id:nanoid(),schedule:target.value};
+    const todoObj = {SchId:nanoid(),Content:target.value};
     addToDo(todoObj)
     target.value=''
     postDataa('calendar/write',todoObj)
@@ -34,9 +34,11 @@ export default  function Calendar(){
     .catch(error => console.error('Error',error))
   }
 
-  const updateTodo=(userId,done)=>{
+  const updateTodo=(SchId,Done)=>{
     const newTodos = todos.map((todoObj)=>{
-      if(todoObj.userId===userId)return {...todoObj,done}
+      if(todoObj.SchId===SchId){
+        return {...todoObj,Done}
+      }
       else return todoObj
     })
     setTodos(newTodos)
@@ -56,7 +58,7 @@ const [isAlldone,setAllDone]=useState(true)
 
   useEffect(()=>{
     setAllDone(true)
-    todos.map((todo)=>{ if(todo.done!=true){setAllDone(false)}  })
+    todos.map((todo)=>{ if(todo.Done!=true){setAllDone(false)}  })
   },[todos])
 
  const updateCalendar= (target)=>{
@@ -73,6 +75,7 @@ const [isAlldone,setAllDone]=useState(true)
     const month = time.getMonth() + 1 ;
     const day = time.getDate();
     const days = day.toString();
+    const months = month.toString();
 
       if(window.innerWidth > window.innerHeight){
           return(
@@ -88,13 +91,13 @@ const [isAlldone,setAllDone]=useState(true)
     <div className='book'>
       <div  className={isClicked?'tear':'page'} onClick={handleClick}>
       <div className='time'>
-      <font>{time.getMonth()<10?'0':''}</font><font>{month}</font>月<font>{time.getDay()<10?'0':days[0]}</font><font>{time.getDay()<10?days[0]:days[1]}</font>日
+      <font>{time.getMonth()<10?'0':months[0]}</font><font>{time.getMonth()<10?months[0]:months[1]}</font>月<font>{days<0?'0':days[0]}</font><font>{days<0?days[0]:days[1]}</font>日
       </div>
       <input id="inputbox" placeholder="今天要做什么呢？" onKeyUp={handleKeyUp}/>
                 <ul>
                 {
 				todos.map((todo)=>{
-					return <Item key={todo.userId} {...todo} updateTodo={updateTodo} />
+					return <Item key={todo.SchId} {...todo} updateTodo={updateTodo} />
 				})
 			}
                 </ul>
