@@ -12,6 +12,9 @@ function TodolistItem(props) {
 		checked(todo.SchId, e.target.checked);
 	}
 	const changeContent = (e) => {
+		if(e.keyCode !== 13) return ;
+    if(e.target.value.trim()==='') return ;
+
 		updateTodo(todo.SchId, e.target.value);
 	}
 	
@@ -27,7 +30,7 @@ function TodolistItem(props) {
 			</div>
 			<div className="InputBox">
 				<input type="text" className={`todo descriptionInput ${todo.Done ? "done" : ""}`} defaultValue={todo.Content}
-				       onChange={changeContent}/>
+				       onKeyUp={changeContent}/>
 				<div className="line">
 					<img src={line} alt=""/>
 				</div>
@@ -41,32 +44,32 @@ const TodolistOuterContent = () => {
 	const [todos, setTodos] = useState([])
 	useEffect(() => {
 		getJSON("calendar", 1)
-			.then((res) => {
-				setTodos(res.schedule);
-			})
-	}, [])
+			.then((res) => {setTodos(res.schedule);});
+	}, []);
 	
-	function updateTodo(id, Content) {
+	
+	function updateTodo(id, Content){
 		const newTodos = todos.map((todo) => {
 			if (todo.SchId === id) return {...todo, Content};
 			else return todo;
-		})
-		postData("calendar/write", {schedule: Content, SchId: id}, 1)
-			.then((res) => {
-				console.log(res)
-			});
+		});
+		postData("calendar/write", {schedule: Content, SchId: id}, 1);
 		setTodos(newTodos);
-	}
-	
-	function checked(id, Done) {
+		let space = "";
+		const addTodo = todos.map((todo) => {
+			if(todos.length-1 === id){
+				postData("calendar/write", {schedule: "", SchId: id+1}, 1);
+				return {...todo, space};
+			} 
+		});
+		setTodos(addTodo);
+	}	
+	function checked(id, Done){
 		const newTodos = todos.map((todo) => {
 			if (todo.SchId === id) return {...todo, Done};
 			else return todo;
 		})
-		postData("calendar/check", {SchId: id}, 1)
-			.then((res) => {
-				console.log(res)
-			});
+		postData("calendar/check", {SchId: id}, 1);
 		setTodos(newTodos);
 	}
 	
