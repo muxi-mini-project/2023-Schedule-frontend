@@ -13,7 +13,8 @@ function TodolistItem(props) {
 	}
 	const changeContent = (e) => {
 		if(e.keyCode !== 13) return ;
-    	if(e.target.value.trim()==='') return ;
+    if(e.target.value.trim()==='') return ;
+
 		updateTodo(todo.SchId, e.target.value);
 	}
 	
