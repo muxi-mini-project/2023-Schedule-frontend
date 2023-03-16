@@ -14,7 +14,7 @@
         top: 0;
         left: 0;
         overflow: scroll;
-        background-image: url("../../img/Todolist/PaperContent.png");
+        background-image: url("../../img/GarbageCan/PaperContent.png");
         display: flex;
         flex-direction: column;
     }
