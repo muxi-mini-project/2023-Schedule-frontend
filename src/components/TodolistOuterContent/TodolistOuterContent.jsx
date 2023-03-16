@@ -54,14 +54,10 @@ const TodolistOuterContent = () => {
 		});
 		postData("calendar/write", {schedule: Content, SchId: id}, 1);
 		setTodos(newTodos);
-		let space = "";
-		const addTodo = todos.map((todo) => {
-			if(todos.length-1 === id){
-				postData("calendar/write", {schedule: "", SchId: id+1}, 1);
-				return {...todo, space};
-			} 
-		});
-		setTodos(addTodo);
+		let len = (todos.length-1).toString();
+		if(len === id){
+			postData("calendar/write", {schedule: "", SchId: id+1}, 1);
+		}
 	}	
 	function checked(id, Done){
 		const newTodos = todos.map((todo) => {
