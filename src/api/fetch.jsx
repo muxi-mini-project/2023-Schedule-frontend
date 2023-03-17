@@ -44,7 +44,7 @@ export async function postDataa(url, data){
     return response.json();
 }
 
-export async function postPhoto(url, data){
+export async function postPhoto(url, data,time){
     tokenCheck();
     var formdata = new FormData();
     formdata.append("photo", data)
@@ -52,9 +52,9 @@ export async function postPhoto(url, data){
         method: 'POST', 
         headers: { 
             "Authorization": localStorage.getItem('token'),
-            "Year":year,
-            "Month":month,
-            "Day":day,
+            "Year":time.year,
+            "Month":time.month,
+            "Day":time.day,
     },
         body: formdata
     })
@@ -118,7 +118,22 @@ export async function postCheck(url, data){
     return response.json();
 }
 
+export async function getPhoto(url,data){
+    tokenCheck();
+    const response = await fetch(preurl+url, {
+        method: 'GET', 
+        headers: {
+            "Content-Type": "application/json;charset=utf-8",
+            "Authorization": localStorage.getItem('token'),
+            "Year":data.year,
+            "Month":data.month,
+            "Day":data.day
+        },
+    })
+        .catch(error => console.log('error', error));
 
+    return response.json();
+}
 
 
 // 引入JSON扩展包解决循环调用

@@ -4,7 +4,7 @@
         background-repeat: no-repeat;
         background-size: 100%;
         background-position: center center;
-        background-image: url(../../img/BulletinBoard/background2.png);
+        background-image: url('https://s2.loli.net/2023/03/16/Hf1pvhQxnUOJRet.png');
         position: fixed;
         top: 0px;
         padding:0;
@@ -18,12 +18,11 @@
     width: 20vh;
     background-repeat: no-repeat;
     background-size:contain;
-    background-image: url('http://mini-project.muxixyz.com/(2023-03-16%2016:05:54.827328897%20+0800%20CST%20m=+16788.150970457)pb2.png');
     transform: rotate(-18deg);
 }
 .pb0::before{
     display: block;
-    content: url(../../img/BulletinBoard/peg1.png);
+    content: url('https://s2.loli.net/2023/03/16/cJ7v3UtSwaB9KGo.png');
     position: relative;
     left: 7.2vh;
 }
@@ -39,7 +38,7 @@
 }
 .pb1::before{
     display: block;
-    content: url(../../img/BulletinBoard/peg1.png);
+    content: url('https://s2.loli.net/2023/03/16/cJ7v3UtSwaB9KGo.png');
     position: relative;
     left: 7.2vh;
 }
@@ -55,7 +54,7 @@
 }
 .pb2::before{
     display: block;
-    content: url(../../img/BulletinBoard/peg2.png);
+    content: url('https://s2.loli.net/2023/03/16/G5n7BX2YLeNdfxM.png');
     position: relative;
     left: 7vh;
     top:-1vh;
@@ -64,7 +63,6 @@
     position: absolute;
     top: 62%;
     left: 25%;
-    background-image:url(../../img/BulletinBoard/pb3.png) ;
     height: 11vh;
     width: 20vh;
     background-repeat: no-repeat;
@@ -73,7 +71,7 @@
 }
 .pb3::before{
     display: block;
-    content: url(../../img/BulletinBoard/peg3.png);
+    content: url('https://s2.loli.net/2023/03/16/3sLkedGz8iM6Ko4.png');
     position: relative;
     left: 6.5vh;
     top:-0.5vh;

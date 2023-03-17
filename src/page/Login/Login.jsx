@@ -37,8 +37,7 @@ const Login = () => {
             postData("login", {Password:pw, UID:uid})
                 .then((res) => {
                     if(res.code === 200) {navigate("/HomePage");
-                    localStorage.token = res.token;
-                    console.log(res.token);}
+                    localStorage.token = res.token;}
                     else alert("学号或密码错误，请再试一次。");
                 });
         }

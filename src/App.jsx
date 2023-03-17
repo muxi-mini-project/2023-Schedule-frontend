@@ -5,6 +5,7 @@ import HomePage from "./page/HomePage/HomePage";
 import TodoList from "./page/TodoList/TodoList";
 import GarbageCan from "./page/GarbageCan/GarbageCan";
 import BulletinBoard from "./page/BulletinBoard/BulletinBoard";
+import SelectTime from "./page/SelectTime/SelectTime"
 
 
 export default function App(){
@@ -17,6 +18,7 @@ export default function App(){
                 <Route path="/HomePage" element={<HomePage/>}/>
                 <Route path="/TodoList" element={<TodoList/>}/>
                 <Route path="/GarbageCan" element={<GarbageCan/>}/>
+                <Route path="/SelectTime" element={<SelectTime/>}/>
             </Routes>
         </BrowserRouter>
     );

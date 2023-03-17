@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './Calendar.css'
 import Item from '../../components/item';
 import{nanoid} from 'nanoid'
-import { postData,postDataa, getJSON, postCheck} from "../../api/fetch";
+import { postDataa, getJSON} from "../../api/fetch";
 
 export default  function Calendar(){
 
@@ -11,9 +11,9 @@ export default  function Calendar(){
 
   useEffect( () =>{
     getJSON('calendar')
-    .then(data => {console.log(data);
+    .then(data => {
     setTodos(data.schedule)})
-    .catch(error => console.error('Error',error))
+    .catch(error => alert('获取任务失败，请检查登录状态。错误信息：',error))
   },[]);
 
   
@@ -31,7 +31,7 @@ export default  function Calendar(){
     target.value=''
     postDataa('calendar/write',todoObj)
     .then(data => console.log(data))
-    .catch(error => console.error('Error',error))
+    .catch(error => alert('error',error))
   }
 
   const updateTodo=(SchId,Done)=>{

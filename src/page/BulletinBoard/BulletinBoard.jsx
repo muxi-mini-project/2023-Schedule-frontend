@@ -1,72 +1,84 @@
 import React,{useEffect, useState} from 'react'
 import './BulletinBoard.css'
-import image1 from '../../img/BulletinBoard/pt1.webp'
-import image2 from '../../img/BulletinBoard/pt2.jpg'
-import image3 from '../../img/BulletinBoard/pt3.webp'
-import image4 from '../../img/BulletinBoard/pt4.webp'
-import { getJSON, postPhoto } from "../../api/fetch";
+import {getPhoto, getJSON, postPhoto } from "../../api/fetch";
+import { useSearchParams } from 'react-router-dom';
 
 
 export default function BulletinBoard() {
 
-  const [firstPhoto,setFirstPhoto]=useState(image1)
-  const [secondPhoto,setSecondPhoto]=useState(image2)
-  const [thirdPhoto,setthirdPhoto]=useState(image3)
-  const [fourthPhoto,setfourthPhoto]=useState(image4)
+  const[searchParams]= useSearchParams()
+  const year = searchParams.get("year")
+  const month = searchParams.get("month")
+  const day = searchParams.get("day")
+  const time ={
+    year:year,
+    month:month,
+    day:day
+  }
+
+  const [firstPhoto,setFirstPhoto]=useState('')
+  const [secondPhoto,setSecondPhoto]=useState('')
+  const [thirdPhoto,setthirdPhoto]=useState('')
+  const [fourthPhoto,setfourthPhoto]=useState('')
 
   useEffect( () =>{
-    getJSON('board/photo')
+    getPhoto('board/photo',time)
     .then(data => {
       if(data.photo.length>0)
       { const url = "'"+'http://'+ data.photo[0].PhotoUrl +"'"
-       setFirstPhoto(url);}})
+       setFirstPhoto(url);}
+      else setFirstPhoto('https://s2.loli.net/2023/03/16/VCI2uMpgTZhqSjk.webp')})
     .catch(error => console.error('Error',error))
-    getJSON('board/photo2')
+    getPhoto('board/photo2',time)
     .then(data => {
       if(data.photo.length>0)
       { const url = "'"+'http://'+ data.photo[0].PhotoUrl +"'"
-       setSecondPhoto(url);}})
+       setSecondPhoto(url);}
+      else setSecondPhoto('https://s2.loli.net/2023/03/16/ki8FaeqPmH937tD.jpg')})
     .catch(error => console.error('Error',error))
-    getJSON('board/photo3')
+    getPhoto('board/photo3',time)
     .then(data => {
       if(data.photo.length>0)
       { const url = "'"+'http://'+ data.photo[0].PhotoUrl +"'"
-       setthirdPhoto(url);}})
+       setthirdPhoto(url);}
+      else setthirdPhoto('https://s2.loli.net/2023/03/16/mHrVcCtyuEWhRAS.webp')})
     .catch(error => console.error('Error',error))
-    getJSON('board/photo4')
+    getPhoto('board/photo4',time)
     .then(data => {
       if(data.photo.length>0)
       { const url = "'"+'http://'+ data.photo[0].PhotoUrl +"'"
-       setfourthPhoto(url);}})
+       setfourthPhoto(url);}
+      else setfourthPhoto('https://s2.loli.net/2023/03/16/FqoRJbdKEnADULf.webp')})
     .catch(error => console.error('Error',error))
+    
   },[]);
   
   const selectedFileHandler1 = (event) =>{
 
     const url = URL.createObjectURL(event.target.files[0])
     setFirstPhoto(url)
-    postPhoto('board/addPhoto',event.target.files[0])
+    postPhoto('board/addPhoto',event.target.files[0],time)
     .catch(error => console.error('Error',error))
     
   }
   const selectedFileHandler2 = (event) =>{
     const url = URL.createObjectURL(event.target.files[0])
     setSecondPhoto(url)
-    postPhoto('board/addPhoto2',event.target.files[0])
+    postPhoto('board/addPhoto2',event.target.files[0],time)
     .catch(error => console.error('Error',error))
   }
 
   const selectedFileHandler3 = (event) =>{
     const url = URL.createObjectURL(event.target.files[0])
     setthirdPhoto(url)
-    postPhoto('board/addPhoto3',event.target.files[0])
+    postPhoto('board/addPhoto3',event.target.files[0],time)
     .catch(error => console.error('Error',error))
   }
   
   const selectedFileHandler4 = (event) =>{
     const url = URL.createObjectURL(event.target.files[0])
     setfourthPhoto(url)
-    postPhoto('board/addPhoto4',event.target.files[0])
+    postPhoto('board/addPhoto4',event.target.files[0],time)
     .catch(error => console.error('Error',error))
   }
 
