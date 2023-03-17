@@ -6,9 +6,9 @@
 // import pottedPlant from '../../img/HomePage/PottedPlant.png';
 // import todoList from '../../img/HomePage/TodoList.png';
 
+import LoadingAnimetion from '../../components/LoadingAnimation/LoadingAnimation';
 import {getJSON} from '../../api/fetch';
 import {Link, useNavigate} from "react-router-dom";
-import $ from 'jquery';
 import './HomePage.css';
 
 
@@ -21,12 +21,6 @@ const HomePage = () => {
         );
     }
     else{
-        let bodyStyle = document.body.style;
-        bodyStyle.zoom = window.innerWidth/750;
-        $(window).on("load",function(){
-            $(".loader-wrapper").fadeOut("slow");
-        });
-
         getJSON("index", 0).then((res) => {if(res.code !== 200) navigate("/");});
 
         let time = new Date();
@@ -48,9 +42,7 @@ const HomePage = () => {
                         <img alt='' src={"https://s2.loli.net/2023/03/17/nKemkzO3x6VsapT.png"} className="paperAirplane item"/>
                         <img alt='' src={"https://s2.loli.net/2023/03/17/fHzrVme5tKNkZRc.png"} className="pottedPlant1 item"/>
                         <Link to="/TodoList"><img alt='' src={"https://s2.loli.net/2023/03/17/cRrysdVl5OJSwjk.png"} className="todoList item"/></Link>
-                        <div class="loader-wrapper">
-                            <span class="loader"><span class="loader-inner"></span></span>
-                        </div>
+                        <LoadingAnimetion/>
                     </div>
                 </div>
             </div>

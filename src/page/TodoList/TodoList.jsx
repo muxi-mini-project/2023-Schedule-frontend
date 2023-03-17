@@ -2,8 +2,8 @@
 // import paper from "../../img/Todolist/paper.png";
 // import greenBook from "../../img/Todolist/GreenBook.png";
 
+import LoadingAnimetion from '../../components/LoadingAnimation/LoadingAnimation';
 import TodolistOuterContent from "../../components/TodolistOuterContent/TodolistOuterContent";
-import $ from 'jquery';
 import "./TodoList.css";
 
 
@@ -14,12 +14,6 @@ const TodoList = () => {
         );
     }
     else{
-        let bodyStyle = document.body.style;
-        bodyStyle.zoom = window.innerWidth/750;
-        $(window).on("load",function(){
-            $(".loader-wrapper").fadeOut("slow");
-        });
-
         return (
             <div className="base">
                 <div className="view">
@@ -32,9 +26,7 @@ const TodoList = () => {
                         </div>
                     </div>
                 </div>
-                <div class="loader-wrapper">
-                    <span class="loader"><span class="loader-inner"></span></span>
-                </div>
+                <LoadingAnimetion/>
             </div>
         );
     }
