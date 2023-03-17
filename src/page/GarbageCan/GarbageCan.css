@@ -16,11 +16,27 @@ html,body{
     align-items: center;
 }
 
-.baseLayer2{
-    max-width: 750px;
-    height: auto;
+.view-box{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #242f3f;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.view-content{
+    width: 750px;
+    height: 1334px;
     position: relative;
 }
+    .baseLayer2{
+        max-width: 750px;
+        height: auto;
+        position: relative;
+    }
     .crumpledPaper{
         max-width: 90%;
         height: 40%;

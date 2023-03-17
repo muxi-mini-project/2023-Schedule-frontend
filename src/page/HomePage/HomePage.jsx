@@ -36,18 +36,22 @@ const HomePage = () => {
 
         return(
             <div className="view">
-                <img alt='' src={"https://s2.loli.net/2023/03/17/8GjBySD6fYPsXaO.png"} className="baseLayer"/>
-                <Link to="/BulletinBoard"><img alt='' src={"https://s2.loli.net/2023/03/17/G1HupeWIPtdJ5Nr.png"} className="bulletinBoard"/></Link>
-                <Link to="/Calendar">
-                    <img alt='' src={"https://s2.loli.net/2023/03/17/7tHcw1boMqdsQNO.png"} className="calendar item"/>
-                    <input type="text" className="timing" defaultValue={timing}></input>
-                </Link>
-                <Link to="/GarbageCan"><img alt='' src={"https://s2.loli.net/2023/03/17/OZA3BhUEILtK9Fv.png"} className="garbageCan item"/></Link>
-                <img alt='' src={"https://s2.loli.net/2023/03/17/nKemkzO3x6VsapT.png"} className="paperAirplane item"/>
-                <img alt='' src={"https://s2.loli.net/2023/03/17/fHzrVme5tKNkZRc.png"} className="pottedPlant1 item"/>
-                <Link to="/TodoList"><img alt='' src={"https://s2.loli.net/2023/03/17/cRrysdVl5OJSwjk.png"} className="todoList item"/></Link>
-                <div class="loader-wrapper">
-                    <span class="loader"><span class="loader-inner"></span></span>
+                <div className="view-box">
+                    <div className="view-content">
+                        <img alt='' src={"https://s2.loli.net/2023/03/17/8GjBySD6fYPsXaO.png"} className="baseLayer"/>
+                        <Link to="/BulletinBoard"><img alt='' src={"https://s2.loli.net/2023/03/17/G1HupeWIPtdJ5Nr.png"} className="bulletinBoard"/></Link>
+                        <Link to="/Calendar">
+                            <img alt='' src={"https://s2.loli.net/2023/03/17/7tHcw1boMqdsQNO.png"} className="calendar item"/>
+                            <input type="text" className="timing" defaultValue={timing}></input>
+                        </Link>
+                        <Link to="/GarbageCan"><img alt='' src={"https://s2.loli.net/2023/03/17/OZA3BhUEILtK9Fv.png"} className="garbageCan item"/></Link>
+                        <img alt='' src={"https://s2.loli.net/2023/03/17/nKemkzO3x6VsapT.png"} className="paperAirplane item"/>
+                        <img alt='' src={"https://s2.loli.net/2023/03/17/fHzrVme5tKNkZRc.png"} className="pottedPlant1 item"/>
+                        <Link to="/TodoList"><img alt='' src={"https://s2.loli.net/2023/03/17/cRrysdVl5OJSwjk.png"} className="todoList item"/></Link>
+                        <div class="loader-wrapper">
+                            <span class="loader"><span class="loader-inner"></span></span>
+                        </div>
+                    </div>
                 </div>
             </div>
         );
