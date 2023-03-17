@@ -1,15 +1,16 @@
-import baseLayer from '../../img/Login/BaseLayer.png';
-import textBox from '../../img/Login/TextBox.png';
-import studentID from '../../img/Login/StudentID.png';
-import password from '../../img/Login/Password.png';
-import login from '../../img/Login/Login.png';
-import logo from '../../img/Login/Logo.png';
-import pottedPlant from '../../img/Login/PottedPlant.png';
-import bacterium from '../../img/Login/Bacterium.png';
+// import baseLayer from '../../img/Login/BaseLayer.png';
+// import textBox from '../../img/Login/TextBox.png';
+// import studentID from '../../img/Login/StudentID.png';
+// import password from '../../img/Login/Password.png';
+// import login from '../../img/Login/Login.png';
+// import logo from '../../img/Login/Logo.png';
+// import pottedPlant from '../../img/Login/PottedPlant.png';
+// import bacterium from '../../img/Login/Bacterium.png';
 
 import {postData} from '../../api/fetch';
 import {Link, useNavigate} from "react-router-dom";
 import {useState} from "react";
+import $ from 'jquery'; 
 import './Login.css';
 
 
@@ -29,6 +30,9 @@ const Login = () => {
     else{
         let bodyStyle = document.body.style;
         bodyStyle.zoom = window.innerWidth/750;
+        $(window).on("load",function(){
+            $(".loader-wrapper").fadeOut("slow");
+        });
 
         function submitClick(){
             postData("login", {Password: pw, UID: uid}, 0)
@@ -41,17 +45,20 @@ const Login = () => {
         
         return(
             <div className="view">
-                <img alt='' src={baseLayer} className="baseLayer"/>
-                <img alt='' src={textBox} className="textBox"/>
-                <img alt='' src={studentID} className="studentID"/>
-                <img alt='' src={password} className="password"/>
-                <Link to="/HomePage"><img alt='' src={login} className="login"/></Link>
-                <img alt='' src={logo} className="logo"/>
-                <img alt='' src={pottedPlant} className="pottedPlant2"/>
-                <img alt='' src={bacterium} className="bacterium"/>
+                <img alt='' src={"https://s2.loli.net/2023/03/16/Z3qfH2nr1QsCLlB.png"} className="baseLayer"/>
+                <img alt='' src={"https://s2.loli.net/2023/03/16/CycpPdjawv6ufsL.png"} className="textBox"/>
+                <img alt='' src={"https://s2.loli.net/2023/03/16/AO4Qfs1iazBpnwh.png"} className="studentID"/>
+                <img alt='' src={"https://s2.loli.net/2023/03/16/9kDiW8T4FahEuXN.png"} className="password"/>
+                <Link to="/HomePage"><img alt='' src={"https://s2.loli.net/2023/03/16/meZRuVgNtr74Sfk.png"} className="login"/></Link>
+                <img alt='' src={"https://s2.loli.net/2023/03/16/dPCl3UcZz2wVA9h.png"} className="logo"/>
+                <img alt='' src={"https://s2.loli.net/2023/03/16/Q4nk5TDdN7FxGtO.png"} className="pottedPlant2"/>
+                <img alt='' src={"https://s2.loli.net/2023/03/16/feKwDl9pZIJGn1N.png"} className="bacterium"/>
                 <input type="text" className="studentIDText Text" onChange={(e) => {SetUid(e.target.value);}}></input>
                 <input type="password" className="passwordText Text" onChange={(e) => {SetPW(e.target.value);}}></input>
                 <input type="submit" className="submit" onClick={submitClick}></input>
+                <div class="loader-wrapper">
+                    <span class="loader"><span class="loader-inner"></span></span>
+                </div>
             </div>
         );
     }

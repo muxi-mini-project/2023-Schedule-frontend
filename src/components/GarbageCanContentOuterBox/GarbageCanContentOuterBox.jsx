@@ -2,10 +2,11 @@ import GarbageCanContentBox from '../GarbageCanContentBox/GarbageCanContentBox'
 import './GarbageCanContentOuterBox.css';
 
 
-const GarbageCanContentOuterBox = (monthF, dateF) => {
+const GarbageCanContentOuterBox = (props) => {
+    const {pastTodos} = props
     return(
         <div className="contentOuterBox">
-            <GarbageCanContentBox monthF={monthF} dateF={dateF}/>
+            <GarbageCanContentBox pastTodos={pastTodos}/>
         </div>
     );
 }
