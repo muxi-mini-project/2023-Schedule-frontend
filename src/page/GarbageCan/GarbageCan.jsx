@@ -47,7 +47,7 @@ const GarbageCan = () => {
         const time = new Date();
         if(monthD!==''||monthT!==''||dateD!==''||dateT !== ''){
             getRecycleBin("calendar", time.getFullYear(), month, date)
-            .then((res) => {setPastTodos(res.schedule);});
+                .then((res) => {setPastTodos(res.schedule);});
         }
     }, [month,date])
     
@@ -99,7 +99,8 @@ const GarbageCan = () => {
         return (
             <div className="view">
                 <img alt='' src={"https://s2.loli.net/2023/03/17/oPcgSR1I9fOq8ZJ.png"} className="baseLayer2" />
-                <img alt='' src={"https://s2.loli.net/2023/03/17/8wEOstqQcZo9VUu.png"} className="crumpledPaper" />
+                <img alt='' src={"https://s2.loli.net/2023/03/17/yrUk1sm3JNp8Id7.png"} className="crumpledPaper" />
+                <img alt='' src={"https://s2.loli.net/2023/03/17/V2kFoedr5wmfHix.png"} className="NewDate" />
                 <GarbageCanContentOuterBox pastTodos={pastTodos}/>
                 <input type="text"  className="tenDigitsOfTheMonth pastTime" value={monthT} onChange={changeMonth1}></input>
                 <input type="text"  className="singleDigitOfTheMonth pastTime" value={monthD} onChange={changeMonth2}></input>
