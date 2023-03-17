@@ -13,8 +13,7 @@ function TodolistItem(props) {
 	}
 	const changeContent = (e) => {
 		if(e.keyCode !== 13) return ;
-    if(e.target.value.trim()==='') return ;
-
+    	if(e.target.value.trim()==='') return ;
 		updateTodo(todo.SchId, e.target.value);
 	}
 	
@@ -26,7 +25,7 @@ function TodolistItem(props) {
 					<img src={checkBox} alt=""/>
 				</label>
 				<input id={todo.SchId} type="checkbox" className="checker" defaultChecked={todo.Done}
-				       onChange={changeChecked}></input>
+				       onChange={changeChecked}/>
 			</div>
 			<div className="InputBox">
 				<input type="text" className={`todo descriptionInput ${todo.Done ? "done" : ""}`} defaultValue={todo.Content}
@@ -44,20 +43,37 @@ const TodolistOuterContent = () => {
 	const [todos, setTodos] = useState([])
 	useEffect(() => {
 		getJSON("calendar", 1)
-			.then((res) => {setTodos(res.schedule);});
+			.then((res) => {
+				setTodos(res.schedule);
+				if(res.schedule.length === 0){
+					postData("calendar/write", {schedule: "todo...", SchId: `${res.schedule.length}`}, 1);
+				}
+			});
 	}, []);
-	
-	
+
 	function updateTodo(id, Content){
 		const newTodos = todos.map((todo) => {
 			if (todo.SchId === id) return {...todo, Content};
 			else return todo;
 		});
+		console.log(id)
+		console.log(Content)
 		postData("calendar/write", {schedule: Content, SchId: id}, 1);
 		setTodos(newTodos);
 		let len = (todos.length-1).toString();
 		if(len === id){
-			postData("calendar/write", {schedule: "", SchId: id+1}, 1);
+			let newId = (parseInt(id, 10)+1).toString();
+			postData("calendar/write", {schedule: "todo...", SchId: newId}, 1);
+			let date = new Date();
+			setTodos([...newTodos,{
+				"Year": date.getFullYear(),
+				"Month": date.getMonth(),
+				"Day": date.getDate(),
+				"UserId": todos[0].UserId,
+				"Content": "todo...",
+				"Done": false,
+				"SchId": `${todos.length}`
+			}]);
 		}
 	}	
 	function checked(id, Done){
@@ -68,8 +84,7 @@ const TodolistOuterContent = () => {
 		postData("calendar/check", {SchId: id}, 1);
 		setTodos(newTodos);
 	}
-	
-	
+
 	return (
 		<div className="TodolistOuterContent">
 			<div className="TodolistContent">

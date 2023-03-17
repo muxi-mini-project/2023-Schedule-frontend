@@ -31,7 +31,8 @@
         .pastCheck{
             max-width: 100%;
             position: relative;
-            top: -20px;
+            top: -13px;
+            left: 5px;
         }
 
         .pastTodo{
