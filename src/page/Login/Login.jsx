@@ -6,11 +6,10 @@
 // import logo from '../../img/Login/Logo.png';
 // import pottedPlant from '../../img/Login/PottedPlant.png';
 // import bacterium from '../../img/Login/Bacterium.png';
-
+import LoadingAnimetion from '../../components/LoadingAnimation/LoadingAnimation';
 import {postData} from '../../api/fetch';
 import {Link, useNavigate} from "react-router-dom";
 import {useState} from "react";
-import $ from 'jquery'; 
 import './Login.css';
 
 
@@ -28,12 +27,6 @@ const Login = () => {
         );
     }
     else{
-        let bodyStyle = document.body.style;
-        bodyStyle.zoom = window.innerWidth/750;
-        $(window).on("load",function(){
-            $(".loader-wrapper").fadeOut("slow");
-        });
-
         function submitClick(){
             postData("login", {Password: pw, UID: uid}, 0)
                 .then((res) => {
@@ -60,9 +53,7 @@ const Login = () => {
                         <input type="submit" className="submit" onClick={submitClick}></input>
                     </div>
                 </div>                
-                <div class="loader-wrapper">
-                    <span class="loader"><span class="loader-inner"></span></span>
-                </div>
+                <LoadingAnimetion/>
             </div>
         );
     }

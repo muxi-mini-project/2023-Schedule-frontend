@@ -1,10 +1,10 @@
 // import baseLayer from '../../img/GarbageCan/BaseLayer.png';
 // import crumpledPaper from '../../img/GarbageCan/CrumpledPaper.png';
+
+import LoadingAnimetion from '../../components/LoadingAnimation/LoadingAnimation';
 import GarbageCanContentOuterBox from '../../components/GarbageCanContentOuterBox/GarbageCanContentOuterBox';
 import {getRecycleBin} from "../../api/fetch";
-
 import { useState, useEffect } from "react";
-import $ from 'jquery'; 
 import './GarbageCan.css';
 
 
@@ -58,7 +58,6 @@ const GarbageCan = () => {
         }
         else setMonthT(e.target.value)
     }
-
     const changeMonth2 = (e) => {
         if(e.target.value !== ''){
             setMonthD(parseInt(e.target.value))
@@ -66,7 +65,6 @@ const GarbageCan = () => {
         }
         else setMonthD(e.target.value)
     }
-
     const changeDay1 = (e) => {
         if(e.target.value !== ''){
             setDateT(parseInt(e.target.value))
@@ -74,8 +72,6 @@ const GarbageCan = () => {
         }
         else setDateT(e.target.value)
     }
-
-
     const changeDay2 = (e) => {
         if(e.target.value !== ''){
             setDateD(parseInt(e.target.value))
@@ -84,19 +80,13 @@ const GarbageCan = () => {
         else setDateD(e.target.value)
     }
 
-    if (window.innerWidth > window.innerHeight) {
-        return (
+    if(window.innerWidth > window.innerHeight){
+        return(
             <div className="hint"><h2>请将萤幕转为纵向或使用手机检视并重整页面</h2></div>
         );
     }
-    else {
-        let bodyStyle = document.body.style;
-        bodyStyle.zoom = window.innerWidth / 750;
-        $(window).on("load",function(){
-            $(".loader-wrapper").fadeOut("slow");
-        });
-
-        return (
+    else{
+        return(
             <div className="view">
                 <div className="view-box">
                     <div className="view-content">
@@ -110,9 +100,7 @@ const GarbageCan = () => {
                         <input type="text" className="singleDigitOfTheDate pastTime" value={dateD} onChange={changeDay2}></input>
                     </div>
                 </div>
-                <div class="loader-wrapper">
-                    <span class="loader"><span class="loader-inner"></span></span>
-                </div>
+                <LoadingAnimetion/>
             </div>
         );
     }
