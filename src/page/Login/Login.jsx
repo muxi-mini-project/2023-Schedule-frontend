@@ -42,20 +42,24 @@ const Login = () => {
                     localStorage.setItem("token", res.token);
                 });
         }
-        
+                
         return(
             <div className="view">
-                <img alt='' src={"https://s2.loli.net/2023/03/16/Z3qfH2nr1QsCLlB.png"} className="baseLayer"/>
-                <img alt='' src={"https://s2.loli.net/2023/03/16/CycpPdjawv6ufsL.png"} className="textBox"/>
-                <img alt='' src={"https://s2.loli.net/2023/03/16/AO4Qfs1iazBpnwh.png"} className="studentID"/>
-                <img alt='' src={"https://s2.loli.net/2023/03/16/9kDiW8T4FahEuXN.png"} className="password"/>
-                <Link to="/HomePage"><img alt='' src={"https://s2.loli.net/2023/03/16/meZRuVgNtr74Sfk.png"} className="login"/></Link>
-                <img alt='' src={"https://s2.loli.net/2023/03/16/dPCl3UcZz2wVA9h.png"} className="logo"/>
-                <img alt='' src={"https://s2.loli.net/2023/03/16/Q4nk5TDdN7FxGtO.png"} className="pottedPlant2"/>
-                <img alt='' src={"https://s2.loli.net/2023/03/16/feKwDl9pZIJGn1N.png"} className="bacterium"/>
-                <input type="text" className="studentIDText Text" onChange={(e) => {SetUid(e.target.value);}}></input>
-                <input type="password" className="passwordText Text" onChange={(e) => {SetPW(e.target.value);}}></input>
-                <input type="submit" className="submit" onClick={submitClick}></input>
+                <div className="view-box">
+                    <div className="view-content">
+                        <img alt='' src={"https://s2.loli.net/2023/03/16/Z3qfH2nr1QsCLlB.png"} className="baseLayer"/>
+                        <img alt='' src={"https://s2.loli.net/2023/03/16/CycpPdjawv6ufsL.png"} className="textBox"/>
+                        <img alt='' src={"https://s2.loli.net/2023/03/16/AO4Qfs1iazBpnwh.png"} className="studentID"/>
+                        <img alt='' src={"https://s2.loli.net/2023/03/16/9kDiW8T4FahEuXN.png"} className="password"/>
+                        <Link to="/HomePage"><img alt='' src={"https://s2.loli.net/2023/03/16/meZRuVgNtr74Sfk.png"} className="login"/></Link>
+                        <img alt='' src={"https://s2.loli.net/2023/03/16/dPCl3UcZz2wVA9h.png"} className="logo"/>
+                        <img alt='' src={"https://s2.loli.net/2023/03/16/Q4nk5TDdN7FxGtO.png"} className="pottedPlant2"/>
+                        <img alt='' src={"https://s2.loli.net/2023/03/16/feKwDl9pZIJGn1N.png"} className="bacterium"/>
+                        <input type="text" className="studentIDText Text" onChange={(e) => {SetUid(e.target.value);}}></input>
+                        <input type="password" className="passwordText Text" onChange={(e) => {SetPW(e.target.value);}}></input>
+                        <input type="submit" className="submit" onClick={submitClick}></input>
+                    </div>
+                </div>                
                 <div class="loader-wrapper">
                     <span class="loader"><span class="loader-inner"></span></span>
                 </div>
