@@ -1,10 +1,11 @@
-import baseLayer from '../../img/GarbageCan/BaseLayer.png';
-import crumpledPaper from '../../img/GarbageCan/CrumpledPaper.png';
+// import baseLayer from '../../img/GarbageCan/BaseLayer.png';
+// import crumpledPaper from '../../img/GarbageCan/CrumpledPaper.png';
 import GarbageCanContentOuterBox from '../../components/GarbageCanContentOuterBox/GarbageCanContentOuterBox';
+import {getRecycleBin} from "../../api/fetch";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import $ from 'jquery'; 
 import './GarbageCan.css';
-import { useEffect } from 'react';
 
 
 const GarbageCan = () => {
@@ -12,13 +13,76 @@ const GarbageCan = () => {
     const [monthD, setMonthD] = useState(0);
     const [dateT, setDateT] = useState(0);
     const [dateD, setDateD] = useState(0);
+    const [month, setMonth] = useState(0);
+    const [date, setDate] = useState(0);
+
+    const [pastTodos, setPastTodos] = useState([]);
+
+
     useEffect(() => {
         let time = new Date();
-        if (time.getMonth() + 1 < 10) { setMonthT(0); setMonthD(time.getMonth() + 1); }
-        else if (time.getMonth() + 1 >= 10) { setMonthT(1); setMonthD(time.getMonth() + 1 - 10); }
-        if (time.getDate() < 10) { setDateT(0); setDateD(time.getDate()); }
-        else if (time.getDate() + 1 >= 10) { setDateT(parseInt(time.getDate() / 10)); setDateD(time.getDate() % 10); }
+        if (time.getMonth() + 1 < 10) {
+            setMonthT(0); 
+            setMonthD(time.getMonth() + 1);
+            setMonth(0 * 10 + time.getMonth() + 1)
+        }
+        else if (time.getMonth() + 1 >= 10) { 
+            setMonthT(1); 
+            setMonthD(time.getMonth() + 1 - 10); 
+            setMonth(1 * 10 + time.getMonth() + 1 - 10)
+        }
+        if (time.getDate() < 10) { 
+            setDateT(0); 
+            setDateD(time.getDate()); 
+            setDate(0 * 10 + time.getDate())
+        }
+        else if (time.getDate() + 1 >= 10) { 
+            setDateT(parseInt(time.getDate() / 10)); 
+            setDateD(time.getDate() % 10); 
+            setDate(parseInt(time.getDate() / 10) * 10 + time.getDate() % 10)
+        }
     }, []);
+
+    useEffect(() => {
+        const time = new Date();
+        if(monthD!==''||monthT!==''||dateD!==''||dateT !== ''){
+            getRecycleBin("calendar", time.getFullYear(), month, date)
+            .then((res) => {setPastTodos(res.schedule);});
+        }
+    }, [month,date])
+    
+    const changeMonth1 = (e) => {
+        if(e.target.value !== ''){
+            setMonthT(parseInt(e.target.value))
+            setDate(parseInt(e.target.value) * 10 + monthD)
+        }
+        else setMonthT(e.target.value)
+    }
+
+    const changeMonth2 = (e) => {
+        if(e.target.value !== ''){
+            setMonthD(parseInt(e.target.value))
+            setDate(monthD * 10 + parseInt(e.target.value))
+        }
+        else setMonthD(e.target.value)
+    }
+
+    const changeDay1 = (e) => {
+        if(e.target.value !== ''){
+            setDateT(parseInt(e.target.value))
+            setDate(parseInt(e.target.value) * 10 + dateD)
+        }
+        else setDateT(e.target.value)
+    }
+
+
+    const changeDay2 = (e) => {
+        if(e.target.value !== ''){
+            setDateD(parseInt(e.target.value))
+            setDate(dateT * 10 + parseInt(e.target.value))
+        }
+        else setDateD(e.target.value)
+    }
 
     if (window.innerWidth > window.innerHeight) {
         return (
@@ -28,19 +92,22 @@ const GarbageCan = () => {
     else {
         let bodyStyle = document.body.style;
         bodyStyle.zoom = window.innerWidth / 750;
-
-        let monthF = monthT * 10 + monthD;
-        let dateF = dateT * 10 + dateD;
+        $(window).on("load",function(){
+            $(".loader-wrapper").fadeOut("slow");
+        });
 
         return (
             <div className="view">
-                <img alt='' src={baseLayer} className="baseLayer2" />
-                <img alt='' src={crumpledPaper} className="crumpledPaper" />
-                <GarbageCanContentOuterBox monthF={monthF} dateF={dateF} />
-                <input type="text" className="tenDigitsOfTheMonth pastTime" value={monthT} onChange={(e) => {setMonthT(e)}}></input>
-                <input type="text" className="singleDigitOfTheMonth pastTime" value={monthD} onChange={(e) => {setMonthD(e)}}></input>
-                <input type="text" className="tenDigitsOfTheDate pastTime" value={dateT} onChange={(e) => {setDateT(e)}}></input>
-                <input type="text" className="singleDigitOfTheDate pastTime" value={dateD} onChange={(e) => {setDateD(e)}}></input>
+                <img alt='' src={"https://s2.loli.net/2023/03/17/oPcgSR1I9fOq8ZJ.png"} className="baseLayer2" />
+                <img alt='' src={"https://s2.loli.net/2023/03/17/8wEOstqQcZo9VUu.png"} className="crumpledPaper" />
+                <GarbageCanContentOuterBox pastTodos={pastTodos}/>
+                <input type="text"  className="tenDigitsOfTheMonth pastTime" value={monthT} onChange={changeMonth1}></input>
+                <input type="text"  className="singleDigitOfTheMonth pastTime" value={monthD} onChange={changeMonth2}></input>
+                <input type="text" className="tenDigitsOfTheDate pastTime" value={dateT} onChange={changeDay1}></input>
+                <input type="text" className="singleDigitOfTheDate pastTime" value={dateD} onChange={changeDay2}></input>
+                <div class="loader-wrapper">
+                    <span class="loader"><span class="loader-inner"></span></span>
+                </div>
             </div>
         );
     }

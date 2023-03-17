@@ -1,6 +1,6 @@
-import check from "../../img/Todolist/check.png";
-import checkBox from "../../img/Todolist/CheckBox.png";
-import line from '../../img/Todolist/line.png';
+// import check from "../../img/Todolist/check.png";
+// import checkBox from "../../img/Todolist/CheckBox.png";
+// import line from '../../img/Todolist/line.png';
 import {postData, getJSON} from "../../api/fetch";
 import {useState, useEffect} from "react";
 import "./TodolistOuterContent.css";
@@ -20,9 +20,9 @@ function TodolistItem(props) {
 	return (
 		<div className="itemBox">
 			<div className="CheckBox">
-				<img src={check} alt="" className={`check ${todo.Done ? "a" : "b"}`}/>
+				<img src={"https://s2.loli.net/2023/03/17/dtMEvfJCDWpU5ko.png"} alt="" className={`check ${todo.Done ? "a" : "b"}`}/>
 				<label className="checkLabel" htmlFor={todo.SchId}>
-					<img src={checkBox} alt=""/>
+					<img src={"https://s2.loli.net/2023/03/17/qpjQRSanE5Cr2OD.png"} alt=""/>
 				</label>
 				<input id={todo.SchId} type="checkbox" className="checker" defaultChecked={todo.Done}
 				       onChange={changeChecked}/>
@@ -31,7 +31,7 @@ function TodolistItem(props) {
 				<input type="text" className={`todo descriptionInput ${todo.Done ? "done" : ""}`} defaultValue={todo.Content}
 				       onKeyUp={changeContent}/>
 				<div className="line">
-					<img src={line} alt=""/>
+					<img src={"https://s2.loli.net/2023/03/17/ga6Ucx75WEjIkfb.png"} alt=""/>
 				</div>
 			</div>
 		</div>
