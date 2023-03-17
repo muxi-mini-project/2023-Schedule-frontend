@@ -23,6 +23,7 @@ const TodoList = () => {
                             <img alt='' src={"https://s2.loli.net/2023/03/17/p5CSDjWPfwLBt6o.png"} className="paper" />
                             <TodolistOuterContent/>
                             <img alt='' src={"https://s2.loli.net/2023/03/17/HXISFte58bDVmPj.png"} className="greenBook" />
+                            <h2 className="todo-hint">hint: 编辑完日程记得按回车键噢</h2>
                         </div>
                     </div>
                 </div>

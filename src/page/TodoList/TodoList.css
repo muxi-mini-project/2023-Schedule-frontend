@@ -45,3 +45,11 @@ html,body{
     top: 395px;
     left: 450px;
   }
+  .todo-hint{
+    position: absolute;
+    top: 1000px;
+    left: 46px;
+    font-size: 36px;
+    color: rgb(155, 122, 122);
+    font-family: 'ftmaru400a';
+  }
