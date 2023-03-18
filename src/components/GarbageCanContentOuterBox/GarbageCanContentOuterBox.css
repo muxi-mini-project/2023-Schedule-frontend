@@ -1,0 +1,8 @@
+.contentOuterBox{
+    width: 384px;
+    height: 347px;
+    position: absolute;
+    top: 457px;
+    left: 150px;
+    overflow:scroll;
+}
