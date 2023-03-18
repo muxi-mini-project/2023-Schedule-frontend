@@ -1,87 +1,73 @@
-/* .GarbageCanContentBox{
-    width: 390px;
-    height: 450px;
-    position: absolute;
-    overflow-x: scroll;
-    overflow-y: hidden;
-    margin: 0;
-    padding: 0;
-} */
-    .GarbageCanContent{
-        width: 390px;
-        height: 450px;;
-        position: relative;
-        top: 0;
-        left: 0;
-        overflow: scroll;
-        background-image: transparent;
-        display: flex;
-        flex-direction: column;
+.contentBox{
+    width: 384px;
+    height: 347px;
+    position: relative;;
+    top: 0;
+    left: 0;
+}
+    .pastChecker{
+        width: 35px;
+        height: 35px;
+        opacity: 0;
     }
-        .paperContent{
-            width: 390px;
-            height: 450px;
+        .pastChecker1{
             position: absolute;
-            top: 0;
-            left: 0;
+            top: 0px;
+            left: 15px;
         }
-
-        .a{opacity: 1;}
-        .b{opacity: 0;}
-        .pastCheck{
-            max-width: 100%;
-            position: relative;
-            top: -13px;
-            left: 5px;
-        }
-
-        .pastTodo{
-            width: 300px;
-            height: 100%;
-            position: relative;
-            top: -10px;
-            left: 60px;
-            border: 0;
-            background-color: transparent;
-            font-size: 36px;
-            color: rgb(155, 122, 122);
-            text-align: center;
-            outline: 0;
-            font-family: 'ftmaru400a';
-        }
-
-        .checker{
-            width: 40px;
-            height: 40px;
-            opacity: 0;
-            transform: rotate(11.2deg);
-        }
-        
-        .itemBox{
-            display: flex;
-            height: 80px;
-            max-width: 380px;
-        }
-        .pastCheckBox {
-            position: relative;
-            transform: rotate(11.2deg);
+        .pastChecker2{
+            position: absolute;
             top: 70px;
+            left: 15px;
         }
-        .pastCheckLabel {
+        .pastChecker3{
             position: absolute;
-            top: 0;
-            left: 0;
+            top: 135px;
+            left: 15px;
         }
-        .pastInputBox {
-            display: flex;
-            flex-direction: column;
+        .pastChecker4{
+            position: absolute;
+            top: 203px;
+            left: 15px;
         }
-        .TodolistContent :first-child {
-            margin-top: 8px;
+        .pastChecker5{
+            position: absolute;
+            top: 270px;
+            left: 14px;
         }
-        .done{
-            text-decoration: line-through;
+    .pastTodo{
+        width: 295px;
+        height: 30px;
+        background-color: transparent;
+        transform: rotate(2deg);
+        border: 0;
+        font-size: 40px;
+        color: rgb(155, 122, 122);
+        text-align: center;
+        outline: 0;
+    }
+        .pastTodo1{
+            position: absolute;
+            top: 8px;
+            left: 60px;
         }
-        .pastLine img {
-            max-width: 100%;
+        .pastTodo2{
+            position: absolute;
+            top: 83px;
+            left: 60px;
+        }
+        .pastTodo3{
+            position: absolute;
+            top: 153px;
+            left: 60px;
+        }
+        .pastTodo4{
+            position: absolute;
+            top: 215px;
+            left: 60px;
+        }
+        .pastTodo5{
+            position: absolute;
+            top: 280px;
+            left: 60px;
         }

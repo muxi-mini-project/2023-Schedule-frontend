@@ -2,11 +2,11 @@ import GarbageCanContentBox from '../GarbageCanContentBox/GarbageCanContentBox'
 import './GarbageCanContentOuterBox.css';
 
 
-const GarbageCanContentOuterBox = (props) => {
-    const {pastTodos} = props
+const GarbageCanContentOuterBox = () => {
     return(
         <div className="contentOuterBox">
-            <GarbageCanContentBox pastTodos={pastTodos}/>
+            <GarbageCanContentBox/>
+            <GarbageCanContentBox/>
         </div>
     );
 }

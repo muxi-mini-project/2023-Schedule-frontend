@@ -1,0 +1,34 @@
+.pastTime{
+    width: 30px;
+    height: 45px;
+    border: 0;
+    background-color: transparent;
+    font-size: 40px;
+    color: rgb(155, 122, 122);
+    text-align: center;
+    outline: 0;
+}
+    .tenDigitsOfTheMonth{
+        transform: rotate(-5deg);
+        position: absolute;
+        top: 383px;
+        left: 97px;
+    }
+    .singleDigitOfTheMonth{
+        transform: rotate(-5deg);
+        position: absolute;
+        top: 380px;
+        left: 146px;
+    }
+    .tenDigitsOfTheDate{
+        transform: rotate(-3deg);
+        position: absolute;
+        top: 380px;
+        left: 230px;
+    }
+    .singleDigitOfTheDate{
+        transform: rotate(-3deg);
+        position: absolute;
+        top: 380px;
+        left: 277px;
+    }

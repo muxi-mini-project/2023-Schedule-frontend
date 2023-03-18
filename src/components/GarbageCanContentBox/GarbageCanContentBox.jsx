@@ -1,42 +1,27 @@
-// import check from '../../img/GarbageCan/Check2.png';
-// import line from '../../img/GarbageCan/line2.png';
-// import checkBox from '../../img/GarbageCan/CheckBox2.png';
-
+import check from '../../img/GarbageCan/Check2.png';
+import crumpledPaperContent from '../../img/GarbageCan/CrumpledPaperContent.png';
 import './GarbageCanContentBox.css';
 
 
-function PastTodolistItem(todo){
+const GarbageCanContentBox = () => {
     return(
-        <div className="pastItemBox" >
-            <div className="pastCheckBox">
-                <img src={"https://s2.loli.net/2023/03/17/3WSN7vdAUEJxXgP.png"} alt="" className={`pastCheck ${todo.todo.Done? "a" : "b"}`}/>
-                <label className="pastCheckLabel" htmlFor={todo.SchId}>
-                    <img src={"https://s2.loli.net/2023/03/17/vFxMpzslYwd6QDq.png"} alt=""/>
-                </label>
-            </div>
-            <div className="pastInputBox">
-                <input type="text" className={`pastTodo pastDescriptionInput ${todo.todo.Done? "done":""}`} defaultValue={todo.todo.Content} readOnly={true}/>
-                <div className="pastLine">
-                    <img src={"https://s2.loli.net/2023/03/17/5TBmfGcWl21dJp9.png"} alt=""/>
-                </div>
-            </div>
-        </div>
-    );
-}
-
-
-const GarbageCanContentBox = (props) => {
-    const {pastTodos} = props;
-    console.log(pastTodos)
-    return(
-        <div className="GarbageCanContentBox">
-            <div className="GarbageCanContent">
-                {pastTodos.map(todo => {
-                    return(
-                        <PastTodolistItem todo={todo}/>
-                    );
-                })}
-            </div>
+        <div className="contentBox">
+            <img alt='' src={crumpledPaperContent} className="" />
+            <img alt='' src={check} className="pastChecker1" />
+            <img alt='' src={check} className="pastChecker2" />
+            <img alt='' src={check} className="pastChecker3" />
+            <img alt='' src={check} className="pastChecker4" />
+            <img alt='' src={check} className="pastChecker5" />
+            <input type="checkbox" className="pastChecker1 pastChecker"></input>
+            <input type="checkbox" className="pastChecker2 pastChecker"></input>
+            <input type="checkbox" className="pastChecker3 pastChecker"></input>
+            <input type="checkbox" className="pastChecker4 pastChecker"></input>
+            <input type="checkbox" className="pastChecker5 pastChecker"></input>
+            <input type="text" className="pastTodo1 pastTodo"></input>
+            <input type="text" className="pastTodo2 pastTodo"></input>
+            <input type="text" className="pastTodo3 pastTodo"></input>
+            <input type="text" className="pastTodo4 pastTodo"></input>
+            <input type="text" className="pastTodo5 pastTodo"></input>
         </div>
     );
 }
