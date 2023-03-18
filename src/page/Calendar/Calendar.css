@@ -26,7 +26,7 @@ li {
 	list-style-type: none;
 	background-image: url('https://s2.loli.net/2023/03/16/npy1BeSMfKTZhd7.png');
 	background-repeat: no-repeat;
-	background-size: 40rem;
+	background-size: 25rem;
 	background-position: 1.5vh 2.3vh;
 	height: 5vh;
 	width: 30vh;
@@ -45,9 +45,9 @@ input[type=checkbox] {
 ul {
 	position: relative;
 	top: 6%;
-	left: 7vh;
+	left: 4vh;
 	overflow: scroll;
-	height: 20vh;
+	height: 18vh;
 }
 
 input[type=checkbox]+label {
@@ -106,7 +106,7 @@ input[type=checkbox]:checked+label::before {
 
 .time{
 	position: relative;
-	font-size: 3.5rem;
+	font-size: 1.6rem;
 	font-weight: bold;
 	color: #88674f;
 	top: 5%;
@@ -114,9 +114,9 @@ input[type=checkbox]:checked+label::before {
 }
 
 font{
-	border: 0.3rem #88674f solid;
-	padding: 0.3rem;
-	margin-right: 0.5vh;
+	border: 0.2rem #88674f solid;
+	padding: 0rem;
+	margin-right: 0.1vh;
 	margin-left: 0.5vh;
 }
 

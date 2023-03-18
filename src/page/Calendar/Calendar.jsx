@@ -10,7 +10,7 @@ export default  function Calendar(){
   const [todos,setTodos] = useState([])
 
   useEffect( () =>{
-    getJSON('calendar')
+    getJSON('calendar',1)
     .then(data => {
     setTodos(data.schedule)})
     .catch(error => alert('获取任务失败，请检查登录状态。错误信息：',error))
@@ -83,10 +83,9 @@ const [isAlldone,setAllDone]=useState(true)
           );
       }
       else{
-          let bodyStyle = document.body.style;
-          bodyStyle.zoom = '';}
-
-  return (
+        let bodyStyle = document.body.style;
+        bodyStyle.zoom = '';
+      return (
     <div className='body'>
     <div className='book'>
       <div  className={isClicked?'tear':'page'} onClick={handleClick}>
@@ -105,4 +104,5 @@ const [isAlldone,setAllDone]=useState(true)
     </div>
     </div>
   )
+}
 }

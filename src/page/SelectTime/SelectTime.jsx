@@ -33,10 +33,7 @@ if(window.innerWidth > window.innerHeight){
 }
 else{
     let bodyStyle = document.body.style;
-    bodyStyle.zoom = window.innerWidth/750;}
-
-
-
+        bodyStyle.zoom = window.innerWidth/750;
     return (
         <div className='body3'>
             <div id='font'> 请输入你想查看的照片时间:</div>
@@ -44,4 +41,5 @@ else{
         <button onClick={submitTime} className='button'>确认</button>
         </div>
     )
+}
 }
