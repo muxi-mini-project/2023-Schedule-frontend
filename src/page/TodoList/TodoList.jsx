@@ -14,6 +14,8 @@ const TodoList = () => {
         );
     }
     else{
+        let bodyStyle = document.body.style;
+        bodyStyle.zoom = window.innerWidth/750;
         return (
             <div className="base">
                 <div className="view">
