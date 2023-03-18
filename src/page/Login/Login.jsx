@@ -6,6 +6,7 @@
 // import logo from '../../img/Login/Logo.png';
 // import pottedPlant from '../../img/Login/PottedPlant.png';
 // import bacterium from '../../img/Login/Bacterium.png';
+
 import LoadingAnimetion from '../../components/LoadingAnimation/LoadingAnimation';
 import {postData} from '../../api/fetch';
 import {Link, useNavigate} from "react-router-dom";
