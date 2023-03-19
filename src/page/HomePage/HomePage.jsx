@@ -1,11 +1,3 @@
-// import baseLayer from '../../img/HomePage/BaseLayer.png';
-// import bulletinBoard from '../../img/HomePage/BulletinBoard.png';
-// import calendar from '../../img/HomePage/Calendar.png';
-// import garbageCan from '../../img/HomePage/GarbageCan.png';
-// import paperAirplane from '../../img/HomePage/PaperAirplane.png';
-// import pottedPlant from '../../img/HomePage/PottedPlant.png';
-// import todoList from '../../img/HomePage/TodoList.png';
-
 import LoadingAnimetion from '../../components/LoadingAnimation/LoadingAnimation';
 import {getJSON} from '../../api/fetch';
 import {Link, useNavigate} from "react-router-dom";
@@ -26,7 +18,7 @@ const HomePage = () => {
         let time = new Date();
         let month = time.getMonth()+1;
         let date = time.getDate();
-        let timing = month + '.' + date;
+        let timing = month + '.' + date;        
 
         return(
             <div className="view">

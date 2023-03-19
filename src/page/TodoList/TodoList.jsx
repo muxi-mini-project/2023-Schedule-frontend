@@ -1,7 +1,3 @@
-// import baseMap from "../../img/Todolist/basemap.png";
-// import paper from "../../img/Todolist/paper.png";
-// import greenBook from "../../img/Todolist/GreenBook.png";
-
 import LoadingAnimetion from '../../components/LoadingAnimation/LoadingAnimation';
 import TodolistOuterContent from "../../components/TodolistOuterContent/TodolistOuterContent";
 import "./TodoList.css";
