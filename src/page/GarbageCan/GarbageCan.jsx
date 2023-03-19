@@ -89,15 +89,17 @@ const GarbageCan = () => {
         return(
             <div className="view">
                 <div className="view-box">
-                    <div className="view-content">
-                        <img alt='' src={"https://s2.loli.net/2023/03/17/oPcgSR1I9fOq8ZJ.png"} className="baseLayer2" />
-                        <img alt='' src={"https://s2.loli.net/2023/03/17/yrUk1sm3JNp8Id7.png"} className="crumpledPaper" />
-                        <img alt='' src={"https://s2.loli.net/2023/03/17/V2kFoedr5wmfHix.png"} className="NewDate" />
-                        <GarbageCanContentOuterBox pastTodos={pastTodos}/>
-                        <input type="text"  className="tenDigitsOfTheMonth pastTime" value={monthT} onChange={changeMonth1}></input>
-                        <input type="text"  className="singleDigitOfTheMonth pastTime" value={monthD} onChange={changeMonth2}></input>
-                        <input type="text" className="tenDigitsOfTheDate pastTime" value={dateT} onChange={changeDay1}></input>
-                        <input type="text" className="singleDigitOfTheDate pastTime" value={dateD} onChange={changeDay2}></input>
+                    <div className="view-content2">
+                        <div className="crumpledPaper">
+                            <div className="NewDate">
+                                {/* <img alt='' src={"https://s2.loli.net/2023/03/17/V2kFoedr5wmfHix.png"} className="NewDate" /> */}
+                                <input type="text"  className="tenDigitsOfTheMonth pastTime" value={monthT} onChange={changeMonth1}></input>
+                                <input type="text"  className="singleDigitOfTheMonth pastTime" value={monthD} onChange={changeMonth2}></input>
+                                <input type="text" className="tenDigitsOfTheDate pastTime" value={dateT} onChange={changeDay1}></input>
+                                <input type="text" className="singleDigitOfTheDate pastTime" value={dateD} onChange={changeDay2}></input>
+                            </div>
+                            <GarbageCanContentOuterBox pastTodos={pastTodos}/>
+                        </div>
                     </div>
                 </div>
                 <LoadingAnimetion/>

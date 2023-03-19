@@ -57,9 +57,9 @@
             transform: rotate(11.2deg);
         }
         
-        .itemBox{
+        .ItemBox{
             display: flex;
-            height: 80px;
+            height: 110px;
             max-width: 380px;
         }
         .pastCheckBox {
