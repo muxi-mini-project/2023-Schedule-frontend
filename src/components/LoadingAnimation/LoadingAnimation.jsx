@@ -11,7 +11,7 @@ const LoadingAnimation = () => {
     const location = useLocation();
     const [dis, setDis] = useState(true);
     useEffect(() => {
-        setTimeout(() => {setDis(false);}, 1500);
+        setTimeout(() => {setDis(false);}, 3000);
     },[location]);
     if(dis === false) $(".loader-wrapper").fadeOut("slow");
 

@@ -3,6 +3,7 @@ import Item from '../../components/item';
 import{nanoid} from 'nanoid';
 import {postDataa, getJSON} from "../../api/fetch";
 import React, {useEffect, useState} from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Calendar(){
   const [todos,setTodos] = useState([]);
@@ -78,12 +79,13 @@ export default function Calendar(){
   }
   else{
     let bodyStyle = document.body.style;
-    bodyStyle.zoom = '';
+    bodyStyle.zoom = window.innerWidth/750;
     return(
       <div className="view">
         <div className="view-box">
           <div className="view-content">
             <div className='body'>
+              <Link to='/HomePage'><img src="https://s2.loli.net/2023/03/19/ub3vaky7ULtnH9E.png" className='turnback' alt="返回" /></Link>
               <div className='book'>
                 <div  className={isClicked?'tear':'page'} onClick={handleClick}>
                 <div className='time'>
