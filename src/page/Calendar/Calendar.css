@@ -17,10 +17,10 @@
 	background-repeat: no-repeat;
 	height: 700px;
 	width: 700px;
-	top: 25%;
+	bottom: -22%;
 	left: 17px;
 	background-size: contain;
-	position: absolute;
+	position: relative;
 }
 li {
 	list-style-type: none;
@@ -44,7 +44,7 @@ ul {
 	top: 100px;
 	left: 100px;
 	overflow: scroll;
-	height: 320px;
+	height: 270px;
 }
 
 .Ccheckbox+label {
@@ -90,8 +90,8 @@ ul {
 	background-color: transparent;
 	outline: none;
 	background-position: 0px 65px;
-	width:450px;
-	background-size:23.5rem;
+	width:350px;
+	background-size:23rem;
 }
 
 .time{
@@ -117,6 +117,12 @@ font{
 	background-position: -23px -400px;
 	background-repeat: no-repeat;
 	background-size:contain;
+}
+
+.turnback{
+	height: 50px;
+	position: relative;
+	top: 80px;
 }
 
 .tear {
