@@ -57,8 +57,6 @@ const TodolistOuterContent = () => {
 			if (todo.SchId === id) return {...todo, Content};
 			else return todo;
 		});
-		console.log(id)
-		console.log(Content)
 		postData("calendar/write", {schedule: Content, SchId: id}, 1);
 		setTodos(newTodos);
 		let len = (todos.length-1).toString();

@@ -1,6 +1,3 @@
-// import baseLayer from '../../img/GarbageCan/BaseLayer.png';
-// import crumpledPaper from '../../img/GarbageCan/CrumpledPaper.png';
-
 import LoadingAnimetion from '../../components/LoadingAnimation/LoadingAnimation';
 import GarbageCanContentOuterBox from '../../components/GarbageCanContentOuterBox/GarbageCanContentOuterBox';
 import {getRecycleBin} from "../../api/fetch";
@@ -24,22 +21,22 @@ const GarbageCan = () => {
         if (time.getMonth() + 1 < 10) {
             setMonthT(0); 
             setMonthD(time.getMonth() + 1);
-            setMonth(0 * 10 + time.getMonth() + 1)
+            setMonth(0 * 10 + time.getMonth() + 1);
         }
         else if (time.getMonth() + 1 >= 10) { 
             setMonthT(1); 
             setMonthD(time.getMonth() + 1 - 10); 
-            setMonth(1 * 10 + time.getMonth() + 1 - 10)
+            setMonth(1 * 10 + time.getMonth() + 1 - 10);
         }
         if (time.getDate() < 10) { 
             setDateT(0); 
             setDateD(time.getDate()); 
-            setDate(0 * 10 + time.getDate())
+            setDate(0 * 10 + time.getDate());
         }
         else if (time.getDate() + 1 >= 10) { 
             setDateT(parseInt(time.getDate() / 10)); 
             setDateD(time.getDate() % 10); 
-            setDate(parseInt(time.getDate() / 10) * 10 + time.getDate() % 10)
+            setDate(parseInt(time.getDate() / 10) * 10 + time.getDate() % 10);
         }
     }, []);
 
@@ -49,35 +46,35 @@ const GarbageCan = () => {
             getRecycleBin("calendar", time.getFullYear(), month, date)
                 .then((res) => {setPastTodos(res.schedule);});
         }
-    }, [month,date])
+    }, [month,date]);
     
     const changeMonth1 = (e) => {
         if(e.target.value !== ''){
-            setMonthT(parseInt(e.target.value))
-            setDate(parseInt(e.target.value) * 10 + monthD)
+            setMonthT(parseInt(e.target.value));
+            setDate(parseInt(e.target.value) * 10 + monthD);
         }
-        else setMonthT(e.target.value)
+        else setMonthT(e.target.value);
     }
     const changeMonth2 = (e) => {
         if(e.target.value !== ''){
-            setMonthD(parseInt(e.target.value))
-            setDate(monthD * 10 + parseInt(e.target.value))
+            setMonthD(parseInt(e.target.value));
+            setDate(monthD * 10 + parseInt(e.target.value));
         }
-        else setMonthD(e.target.value)
+        else setMonthD(e.target.value);
     }
     const changeDay1 = (e) => {
         if(e.target.value !== ''){
-            setDateT(parseInt(e.target.value))
-            setDate(parseInt(e.target.value) * 10 + dateD)
+            setDateT(parseInt(e.target.value));
+            setDate(parseInt(e.target.value) * 10 + dateD);
         }
-        else setDateT(e.target.value)
+        else setDateT(e.target.value);
     }
     const changeDay2 = (e) => {
         if(e.target.value !== ''){
-            setDateD(parseInt(e.target.value))
-            setDate(dateT * 10 + parseInt(e.target.value))
+            setDateD(parseInt(e.target.value));
+            setDate(dateT * 10 + parseInt(e.target.value));
         }
-        else setDateD(e.target.value)
+        else setDateD(e.target.value);
     }
 
     if(window.innerWidth > window.innerHeight){
@@ -92,7 +89,6 @@ const GarbageCan = () => {
                     <div className="view-content2">
                         <div className="crumpledPaper">
                             <div className="NewDate">
-                                {/* <img alt='' src={"https://s2.loli.net/2023/03/17/V2kFoedr5wmfHix.png"} className="NewDate" /> */}
                                 <input type="text"  className="tenDigitsOfTheMonth pastTime" value={monthT} onChange={changeMonth1}></input>
                                 <input type="text"  className="singleDigitOfTheMonth pastTime" value={monthD} onChange={changeMonth2}></input>
                                 <input type="text" className="tenDigitsOfTheDate pastTime" value={dateT} onChange={changeDay1}></input>
