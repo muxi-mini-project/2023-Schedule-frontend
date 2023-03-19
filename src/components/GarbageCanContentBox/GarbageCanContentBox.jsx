@@ -1,7 +1,3 @@
-// import check from '../../img/GarbageCan/Check2.png';
-// import line from '../../img/GarbageCan/line2.png';
-// import checkBox from '../../img/GarbageCan/CheckBox2.png';
-
 import './GarbageCanContentBox.css';
 
 

@@ -1,6 +1,5 @@
 import $ from 'jquery'; 
-import { useState } from 'react';
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import './LoadingAnimation.css';
 
@@ -8,19 +7,16 @@ import './LoadingAnimation.css';
 const LoadingAnimation = () => {
     let bodyStyle = document.body.style;
     bodyStyle.zoom = window.innerWidth/750;
-    $(window).on("load",function(){
-        $(".loader-wrapper").fadeOut("slow");
-    });
-
+    
     const location = useLocation();
-    const [dis,setDis] = useState(true);
-
-    useEffect(()=>{
-        setDis(false);
-    },[location])
+    const [dis, setDis] = useState(true);
+    useEffect(() => {
+        setTimeout(() => {setDis(false);}, 1500);
+    },[location]);
+    if(dis === false) $(".loader-wrapper").fadeOut("slow");
 
     return(
-        <div className="loader-wrapper" style={dis?{display:'block'}:{display:'none'}}>
+        <div className="loader-wrapper" >
             <span className="loader"><span className="loader-inner"></span></span>
         </div>
     );
