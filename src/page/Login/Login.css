@@ -96,12 +96,12 @@ html,body{
         font-size: 40px;
         color: rgb(155, 122, 122);
         outline: 0;
-        font-family: 'ftmaru400a';
     }
         .studentIDText{
             position: absolute;
             top:595px;
             left: 230px;
+            font-family: 'ftmaru400a';
         }
         .passwordText{
             position: absolute;
