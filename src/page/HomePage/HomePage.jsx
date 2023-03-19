@@ -33,7 +33,7 @@ const HomePage = () => {
                 <div className="view-box">
                     <div className="view-content">
                         <img alt='' src={"https://s2.loli.net/2023/03/17/8GjBySD6fYPsXaO.png"} className="baseLayer"/>
-                        <Link to="/BulletinBoard"><img alt='' src={"https://s2.loli.net/2023/03/17/G1HupeWIPtdJ5Nr.png"} className="bulletinBoard"/></Link>
+                        <Link to="/SelectTime"><img alt='' src={"https://s2.loli.net/2023/03/17/G1HupeWIPtdJ5Nr.png"} className="bulletinBoard"/></Link>
                         <Link to="/Calendar">
                             <img alt='' src={"https://s2.loli.net/2023/03/17/7tHcw1boMqdsQNO.png"} className="calendar item"/>
                             <input type="text" className="timing" defaultValue={timing}></input>

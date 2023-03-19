@@ -14,8 +14,8 @@
     top: 22%;
     left: 60%;
     position: absolute;
-    height: 11vh;
-    width: 20vh;
+    height: 15vh;
+    width: 30vh;
     background-repeat: no-repeat;
     background-size:contain;
     transform: rotate(-18deg);
@@ -25,20 +25,20 @@
     content:'';
     background-size: contain;
     background-repeat: no-repeat;
-    width: 3vh;
-    height: 5vh;
+    width: 10vh;
+    height: 6vh;
     position: relative;
-    left: 7.2vh;
     background-image: url('https://s2.loli.net/2023/03/16/cJ7v3UtSwaB9KGo.png');
     position: relative;
-    left: 7.2vh;
+    left: 14vh;
+    top: -2vh;
 }
 .pb1{
     position: absolute;
     top: 32%;
     left: 15%;
-    height: 11vh;
-    width: 20vh;
+    height: 20vh;
+    width: 30vh;
     background-repeat: no-repeat;
     background-size:contain;
     transform: rotate(18deg);
@@ -49,17 +49,18 @@
     content:'';
     background-size: contain;
     background-repeat: no-repeat;
-    width: 3vh;
-    height: 5vh;
+    width: 10vh;
+    height: 6vh;
     position: relative;
     left: 7.2vh;
+    top: -2vh;
 }
 .pb2{
     position: absolute;
     top: 46%;
     left: 50%;
-    height: 11vh;
-    width: 20vh;
+    height: 20vh;
+    width: 30vh;
     background-repeat: no-repeat;
     background-size:contain;
     transform: rotate(5deg);
@@ -69,8 +70,8 @@
     content:'';
     background-size: contain;
     background-repeat: no-repeat;
-    width: 3vh;
-    height: 5vh;
+    width: 10vh;
+    height: 6vh;
     position: relative;
     left: 7.2vh;
     background-image:  url('https://s2.loli.net/2023/03/16/G5n7BX2YLeNdfxM.png');
@@ -82,8 +83,8 @@
     position: absolute;
     top: 62%;
     left: 25%;
-    height: 11vh;
-    width: 20vh;
+    height: 20vh;
+    width: 30vh;
     background-repeat: no-repeat;
     background-size:contain;
     transform: rotate(-5deg);
@@ -93,14 +94,13 @@
     content:'';
     background-size: contain;
     background-repeat: no-repeat;
-    width: 3vh;
-    height: 5vh;
+    width: 10vh;
+    height: 6vh;
     position: relative;
-    left: 7.2vh;
     background-image:  url('https://s2.loli.net/2023/03/16/3sLkedGz8iM6Ko4.png');
     position: relative;
-    left: 6.5vh;
-    top:-0.5vh;
+    left: 12vh;
+    top:-2vh;
 }
 
 #uploadPhoto1{

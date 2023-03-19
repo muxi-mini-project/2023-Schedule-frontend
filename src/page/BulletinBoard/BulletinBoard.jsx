@@ -95,8 +95,7 @@ export default function BulletinBoard(){
   }
   else{
     let bodyStyle = document.body.style;
-    bodyStyle.zoom = '';
-  }
+    bodyStyle.zoom = window.innerWidth/750;
 
   return(
     <div className="view">
@@ -113,4 +112,5 @@ export default function BulletinBoard(){
       <LoadingAnimetion/>
     </div>
   );
+}
 }

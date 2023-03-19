@@ -62,9 +62,9 @@ const TodolistOuterContent = () => {
 		postData("calendar/write", {schedule: Content, SchId: id}, 1);
 		setTodos(newTodos);
 		let len = (todos.length-1).toString();
-		if(len === id){
-			let newId = (parseInt(id, 10)+1).toString();
-			postData("calendar/write", {schedule: "todo...", SchId: newId}, 1);
+		if(todos[todos.length-1].SchId === id){
+			// let newId = (parseInt(id, 10)+1).toString();
+			// postData("calendar/write", {schedule: "todo...", SchId: newId}, 1);
 			let date = new Date();
 			setTodos([...newTodos,{
 				"Year": date.getFullYear(),
