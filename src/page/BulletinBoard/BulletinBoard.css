@@ -11,11 +11,11 @@
         border: 0;
     }
 .pb0{
-    top: 22%;
-    left: 60%;
+    top:18%;
+    left: 500px;
     position: absolute;
-    height: 15vh;
-    width: 30vh;
+    height: 250px;
+    width: 250px;
     background-repeat: no-repeat;
     background-size:contain;
     transform: rotate(-18deg);
@@ -25,20 +25,20 @@
     content:'';
     background-size: contain;
     background-repeat: no-repeat;
-    width: 10vh;
-    height: 6vh;
+    width: 80px;
+    height: 50px;
     position: relative;
     background-image: url('https://s2.loli.net/2023/03/16/cJ7v3UtSwaB9KGo.png');
     position: relative;
-    left: 14vh;
-    top: -2vh;
+    left: 50px;
+    top: -10px;
 }
 .pb1{
     position: absolute;
-    top: 32%;
-    left: 15%;
-    height: 20vh;
-    width: 30vh;
+    top: 28%;
+    left: 130px;
+    height: 250px;
+    width: 250px;
     background-repeat: no-repeat;
     background-size:contain;
     transform: rotate(18deg);
@@ -49,18 +49,18 @@
     content:'';
     background-size: contain;
     background-repeat: no-repeat;
-    width: 10vh;
-    height: 6vh;
+    width: 80px;
+    height: 50px;
     position: relative;
-    left: 7.2vh;
-    top: -2vh;
+    left: 80px;
+    top: -20px;
 }
 .pb2{
     position: absolute;
-    top: 46%;
+    top: 48%;
     left: 50%;
-    height: 20vh;
-    width: 30vh;
+    height: 250px;
+    width: 250px;
     background-repeat: no-repeat;
     background-size:contain;
     transform: rotate(5deg);
@@ -70,21 +70,20 @@
     content:'';
     background-size: contain;
     background-repeat: no-repeat;
-    width: 10vh;
-    height: 6vh;
+    width: 80px;
+    height: 50px;
     position: relative;
-    left: 7.2vh;
     background-image:  url('https://s2.loli.net/2023/03/16/G5n7BX2YLeNdfxM.png');
     position: relative;
-    left: 7vh;
-    top:-1vh;
+    left: 100px;
+    top:-10px;
 }
 .pb3{
     position: absolute;
-    top: 62%;
-    left: 25%;
-    height: 20vh;
-    width: 30vh;
+    top: 70%;
+    left: 150px;
+    height: 250px;
+    width: 250px;
     background-repeat: no-repeat;
     background-size:contain;
     transform: rotate(-5deg);
@@ -94,13 +93,13 @@
     content:'';
     background-size: contain;
     background-repeat: no-repeat;
-    width: 10vh;
-    height: 6vh;
+    width: 80px;
+    height: 50px;
     position: relative;
     background-image:  url('https://s2.loli.net/2023/03/16/3sLkedGz8iM6Ko4.png');
     position: relative;
-    left: 12vh;
-    top:-2vh;
+    left: 100px;
+    top:-20px;
 }
 
 #uploadPhoto1{

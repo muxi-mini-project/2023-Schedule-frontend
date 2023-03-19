@@ -78,7 +78,7 @@ export default function Calendar(){
   }
   else{
     let bodyStyle = document.body.style;
-    bodyStyle.zoom = '';
+    bodyStyle.zoom = window.innerWidth/750;
     return(
       <div className="view">
         <div className="view-box">
