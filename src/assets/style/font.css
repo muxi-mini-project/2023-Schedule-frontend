@@ -18,3 +18,17 @@
     font-weight: normal;
     font-style: normal;
 }
+
+@font-face {  
+    font-family: KurewaGothicCjkJp-SemiBold-2;  
+    src: url('../fonts/KurewaGothicCjkJp-SemiBold-2.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {  
+    font-family: NaikaiFont-Regular-2;  
+    src: url('../fonts/NaikaiFont-Regular-2.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
