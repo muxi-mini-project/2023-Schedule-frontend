@@ -31,6 +31,7 @@ li {
 	height:80px;
 	width: 400px;
 	position: relative;
+	font-family: 'NaikaiFont-Regular-2';
 }
 
 .Ccheckbox {
@@ -74,7 +75,7 @@ ul {
 	background-image: url('https://s2.loli.net/2023/03/16/UxeZLlSjsMiFXID.png');
 	background-size: contain;
 	background-repeat: no-repeat;
-	background-position: 5px -3px;
+	background-position: 0px -10px;
 }
 
 
@@ -92,6 +93,7 @@ ul {
 	background-position: 0px 65px;
 	width:350px;
 	background-size:23rem;
+	font-family: 'NaikaiFont-Regular-2';
 }
 
 .time{
@@ -108,6 +110,7 @@ font{
 	padding: 2px;
 	margin-right: 5px;
 	margin-left: 5px;
+	font-family: 'NaikaiFont-Regular-2';
 }
 
 .page{

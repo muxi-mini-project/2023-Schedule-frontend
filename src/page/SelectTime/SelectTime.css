@@ -23,6 +23,7 @@
     border: rgb(130,90,60) solid 10px;
     transform: translate(-50%);
     border-radius: 15%;
+    font-family: 'NaikaiFont-Regular-2';
 }
 
 #font{
@@ -31,6 +32,7 @@
     font-size: 30px;
     color: rgb(130,90,60);
     position: relative;
+    font-family: 'NaikaiFont-Regular-2';
 }
 
 .button{
@@ -52,6 +54,7 @@
     background-color: rgb(195,150,108);
     border: rgb(130,90,60) solid 10px;
     box-shadow: 0 9px #999;
+    font-family: 'NaikaiFont-Regular-2';
 }
 
 .button:hover{
