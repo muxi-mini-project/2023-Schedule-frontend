@@ -183,3 +183,13 @@ font{
         opacity: 0;
     }
 }
+
+.hint0{
+	height: 100px;
+	width: 800px;
+	height: 100px;
+	font-size: 40px;
+	color: #88674f;
+	top:300px;
+	position: relative;
+}

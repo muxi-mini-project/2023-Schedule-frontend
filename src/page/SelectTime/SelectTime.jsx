@@ -3,6 +3,7 @@ import flatpickr from 'flatpickr'
 import {useNavigate} from "react-router-dom";
 import './SelectTime.css'
 import { Link } from 'react-router-dom';
+import LoadingAnimetion from '../../components/LoadingAnimation/LoadingAnimation';
 
 export default function SelectTime (){
 
@@ -43,11 +44,12 @@ export default function SelectTime (){
                         <div className='body3'>
                         <Link to='/HomePage'><img src="https://s2.loli.net/2023/03/19/ub3vaky7ULtnH9E.png" className='turnback2' alt="返回" /></Link>
                             <div id='font'> 请输入你想查看的照片时间:</div>
-                            <input id='myID' onInput={onInputHandler} /><br />
+                            <input  id='myID' onInput={onInputHandler} /><br />
                             <button onClick={submitTime} className='button'>确认</button>
                         </div>
                     </div>
                 </div>
+                <LoadingAnimetion/>
             </div>
         );
     }

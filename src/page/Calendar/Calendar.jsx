@@ -1,9 +1,11 @@
 import './Calendar.css';
 import Item from '../../components/item';
 import{nanoid} from 'nanoid';
-import {postDataa, getJSON} from "../../api/fetch";
+import {postDataa, getJSON,deleteAll} from "../../api/fetch";
 import React, {useEffect, useState} from 'react';
-import { Link } from 'react-router-dom';
+//import '../../font/font.css' ;
+import { Link } from 'react-router-dom';import LoadingAnimetion from '../../components/LoadingAnimation/LoadingAnimation';
+
 
 export default function Calendar(){
   const [todos,setTodos] = useState([]);
@@ -11,8 +13,9 @@ export default function Calendar(){
   useEffect(() =>{
     getJSON('calendar',1)
     .then(data => {
-    setTodos(data.schedule)})
-    .catch(error => alert('获取任务失败，请检查登录状态。错误信息：',error))
+      if (data.schedule.length==0) setTodos([]);
+    else setTodos(data.schedule)})
+    .catch(error => alert('获取任务失败，请检查登录状态。错误信息：'+error))
   },[]);
 
   const addToDo=(todoObj)=>{
@@ -46,11 +49,21 @@ export default function Calendar(){
 
   const handleClick =(target)=>{
     if(todos.length!==0 && isAlldone===true){
-      setTodos([]);
+      setTodos([])
+      deleteAll('calendar/deleteAll')
+      .then(data => console.log(data))
+      .catch(error => alert('error',error));
       setClick(true);
       updateCalendar(target);
     }
     else return ;
+  }
+
+  const deleteOne=(id)=>{
+    const newTodos = todos.filter((todoObj)=>{
+      return todoObj.SchId !== id
+  })
+  setTodos(newTodos)
   }
 
   useEffect(() => {
@@ -66,6 +79,7 @@ export default function Calendar(){
     } 
     else{return ;}
   }
+
   const time = new Date();
   const month = time.getMonth() + 1 ;
   const day = time.getDate();
@@ -85,6 +99,7 @@ export default function Calendar(){
         <div className="view-box">
           <div className="view-content">
             <div className='body'>
+              <div className='hint0'>hint:全部完成后点击可撕下日历哦~</div>
               <Link to='/HomePage'><img src="https://s2.loli.net/2023/03/19/ub3vaky7ULtnH9E.png" className='turnback' alt="返回" /></Link>
               <div className='book'>
                 <div  className={isClicked?'tear':'page'} onClick={handleClick}>
@@ -94,7 +109,7 @@ export default function Calendar(){
                 <input id="inputbox" placeholder="今天要做什么呢？" onKeyUp={handleKeyUp}/>
                   <ul>{
                     todos.map((todo)=>{
-                      return <Item key={todo.SchId} {...todo} updateTodo={updateTodo} />
+                      return <Item key={todo.SchId} {...todo} updateTodo={updateTodo} deleteOne={deleteOne}/>
                     })
                   }</ul>
                 </div>
@@ -102,6 +117,7 @@ export default function Calendar(){
             </div>
           </div>
         </div>
+        <LoadingAnimetion/>
       </div>
     );
   }
