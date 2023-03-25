@@ -2,6 +2,7 @@ import React,{useEffect, useState} from 'react'
 import './BulletinBoard.css'
 import {getPhoto, postPhoto} from "../../api/fetch";
 import { useSearchParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import LoadingAnimetion from '../../components/LoadingAnimation/LoadingAnimation';
 
 
@@ -102,6 +103,7 @@ export default function BulletinBoard(){
       <div className="view-box">
         <div className="view-content">
           <div className='body2'>
+          <Link to='/SelectTime'><img src="https://s2.loli.net/2023/03/19/ub3vaky7ULtnH9E.png" className='turnback' alt="返回" /></Link>
             <label htmlFor="uploadPhoto1"><div className="pb0" style={{backgroundImage: `url(${firstPhoto})`}}><input id='uploadPhoto1' type="file" accept='image/gif,image/jepg,image/jpg,image/png' multiple onChange={selectedFileHandler1}></input></div></label>
             <label htmlFor="uploadPhoto2"><div className="pb1" style={{backgroundImage: `url(${secondPhoto})`}} ><input id='uploadPhoto2' type="file" accept='image/gif,image/jepg,image/jpg,image/png' multiple onChange={selectedFileHandler2}></input></div></label>
             <label htmlFor="uploadPhoto3"><div className="pb2" style={{backgroundImage: `url(${thirdPhoto})`}}><input id='uploadPhoto3' type="file" accept='image/gif,image/jepg,image/jpg,image/png' multiple onChange={selectedFileHandler3}></input></div></label>

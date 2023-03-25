@@ -49,7 +49,13 @@ html,body{
     position: absolute;
     top: 1000px;
     left: 46px;
-    font-size: 36px;
+    font-size: 40px;
     color: rgb(155, 122, 122);
-    font-family: 'Mengshen-Handwritten-2';
+    font-family: 'QingSongShouXieTi1-2';
+  }
+  .turnback2{
+    height: 50px;
+    position: relative;
+    top: 180px;
+    left: 15px;
   }

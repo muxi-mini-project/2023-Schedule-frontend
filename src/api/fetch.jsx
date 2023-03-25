@@ -1,4 +1,4 @@
-const preurl = "/api/v1/";
+const preurl = "http://localhost:3000/api/v1/";
 
 function tokenCheck() {
 	const token = localStorage.getItem('token');
@@ -199,3 +199,20 @@ export async function postPhoto(url, data,time){
 
     return response.json();
 }
+
+export async function deleteAll(url){
+    tokenCheck();
+    const response = await fetch(preurl+url, {
+        method: 'DELETE', 
+        headers: { 
+            "Authorization": tokenCheck(),
+            "Year": time.getFullYear(),
+			"Month": time.getMonth() + 1,
+			"Day": time.getDate()
+    }
+    })
+
+    return response.json();
+}
+
+

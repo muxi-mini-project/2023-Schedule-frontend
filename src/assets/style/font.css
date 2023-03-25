@@ -32,3 +32,31 @@
     font-weight: normal;
     font-style: normal;
 }
+
+@font-face {  
+    font-family: duck;  
+    src: url('../fonts/duck.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {  
+    font-family: MeiGanShouXieTi-2;  
+    src: url('../fonts/MeiGanShouXieTi-2.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {  
+    font-family: SuCaiJiShiKangKangTi-2;  
+    src: url('../fonts/SuCaiJiShiKangKangTi-2.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {  
+    font-family: QingSongShouXieTi1-2;  
+    src: url('../fonts/QingSongShouXieTi1-2.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
