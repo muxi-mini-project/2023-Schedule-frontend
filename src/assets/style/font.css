@@ -1,0 +1,34 @@
+@font-face {  
+    font-family: ftmaru400a;  
+    src: url('../fonts/id-ftmaru400a-2.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {  
+    font-family: KurewaGothicCjkJp-Bold-2;  
+    src: url('../fonts/KurewaGothicCjkJp-Bold-2.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {  
+    font-family: Mengshen-Handwritten-2;  
+    src: url('../fonts/Mengshen-Handwritten-2.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {  
+    font-family: KurewaGothicCjkJp-SemiBold-2;  
+    src: url('../fonts/KurewaGothicCjkJp-SemiBold-2.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {  
+    font-family: NaikaiFont-Regular-2;  
+    src: url('../fonts/NaikaiFont-Regular-2.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
