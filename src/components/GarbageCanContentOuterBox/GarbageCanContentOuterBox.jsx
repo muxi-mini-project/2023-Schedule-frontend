@@ -3,10 +3,10 @@ import './GarbageCanContentOuterBox.css';
 
 
 const GarbageCanContentOuterBox = (props) => {
-    const {pastTodos} = props
-    return(
+    const { pastTodos } = props
+    return (
         <div className="contentOuterBox">
-            <GarbageCanContentBox pastTodos={pastTodos}/>
+            <GarbageCanContentBox pastTodos={pastTodos} />
         </div>
     );
 }

@@ -1,17 +1,17 @@
-.body3{
+.body3 {
     width: 100%;
-	height: 100%;
-	background-repeat: no-repeat;
-	background-size: 100%;
-	background-image: url('https://s2.loli.net/2023/03/17/DJdlxgSh4pZC6Yu.png');
-	position: fixed;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-image: url('https://s2.loli.net/2023/03/17/DJdlxgSh4pZC6Yu.png');
+    position: fixed;
     background-position: center center;
-	top: 0px;
-	padding:0;
-	border: 0;
+    top: 0px;
+    padding: 0;
+    border: 0;
 }
 
-.flatpickr-input{
+.flatpickr-input {
     width: 250px;
     height: 100px;
     font-size: 30px;
@@ -19,23 +19,23 @@
     top: 600px;
     text-align: center;
     left: 50%;
-    background-color: rgb(195,150,108);
-    border: rgb(130,90,60) solid 10px;
+    background-color: rgb(195, 150, 108);
+    border: rgb(130, 90, 60) solid 10px;
     transform: translate(-50%);
     border-radius: 15%;
     font-family: 'QingSongShouXieTi1-2';
 }
 
-#font{
+#font {
     top: 550px;
     text-align: center;
-    font-size: 30px;
-    color: rgb(130,90,60);
+    font-size: 40px;
+    color: rgb(130, 90, 60);
     position: relative;
     font-family: 'QingSongShouXieTi1-2';
 }
 
-.button{
+.button {
     width: 250px;
     height: 130px;
     font-size: 50px;
@@ -50,24 +50,24 @@
     text-align: center;
     text-decoration: none;
     outline: none;
-    color:rgb(130,90,60);
-    background-color: rgb(195,150,108);
-    border: rgb(130,90,60) solid 10px;
+    color: rgb(130, 90, 60);
+    background-color: rgb(195, 150, 108);
+    border: rgb(130, 90, 60) solid 10px;
     box-shadow: 0 9px #999;
     font-family: 'QingSongShouXieTi1-2';
 }
 
-.button:hover{
+.button:hover {
     background-color: #b08761;
 }
 
-.button:active{
-        background-color: #b08761;
-        box-shadow: 0 5px #666;
+.button:active {
+    background-color: #b08761;
+    box-shadow: 0 5px #666;
 }
 
-.turnback2{
-	height: 50px;
-	position: relative;
-	top: 150px;
+.turnback2 {
+    height: 50px;
+    position: relative;
+    top: 150px;
 }

@@ -4,56 +4,6 @@
     font-weight: normal;
     font-style: normal;
 }
-
-@font-face {  
-    font-family: KurewaGothicCjkJp-Bold-2;  
-    src: url('../fonts/KurewaGothicCjkJp-Bold-2.ttf');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {  
-    font-family: Mengshen-Handwritten-2;  
-    src: url('../fonts/Mengshen-Handwritten-2.ttf');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {  
-    font-family: KurewaGothicCjkJp-SemiBold-2;  
-    src: url('../fonts/KurewaGothicCjkJp-SemiBold-2.ttf');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {  
-    font-family: NaikaiFont-Regular-2;  
-    src: url('../fonts/NaikaiFont-Regular-2.ttf');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {  
-    font-family: duck;  
-    src: url('../fonts/duck.ttf');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {  
-    font-family: MeiGanShouXieTi-2;  
-    src: url('../fonts/MeiGanShouXieTi-2.ttf');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {  
-    font-family: SuCaiJiShiKangKangTi-2;  
-    src: url('../fonts/SuCaiJiShiKangKangTi-2.ttf');
-    font-weight: normal;
-    font-style: normal;
-}
-
 @font-face {  
     font-family: QingSongShouXieTi1-2;  
     src: url('../fonts/QingSongShouXieTi1-2.ttf');
