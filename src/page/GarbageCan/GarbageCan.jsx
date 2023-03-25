@@ -1,7 +1,8 @@
 import LoadingAnimetion from '../../components/LoadingAnimation/LoadingAnimation';
 import GarbageCanContentOuterBox from '../../components/GarbageCanContentOuterBox/GarbageCanContentOuterBox';
 import {getRecycleBin} from "../../api/fetch";
-import { useState, useEffect } from "react";
+import {useState, useEffect} from "react";
+import {Link} from "react-router-dom"
 import './GarbageCan.css';
 
 
@@ -96,8 +97,10 @@ const GarbageCan = () => {
                             </div>
                             <GarbageCanContentOuterBox pastTodos={pastTodos}/>
                         </div>
+                        <h2 className="gb-hint">hint: 修改日期查看过往的日程</h2>
                     </div>
                 </div>
+                <Link to='/HomePage'><img src="https://s2.loli.net/2023/03/19/ub3vaky7ULtnH9E.png" className='turnback2' alt="返回" /></Link>
                 <LoadingAnimetion/>
             </div>
         );

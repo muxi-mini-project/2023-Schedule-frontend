@@ -31,7 +31,7 @@ li {
 	height:80px;
 	width: 400px;
 	position: relative;
-	font-family: 'NaikaiFont-Regular-2';
+	font-family: 'QingSongShouXieTi1-2';
 }
 
 .Ccheckbox {
@@ -93,7 +93,7 @@ ul {
 	background-position: 0px 65px;
 	width:350px;
 	background-size:23rem;
-	font-family: 'NaikaiFont-Regular-2';
+	font-family: 'QingSongShouXieTi1-2';
 }
 
 .time{
@@ -126,6 +126,7 @@ font{
 	height: 50px;
 	position: relative;
 	top: 80px;
+	left: 15px;
 }
 
 .tear {
@@ -193,6 +194,8 @@ font{
 	height: 100px;
 	font-size: 40px;
 	color: #88674f;
-	top:300px;
+	top:1350px;
+	left: 30px;
 	position: relative;
+	font-family: 'NaikaiFont-Regular-2';
 }
