@@ -1,28 +1,30 @@
-.body2{
-        width: 100%;
-        height: 100%;
-        background-repeat: no-repeat;
-        background-size: 100%;
-        background-position: center center;
-        background-image: url('https://s2.loli.net/2023/03/16/Hf1pvhQxnUOJRet.png');
-        position: fixed;
-        top: 0px;
-        padding:0;
-        border: 0;
-    }
-.pb0{
-    top:18%;
+.body2 {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center center;
+    background-image: url('https://s2.loli.net/2023/03/16/Hf1pvhQxnUOJRet.png');
+    position: fixed;
+    top: 0px;
+    padding: 0;
+    border: 0;
+}
+
+.pb0 {
+    top: 18%;
     left: 500px;
     position: absolute;
     height: 250px;
     width: 250px;
     background-repeat: no-repeat;
-    background-size:contain;
+    background-size: contain;
     transform: rotate(-18deg);
 }
-.pb0::before{
+
+.pb0::before {
     display: block;
-    content:'';
+    content: '';
     background-size: contain;
     background-repeat: no-repeat;
     width: 80px;
@@ -33,20 +35,22 @@
     left: 50px;
     top: -10px;
 }
-.pb1{
+
+.pb1 {
     position: absolute;
     top: 28%;
     left: 130px;
     height: 250px;
     width: 250px;
     background-repeat: no-repeat;
-    background-size:contain;
+    background-size: contain;
     transform: rotate(18deg);
 }
-.pb1::before{
+
+.pb1::before {
     display: block;
     background-image: url('https://s2.loli.net/2023/03/16/cJ7v3UtSwaB9KGo.png');
-    content:'';
+    content: '';
     background-size: contain;
     background-repeat: no-repeat;
     width: 80px;
@@ -55,66 +59,69 @@
     left: 80px;
     top: -20px;
 }
-.pb2{
+
+.pb2 {
     position: absolute;
     top: 48%;
     left: 50%;
     height: 250px;
     width: 250px;
     background-repeat: no-repeat;
-    background-size:contain;
+    background-size: contain;
     transform: rotate(5deg);
 }
-.pb2::before{
+
+.pb2::before {
     display: block;
-    content:'';
+    content: '';
     background-size: contain;
     background-repeat: no-repeat;
     width: 80px;
     height: 50px;
     position: relative;
-    background-image:  url('https://s2.loli.net/2023/03/16/G5n7BX2YLeNdfxM.png');
+    background-image: url('https://s2.loli.net/2023/03/16/G5n7BX2YLeNdfxM.png');
     position: relative;
     left: 100px;
-    top:-10px;
+    top: -10px;
 }
-.pb3{
+
+.pb3 {
     position: absolute;
     top: 70%;
     left: 150px;
     height: 250px;
     width: 250px;
     background-repeat: no-repeat;
-    background-size:contain;
+    background-size: contain;
     transform: rotate(-5deg);
 }
-.pb3::before{
+
+.pb3::before {
     display: block;
-    content:'';
+    content: '';
     background-size: contain;
     background-repeat: no-repeat;
     width: 80px;
     height: 50px;
     position: relative;
-    background-image:  url('https://s2.loli.net/2023/03/16/3sLkedGz8iM6Ko4.png');
+    background-image: url('https://s2.loli.net/2023/03/16/3sLkedGz8iM6Ko4.png');
     position: relative;
     left: 100px;
-    top:-20px;
+    top: -20px;
 }
 
-#uploadPhoto1{
+#uploadPhoto1 {
     display: none;
 }
 
-#uploadPhoto2{
+#uploadPhoto2 {
     display: none;
 }
 
-#uploadPhoto3{
+#uploadPhoto3 {
     display: none;
 }
 
-#uploadPhoto4{
+#uploadPhoto4 {
     display: none;
 }
-

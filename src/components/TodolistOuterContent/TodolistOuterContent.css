@@ -1,4 +1,4 @@
-.TodolistOuterContent{
+.TodolistOuterContent {
     width: 390px;
     height: 450px;
     transform: rotate(-12.2deg);
@@ -10,9 +10,11 @@
     margin: 0;
     padding: 0;
 }
-    .TodolistContent{
+
+    .TodolistContent {
         width: 390px;
-        height: 450px;;
+        height: 450px;
+        ;
         position: relative;
         top: 0;
         left: 0;
@@ -21,7 +23,8 @@
         display: flex;
         flex-direction: column;
     }
-        .paperContent{
+
+        .paperContent {
             width: 390px;
             height: 450px;
             position: absolute;
@@ -29,15 +32,21 @@
             left: 0;
         }
 
-        .a{opacity: 1;}
-        .b{opacity: 0;}
-        .check{
+        .a {
+            opacity: 1;
+        }
+
+        .b {
+            opacity: 0;
+        }
+
+        .check {
             max-width: 100%;
             position: relative;
             top: -20px;
         }
 
-        .todo{
+        .todo {
             width: 325px;
             height: 100%;
             border: 0;
@@ -49,37 +58,43 @@
             font-family: 'QingSongShouXieTi1-2';
         }
 
-        .checker{
+        .checker {
             width: 40px;
             height: 40px;
             opacity: 0;
             transform: rotate(11.2deg);
         }
-        
-        .itemBox{
+
+        .itemBox {
             display: flex;
             height: 80px;
             max-width: 380px;
         }
+
         .CheckBox {
             position: relative;
             transform: rotate(11.2deg);
         }
+
         .checkLabel {
             position: absolute;
             top: 0;
             left: 0;
         }
+
         .InputBox {
             display: flex;
             flex-direction: column;
         }
+
         .TodolistContent :first-child {
             margin-top: 8px;
         }
-        .done{
+
+        .done {
             text-decoration: line-through;
         }
+
         .line img {
             max-width: 100%;
         }

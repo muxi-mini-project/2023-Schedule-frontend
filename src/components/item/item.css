@@ -1,13 +1,14 @@
-.spann{
+.spann {
 	position: absolute;
 	left: 30px;
 	top: -10px;
 	font-size: 40px;
 }
-.delete{
+
+.delete {
 	position: absolute;
 	right: 5px;
 	top: -20px;
-	font-size:50px;
+	font-size: 50px;
 	color: #88674f;
 }

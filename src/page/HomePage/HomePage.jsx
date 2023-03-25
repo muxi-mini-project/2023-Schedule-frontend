@@ -1,40 +1,43 @@
+import { getJSON } from '../../api/fetch';
+import { Link, useNavigate } from "react-router-dom";
+import BGM from 'react-awesome-snippets-bgm';
+import HomePageBGM from '../../assets/bgm/HomePage.mp3';
 import LoadingAnimetion from '../../components/LoadingAnimation/LoadingAnimation';
-import {getJSON} from '../../api/fetch';
-import {Link, useNavigate} from "react-router-dom";
 import './HomePage.css';
 
 
 const HomePage = () => {
     let navigate = useNavigate();
 
-    if(window.innerWidth > window.innerHeight){
-        return(
+    if (window.innerWidth > window.innerHeight) {
+        return (
             <div className="hint"><h2>请将萤幕转为纵向或使用手机检视并重整页面</h2></div>
         );
     }
-    else{
-        getJSON("index", 0).then((res) => {if(res.code !== 200) navigate("/");});
+    else {
+        getJSON("index", 0).then((res) => { if (res.code !== 200) navigate("/"); });
 
         let time = new Date();
-        let month = time.getMonth()+1;
+        let month = time.getMonth() + 1;
         let date = time.getDate();
-        let timing = month + '.' + date;        
+        let timing = month + '.' + date;
 
-        return(
+        return (
             <div className="view">
+                <BGM src={HomePageBGM} loop={true} autoplay={true}></BGM>
                 <div className="view-box">
                     <div className="view-content">
-                        <img alt='' src={"https://s2.loli.net/2023/03/17/8GjBySD6fYPsXaO.png"} className="baseLayer"/>
-                        <Link to="/SelectTime"><img alt='' src={"https://s2.loli.net/2023/03/17/G1HupeWIPtdJ5Nr.png"} className="bulletinBoard"/></Link>
+                        <img alt='' src={"https://s2.loli.net/2023/03/17/8GjBySD6fYPsXaO.png"} className="baseLayer" />
+                        <Link to="/SelectTime"><img alt='' src={"https://s2.loli.net/2023/03/17/G1HupeWIPtdJ5Nr.png"} className="bulletinBoard" /></Link>
                         <Link to="/Calendar">
-                            <img alt='' src={"https://s2.loli.net/2023/03/17/7tHcw1boMqdsQNO.png"} className="calendar item"/>
+                            <img alt='' src={"https://s2.loli.net/2023/03/17/7tHcw1boMqdsQNO.png"} className="calendar item" />
                             <input type="text" className="timing" defaultValue={timing}></input>
                         </Link>
-                        <Link to="/GarbageCan"><img alt='' src={"https://s2.loli.net/2023/03/17/OZA3BhUEILtK9Fv.png"} className="garbageCan item"/></Link>
-                        <img alt='' src={"https://s2.loli.net/2023/03/17/nKemkzO3x6VsapT.png"} className="paperAirplane item"/>
-                        <img alt='' src={"https://s2.loli.net/2023/03/17/fHzrVme5tKNkZRc.png"} className="pottedPlant1 item"/>
-                        <Link to="/TodoList"><img alt='' src={"https://s2.loli.net/2023/03/17/cRrysdVl5OJSwjk.png"} className="todoList item"/></Link>
-                        <LoadingAnimetion/>
+                        <Link to="/GarbageCan"><img alt='' src={"https://s2.loli.net/2023/03/17/OZA3BhUEILtK9Fv.png"} className="garbageCan item" /></Link>
+                        <img alt='' src={"https://s2.loli.net/2023/03/17/nKemkzO3x6VsapT.png"} className="paperAirplane item" />
+                        <img alt='' src={"https://s2.loli.net/2023/03/17/fHzrVme5tKNkZRc.png"} className="pottedPlant1 item" />
+                        <Link to="/TodoList"><img alt='' src={"https://s2.loli.net/2023/03/17/cRrysdVl5OJSwjk.png"} className="todoList item" /></Link>
+                        <LoadingAnimetion />
                     </div>
                 </div>
             </div>

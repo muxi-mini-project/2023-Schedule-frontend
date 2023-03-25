@@ -7,7 +7,6 @@ function tokenCheck() {
 }
 
 export async function postData(url, data, temp) {
-	// let d = JSON.decycle(data);
 	if (temp === 0) {
 		const response = await fetch(preurl + url, {
 			method: 'POST',
@@ -119,9 +118,9 @@ export async function putData(url, data, temp) {
 }
 
 const time = new Date();
-    const year = time.getFullYear();
-    const month = time.getMonth() + 1 ;
-    const day = time.getDate();
+const year = time.getFullYear();
+const month = time.getMonth() + 1 ;
+const day = time.getDate();
 
 export async function postDataa(url, data){
     tokenCheck();
@@ -193,9 +192,9 @@ export async function postPhoto(url, data,time){
             "Year":time.year,
             "Month":time.month,
             "Day":time.day,
-    },
+    	},
         body: formdata
-    })
+    });
 
     return response.json();
 }
@@ -209,10 +208,8 @@ export async function deleteAll(url){
             "Year": time.getFullYear(),
 			"Month": time.getMonth() + 1,
 			"Day": time.getDate()
-    }
-    })
+    	}
+    });
 
     return response.json();
 }
-
-
