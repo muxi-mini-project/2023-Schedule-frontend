@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import Calender from "./page/Calendar/Calendar";
 import Login from "./page/Login/Login";
 import HomePage from "./page/HomePage/HomePage";
@@ -10,7 +10,7 @@ import SelectTime from "./page/SelectTime/SelectTime"
 
 export default function App() {
     return (
-        <BrowserRouter>
+        <HashRouter>
             <Routes>
                 <Route path="/Calendar" element={<Calender />} />
                 <Route path="/BulletinBoard" element={<BulletinBoard />} />
@@ -20,6 +20,6 @@ export default function App() {
                 <Route path="/GarbageCan" element={<GarbageCan />} />
                 <Route path="/SelectTime" element={<SelectTime />} />
             </Routes>
-        </BrowserRouter>
+        </HashRouter>
     );
 }
