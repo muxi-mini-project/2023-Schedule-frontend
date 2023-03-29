@@ -1,4 +1,4 @@
-const preurl = "/schedule/api/v1/";
+const preurl = "/api/v1/";
 
 function tokenCheck() {
 	const token = localStorage.getItem('token');
