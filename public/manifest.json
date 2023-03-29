@@ -1,6 +1,6 @@
 {
-  "short_name": "我的日程本",
-  "name": "我的日程本",
+  "short_name": "React App",
+  "name": "Create React App Sample",
   "icons": [
     {
       "src": "favicon.ico",
