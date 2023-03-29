@@ -7,9 +7,8 @@ import TodoList from "./page/TodoList/TodoList";
 import GarbageCan from "./page/GarbageCan/GarbageCan";
 import BulletinBoard from "./page/BulletinBoard/BulletinBoard";
 import SelectTime from "./page/SelectTime/SelectTime"
-import './App.css';
 
-function App() {
+export default function App() {
   return (
     <HashRouter>
       <Routes>
@@ -24,5 +23,3 @@ function App() {
     </HashRouter>
   );
 }
-
-export default App;
